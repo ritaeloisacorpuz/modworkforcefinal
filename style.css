@@ -1,0 +1,1218 @@
+/* Global Typography & Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #1e3a52;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ----------------------------------
+   HEADER STYLES
+---------------------------------- */
+.site-header {
+    background-color: #e0f7fa;
+    border-bottom: 1px solid #b2ebf2;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #1e3a52;
+    text-transform: uppercase;
+}
+
+.brand-logo span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    border-right: 1px solid #b2ebf2;
+    padding: 0 15px;
+}
+
+.nav-menu li:last-child {
+    border-right: none;
+}
+
+.nav-menu a {
+    font-size: 13px;
+    color: #1e3a52;
+    font-weight: 500;
+}
+
+.header-right {
+    text-align: right;
+    font-size: 12px;
+}
+
+.header-right .blue-pages {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* ----------------------------------
+   HERO SECTION (INDEX)
+---------------------------------- */
+.hero-section {
+    background-color: #ffffff;
+    padding: 60px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 450px;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h2 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #555;
+}
+
+.hero-content h1 {
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #1e3a52;
+    margin: 10px 0;
+}
+
+.hero-content h3 {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.hero-content p.tagline {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #1e3a52;
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: #ffff72;
+    color: #1e3a52;
+    padding: 12px 25px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+/* Sub-nav Bar */
+.sub-nav-bar {
+    display: flex;
+    background-color: #1e3a52;
+    color: #ffffff;
+}
+
+.sub-nav-item {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    border-right: 1px solid #2c5270;
+}
+
+.sub-nav-item.active-light {
+    background-color: #b2ebf2;
+    color: #1e3a52;
+}
+
+/* ----------------------------------
+   CONTENT SECTIONS & CARDS
+---------------------------------- */
+.section-container {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.section-container h2 {
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.section-container p.subtext {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    font-size: 14px;
+    color: #444;
+}
+
+/* 3-Column Features */
+.features-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.feature-card {
+    flex: 1;
+    font-size: 13px;
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #1e3a52;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* 5-Column Packages/Promos Grid */
+.promos-section {
+    background-color: #e0f7fa;
+    padding: 50px 5%;
+}
+
+.promos-grid {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.promo-card {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 3px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.promo-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.promo-card h4 {
+    font-size: 13px;
+    margin: 10px 0 5px 0;
+}
+
+.promo-card p {
+    font-size: 11px;
+    color: #666;
+    padding: 0 8px;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 1px solid #1e3a52;
+    padding: 8px 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #1e3a52;
+}
+
+/* ----------------------------------
+   FOOTER STYLES
+---------------------------------- */
+.site-footer {
+    background-color: #1e3a52;
+    color: #ffffff;
+    padding: 50px 8%;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    font-size: 12px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h4 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-contact-info p {
+    margin-top: 10px;
+}
+/* ==========================================================================
+   ABOUT US & FAQS PAGE STYLES
+   ========================================================================== */
+
+/* Mission Grid */
+.mission-grid {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mission-image {
+    flex: 0 0 320px;
+}
+
+.mission-image img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.mission-text {
+    flex: 1;
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.7;
+}
+
+.mission-text p {
+    margin-bottom: 18px;
+}
+
+.signature-block {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #1e3a52;
+}
+
+.signature-img {
+    height: 45px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.signature-block strong {
+    display: block;
+    font-size: 13px;
+}
+
+/* Cleaners / Team Grid */
+.cleaners-grid {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cleaner-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cleaner-avatar-wrapper {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cleaner-avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cleaner-card h3 {
+    font-family: 'Georgia', serif;
+    color: #c09d62;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+.cleaner-role {
+    font-size: 12px;
+    color: #555;
+    min-height: 32px;
+    margin-bottom: 20px;
+}
+
+.team-divider {
+    width: 40px;
+    height: 2px;
+    background-color: #d4bc82;
+    margin: 0 auto 10px auto;
+}
+
+.team-name {
+    font-size: 11px;
+    color: #777;
+}
+
+/* FAQ Layout */
+.faq-section {
+    background-color: #e0f7fa;
+    padding: 60px 10%;
+}
+
+.faq-header {
+    font-size: 32px;
+    color: #1e3a52;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.faq-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    border-bottom: 1px solid #b2ebf2;
+}
+
+.faq-question {
+    flex: 0 0 35%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1e3a52;
+    padding-right: 20px;
+}
+
+.faq-answer {
+    flex: 0 0 60%;
+    font-size: 12px;
+    color: #1e3a52;
+    line-height: 1.6;
+}
+
+/* Responsive adjust for mobile */
+@media (max-width: 768px) {
+    .mission-grid, .cleaners-grid, .faq-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .faq-question, .faq-answer {
+        flex: 100%;
+    }
+    .faq-question {
+        margin-bottom: 10px;
+    }
+}
+/* ==========================================================================
+   CLEANING APPOINTMENT BOOKING FORM STYLES
+   ========================================================================== */
+
+.booking-page-container {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.booking-main-title {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 36px;
+    color: #1e3a52;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.booking-intro-text {
+    text-align: center;
+    font-size: 13px;
+    color: #555555;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    line-height: 1.6;
+}
+
+/* Yellow Card Container */
+.booking-form-card {
+    background-color: #ffffdd;
+    border-radius: 12px;
+    padding: 40px 35px;
+    color: #222222;
+}
+
+.form-header-title {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row-2col {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row-2col .form-group {
+    flex: 1;
+}
+
+.form-label {
+    display: block;
+    font-size: 11px;
+    color: #222222;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-sublabel {
+    display: block;
+    font-size: 11px;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+/* Minimalist Bottom-Border Inputs */
+.form-input {
+    width: 100%;
+    border: none;
+    border-bottom: 2.5px solid #000000;
+    background: transparent;
+    padding: 4px 0;
+    font-size: 14px;
+    outline: none;
+    color: #000000;
+}
+
+.form-select {
+    width: 100%;
+    border: none;
+    border-bottom: 2.5px solid #000000;
+    background: transparent;
+    padding: 4px 0;
+    font-size: 13px;
+    outline: none;
+    color: #000000;
+    border-radius: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 5px top 50%;
+    background-size: 10px auto;
+}
+
+/* Checkbox & Radio Styles */
+.checkbox-group, .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.checkbox-label, .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: #222222;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #000000;
+    background-color: transparent;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+}
+
+.checkbox-label input[type="checkbox"]:checked::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #000000;
+}
+
+.radio-label input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+}
+
+.radio-label input[type="radio"]:checked::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.form-divider {
+    border: none;
+    border-top: 2px solid #000000;
+    margin: 30px 0;
+}
+
+/* Preferred Dates Styles */
+.dates-section-title {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.form-option-block {
+    margin-bottom: 15px;
+}
+
+.option-title {
+    font-size: 11px;
+    font-weight: bold;
+    color: #222222;
+    margin-bottom: 5px;
+}
+
+.date-time-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.date-time-grid .form-group {
+    flex: 1;
+}
+
+/* Submit Button */
+.form-submit-container {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.btn-booking-submit {
+    background-color: transparent;
+    border: 2px solid #000000;
+    padding: 10px 65px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-booking-submit:hover {
+    background-color: #000000;
+    color: #ffffdd;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .form-row-2col, .date-time-grid {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .booking-form-card {
+        padding: 25px 18px;
+    }
+}
+/* ==========================================================================
+   UPDATED HERO LOGO & SUB-NAV BUTTON STYLES
+   ========================================================================== */
+
+/* Hero Logo Placement */
+.hero-logo-wrapper {
+    margin: 15px 0 5px 0;
+}
+
+.hero-logo {
+    max-width: 140px;
+    height: auto;
+    display: block;
+}
+
+/* Sub-Navigation Clickable Bar */
+.sub-nav-bar {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sub-Navigation Buttons Base Styling */
+.sub-nav-button {
+    flex: 1;
+    padding: 22px 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Alternating Light Blue Button Color */
+.sub-nav-button.btn-light {
+    background-color: #b2ebf2;
+    color: #1e3a52;
+}
+
+.sub-nav-button.btn-light:hover {
+    background-color: #9cdde6;
+}
+
+/* Alternating Dark Blue Button Color */
+.sub-nav-button.btn-dark {
+    background-color: #1e3a52;
+    color: #ffffff;
+}
+
+.sub-nav-button.btn-dark:hover {
+    background-color: #274b68;
+}
+
+/* Mobile Responsiveness for Sub-Nav Buttons */
+@media (max-width: 768px) {
+    .sub-nav-bar {
+        flex-direction: column;
+    }
+    
+    .sub-nav-button {
+        padding: 15px;
+        width: 100%;
+    }
+}
+/* ==========================================================================
+   REVISED HERO SECTION & SUB-NAV BUTTON STYLES
+   ========================================================================== */
+
+/* Hero Section Layout (2-Column Desktop View) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 8%;
+    background-color: #ffffff;
+    min-height: 480px;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 45%;
+}
+
+.hero-logo-wrapper {
+    margin-bottom: 15px;
+}
+
+.hero-logo {
+    max-width: 120px;
+    height: auto;
+    display: block;
+}
+
+/* Right Column: Pink Hand Image */
+.hero-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-hand-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* Clickable Sub Navigation Bar */
+.sub-nav-bar {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-nav-button {
+    flex: 1;
+    padding: 22px 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Light Blue Button Style */
+.sub-nav-button.btn-light {
+    background-color: #b2ebf2;
+    color: #1e3a52;
+}
+
+.sub-nav-button.btn-light:hover {
+    background-color: #9cdde6;
+}
+
+/* Dark Blue Button Style */
+.sub-nav-button.btn-dark {
+    background-color: #1e3a52;
+    color: #ffffff;
+}
+
+.sub-nav-button.btn-dark:hover {
+    background-color: #274b68;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        padding: 30px 5%;
+    }
+    .hero-content, .hero-image-wrapper {
+        max-width: 100%;
+        width: 100%;
+    }
+    .sub-nav-bar {
+        flex-direction: column;
+    }
+    .sub-nav-button {
+        padding: 15px;
+    }
+}
+/* ==========================================================================
+   PROMOS & PACKAGES PAGE STYLES
+   ========================================================================== */
+
+/* Light Blue Hero Section with Intro Text */
+.promos-hero-section {
+    background-color: #e0f7fa;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.promos-hero-container {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.promos-hero-container h1 {
+    font-size: 38px;
+    font-weight: 300;
+    color: #1e3a52;
+    margin-bottom: 30px;
+}
+
+.promos-hero-container p {
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.promos-hero-container p:last-child {
+    margin-bottom: 0;
+}
+
+/* Promos Item Grid Section */
+.promos-list-section {
+    background-color: #ffffff;
+    padding: 70px 8%;
+}
+
+.promos-list-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 40px;
+    max-width: 1050px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.promo-item-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.promo-item-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-item-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e3a52;
+    margin-bottom: 12px;
+}
+
+.promo-desc {
+    font-size: 12px;
+    color: #444444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.promo-footnote {
+    font-size: 11px;
+    color: #666666;
+    line-height: 1.5;
+    margin-top: auto;
+}
+
+/* Responsive adjustments for mobile and tablets */
+@media (max-width: 850px) {
+    .promos-list-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    .promos-hero-section {
+        padding: 40px 5%;
+    }
+    .promos-hero-container h1 {
+        font-size: 28px;
+    }
+    .promos-list-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+/* ==========================================================================
+   ADDITIONAL STYLES FOR BROKER REWARDS PAGE
+   ========================================================================== */
+
+/* Step Number Badges for How-To Grids */
+.step-number {
+    width: 36px;
+    height: 36px;
+    background-color: #1e3a52;
+    color: #ffffff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* Ensure equal height cards inside flex grids */
+.promos-grid .promo-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Smooth Scrolling for Anchor Links */
+html {
+    scroll-behavior: smooth;
+}
+/* ==========================================================================
+   BROKER REWARDS PAGE ADDITIONAL STYLES
+   ========================================================================== */
+
+.page-container {
+    background-color: #eafaf9;
+    padding: 60px 20px 80px 20px;
+    color: #333333;
+}
+
+/* Intro Header & Paragraph Section */
+.intro-section {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 38px;
+    font-weight: 300;
+    color: #2b2b2b;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.intro-text p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555555;
+    margin-bottom: 16px;
+}
+
+/* PDF Download Button Styling */
+.download-container {
+    margin-top: 30px;
+}
+
+.btn-pdf-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e3a52;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-pdf-download:hover {
+    background-color: #152838;
+    color: #ffffff;
+}
+
+/* 3x2 Grid Layout */
+.grid-section {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 40px;
+}
+
+.promo-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-icon {
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+}
+
+.promo-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2b2b2b;
+    margin-bottom: 12px;
+}
+
+.promo-card p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555555;
+    margin: 0;
+}
+
+.promo-card p a {
+    color: #2b2b2b;
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .promo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .promo-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .page-title {
+        font-size: 28px;
+    }
+}
+/* Justify footer paragraphs */
+footer p {
+  text-align: justify;
+  hyphens: auto;
+}
+/* Center Logo */
+.footer-logo-container {
+  text-align: center;
+  padding: 40px 0 20px 0;
+}
+
+.footer-logo {
+  max-width: 160px; /* Adjust size to fit your logo */
+  height: auto;
+}
+
+/* Horizontal Line Separator */
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 20px 0 40px 0;
+}
+
+/* Bottom Columns Grid */
+.footer-bottom-columns {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.footer-bottom-columns .footer-col {
+  flex: 1;
+}
+
+.footer-bottom-columns p {
+  text-align: justify;
+  hyphens: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.footer-bottom-columns h4 {
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+/* Links & Copyright */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Stack footer items vertically */
+footer {
+  display: block; /* Removes side-by-side forcing on main footer wrapper */
+  width: 100%;
+}
+
+/* Make top row 3 columns side-by-side */
+.footer-top-row,
+.footer-bottom-row {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+/* Individual Column width */
+.footer-col {
+  flex: 1;
+}
+
+.footer-col p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Logo styling */
+.footer-logo-container {
+  text-align: center;
+  padding: 40px 0 20px 0;
+}
+
+.footer-logo {
+  max-width: 160px;
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 20px 0 40px 0;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  padding-top: 20px;
+}
