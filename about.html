@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>About Us & FAQs | MOD - Maid On Demand</title>
+    <meta name="description" content="Learn about MOD's mission, meet our cleaning team, and get answers to frequently asked questions.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Linked directly to your shared style sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dynamic Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Section 1: Our Mission -->
+    <section class="section-container" style="background-color: #ffffff;">
+        <h2>Our Mission</h2>
+        <div class="mission-grid">
+            <div class="mission-image">
+                <img src="#" alt="Arleen Ayala - Operations Director">
+            </div>
+            <div class="mission-text">
+                <p>We are a cleaning company that cares.</p>
+                <p>We professionalized the cleaning business because we believe that cleanliness is necessary for a good quality of life. We want to give you that while allowing you more time for the more important things that require your time and attention --- your family, your career and your personal time.</p>
+                <p>In turn, we provide our cleaners with the opportunity to earn well and instill dignity in their humble but honest profession.</p>
+                
+                <div class="signature-block">
+                    <img src="#" alt="Signature" class="signature-img">
+                    <strong>Arleen Ayala</strong>
+                    <div>Operations Director in MOD</div>
+                    <div>Owner, Exemplary Cleaning Services</div>
+                    <div>DTI Business Permit No. 8097043</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Meet the Cleaners -->
+    <section class="section-container" style="background-color: #ffffff; border-top: 1px solid #eee;">
+        <h2>Meet the Cleaners</h2>
+        <div class="cleaners-grid">
+            <!-- Cleaner 1 -->
+            <div class="cleaner-card">
+                <div class="cleaner-avatar-wrapper" style="background-color: #d8d3c5;">
+                    <img src="#" alt="Abegail">
+                </div>
+                <h3>Abegail</h3>
+                <div class="cleaner-role">BGC Cleaning Lady</div>
+                <div class="team-divider"></div>
+                <div class="team-name">Team Tidy</div>
+            </div>
+
+            <!-- Cleaner 2 -->
+            <div class="cleaner-card">
+                <div class="cleaner-avatar-wrapper" style="background-color: #dce7a8;">
+                    <img src="#" alt="Mark">
+                </div>
+                <h3>Mark</h3>
+                <div class="cleaner-role">Party Staff</div>
+                <div class="team-divider"></div>
+                <div class="team-name">Team Exemplary</div>
+            </div>
+
+            <!-- Cleaner 3 -->
+            <div class="cleaner-card">
+                <div class="cleaner-avatar-wrapper" style="background-color: #c9e29a;">
+                    <img src="#" alt="Joy">
+                </div>
+                <h3>Joy</h3>
+                <div class="cleaner-role">BGC/Makati Cleaning Lady</div>
+                <div class="team-divider"></div>
+                <div class="team-name">Team Exemplary</div>
+            </div>
+
+            <!-- Cleaner 4 -->
+            <div class="cleaner-card">
+                <div class="cleaner-avatar-wrapper" style="background-color: #f7ed73;">
+                    <img src="#" alt="Mary Rose">
+                </div>
+                <h3>Mary Rose</h3>
+                <div class="cleaner-role">San Juan / Mandaluyong<br>Cleaning Lady</div>
+                <div class="team-divider"></div>
+                <div class="team-name">Team Exemplary</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: FAQs -->
+    <section class="faq-section">
+        <h1 class="faq-header">FAQs</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">How does the MOD cleaning service work?</div>
+            <div class="faq-answer">
+                MOD cleaning services provide fractional employment of Cleaners to households only at a time and date the homeowner needs the cleaning service. It allows clients to have clean homes without the need to employ a full-time, stay-in maid. This is more cost-efficient in the long run, apart from being safer because the client-cleaner relationship is maintained at a professional distance and the cleaning lady has no free access to the home when the homeowner is not at home.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How are the fees computed?</div>
+            <div class="faq-answer">
+                For a studio unit MOD charges begin at Php 800 per cleaning for the smallest unit, which is 15 square meters. There is an additional 40 pesos per square meter. So, if it is 28 square meters, that's 800 pesos basic charge + 520 pesos for the additional 13 square meters which amounts to 1,320 cleaning fee.<br><br>
+                Fees for the Party Staff and Kitchen Staff are variable, depending on client specifications.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Will MOD cleaners be bringing their own cleaning equipment?</div>
+            <div class="faq-answer">
+                At present, MOD only provides manpower for the cleaning service because most clients prefer to use their own cleaning implements for hygienic reasons. However, in the next phase launch our accredited cleaning ladies will provide an option to bring in cleaning equipments at a minimal additional cost.
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader -->
+    <script>
+        function loadComponent(id, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(err => console.error('Error loading ' + file + ':', err));
+        }
+
+        loadComponent('header-placeholder', 'header.html');
+        loadComponent('footer-placeholder', 'footer.html');
+    </script>
+</body>
+</html>
