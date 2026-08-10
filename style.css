@@ -1235,3 +1235,144 @@ footer {
     max-height: 100%;
     object-fit: contain;     /* Keeps image aspect ratio intact */
 }
+/* ==========================================================================
+   MOBILE & RESPONSIVE FIXES (PASTE AT BOTTOM OF STYLE.CSS)
+   ========================================================================== */
+
+/* Prevent horizontal overflow on the page */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    /* ----------------------------------
+       1. HEADER & NAVIGATION FIXES
+    ---------------------------------- */
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 5%;
+        gap: 12px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        border-right: none;
+        border-bottom: 1px solid #b2ebf2;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        display: block;
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+
+    /* ----------------------------------
+       2. HERO SECTION & TYPOGRAPHY FIXES
+    ---------------------------------- */
+    .hero-section {
+        flex-direction: column;
+        padding: 30px 5%;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .hero-logo-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 32px; /* Scale down oversized text causing overflow */
+        letter-spacing: 1px;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .hero-content h2 {
+        font-size: 15px;
+    }
+
+    .hero-content h3 {
+        font-size: 18px;
+    }
+
+    .hero-image-wrapper {
+        width: 100%;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+
+    /* ----------------------------------
+       3. CARDS & GRID RESPONSIVENESS
+    ---------------------------------- */
+    /* Fix 5-column promo cards squishing on mobile */
+    .promos-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .promo-card {
+        width: 100%;
+    }
+
+    /* Fix 3-column features grid */
+    .features-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-card {
+        width: 100%;
+    }
+
+    .section-container {
+        padding: 40px 5%;
+    }
+
+    .section-container h2 {
+        font-size: 26px;
+    }
+
+
+    /* ----------------------------------
+       4. FOOTER RESPONSIVENESS
+    ---------------------------------- */
+    .site-footer,
+    .footer-top-row,
+    .footer-bottom-row,
+    .footer-bottom-columns {
+        flex-direction: column;
+        padding: 30px 5%;
+        gap: 30px;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
+
+    .footer-col p {
+        text-align: left; /* Switch justified text on mobile for better readability */
+        word-break: break-word;
+    }
+}
