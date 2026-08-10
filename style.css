@@ -1221,3 +1221,17 @@ footer {
     height: 100%;
     object-fit: contain;
 }
+.feature-icon {
+    width: 48px;            /* Set desired icon box width */
+    height: 48px;           /* Set desired icon box height */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;    /* Centers the icon above the title */
+}
+
+.feature-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;     /* Keeps image aspect ratio intact */
+}
