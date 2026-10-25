@@ -193,6 +193,32 @@
   <script src="include.js"></script>
 <!-- CSV Auto-Parse Script -->
   <script>
+    // Helper function to format image URLs from Google Drive, Wix, or direct links
+    function formatImageUrl(rawUrl) {
+      if (!rawUrl || typeof rawUrl !== 'string') return 'images/default-avatar.jpg';
+      
+      let trimmed = rawUrl.trim();
+      if (trimmed === '') return 'images/default-avatar.jpg';
+
+      // 1. Convert Wix Image Protocol to CDN URL
+      if (trimmed.startsWith('wix:image://v1/')) {
+        const parts = trimmed.replace('wix:image://v1/', '').split('/');
+        const fileId = parts[0];
+        return `https://static.wixstatic.com/media/${fileId}`;
+      }
+
+      // 2. Convert Google Drive Sharing Links to Direct Image URLs
+      if (trimmed.includes('drive.google.com')) {
+        const match = trimmed.match(/\/d\/([a-zA-Z0-9_-]+)/) || trimmed.match(/id=([a-zA-Z0-9_-]+)/);
+        if (match && match[1]) {
+          return `https://lh3.googleusercontent.com/d/${match[1]}`;
+        }
+      }
+
+      // 3. Standard HTTP/HTTPS or local relative image path
+      return trimmed;
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
       Papa.parse("profile.csv", {
         download: true,
@@ -208,26 +234,22 @@
             return;
           }
 
-          // Clear existing static placeholder content before appending CSV rows
           container.innerHTML = "";
 
           results.data.forEach(cleaner => {
-            // Mapping CSV Column Names exactly from profile.csv
             const workerName = cleaner['First Name'] || cleaner.FirstName || cleaner.Name || 'Anonymous Worker';
             const workerCategory = cleaner['Job Type'] || cleaner.Category || 'Blue Collar';
             const workerLocation = cleaner['Preferred work area'] || cleaner['Preferred Location for facetoface Tutorials'] || cleaner.Location || 'Not specified';
             const workerSchedule = cleaner['Sched'] || cleaner.Schedule || 'Flexible';
             const workerNarrative = cleaner['Job Narrative'] || cleaner.Narrative || cleaner.Bio || 'No background description provided.';
 
-            // Profile Picture processing
-            let photo = cleaner['Profile Picture'] || cleaner.PhotoURL || 'images/default-avatar.jpg';
-            if (!photo || photo.trim() === "" || photo.startsWith("wix:image://")) {
-              photo = "images/default-avatar.jpg";
-            }
+            // Format the photo URL using the helper function
+            const rawPhoto = cleaner['Profile Picture'] || cleaner['PhotoURL'] || cleaner['Photo'] || cleaner['Image'];
+            const photo = formatImageUrl(rawPhoto);
 
             const cardHTML = `
               <div class="cleaner-card">
-                <img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.src='images/default-avatar.jpg'">
+                <img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.onerror=null; this.src='images/default-avatar.jpg';">
                 <div class="cleaner-info">
                   <h3 class="cleaner-name">${workerName}</h3>
                   <div class="cleaner-meta">
@@ -253,6 +275,3 @@
       });
     });
   </script>
- 
-</body>
-</html>
