@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Pages - Worker Profiles</title>
+  
+  <!-- 1. Link the external stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- PapaParse Library to fetch and parse the CSV file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  
+  <style>
+    :root {
+      --blue-primary: #1e3a8a;
+      --blue-secondary: #2563eb;
+      --blue-light: #f0f7ff;
+      --blue-border: #bfdbfe;
+      --text-dark: #1f2937;
+    }
+
+    .directory-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+
+    .directory-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .directory-header h1 {
+      color: var(--blue-primary);
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .directory-header p {
+      color: #4b5563;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive Grid Layout */
+    .cleaners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .cleaner-card {
+      border: 1px solid var(--blue-border);
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0 4px 10px rgba(30, 58, 138, 0.08);
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cleaner-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(30, 58, 138, 0.15);
+    }
+
+    .cleaner-photo {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      background-color: var(--blue-light);
+    }
+
+    .cleaner-info {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cleaner-name {
+      font-size: 1.3rem;
+      color: var(--blue-primary);
+      margin-bottom: 10px;
+      font-weight: 700;
+      border-bottom: 2px solid var(--blue-light);
+      padding-bottom: 6px;
+    }
+
+    .cleaner-meta {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-bottom: 15px;
+      background-color: var(--blue-light);
+      padding: 10px 12px;
+      border-radius: 6px;
+    }
+
+    .cleaner-meta p {
+      margin-bottom: 6px;
+    }
+
+    .cleaner-meta p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cleaner-meta strong {
+      color: var(--blue-secondary);
+    }
+
+    .cleaner-narrative {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--text-dark);
+      margin-top: auto;
+      white-space: pre-line;
+    }
+
+    .loading-msg {
+      font-size: 1.1rem;
+      color: var(--blue-secondary);
+      text-align: center;
+      margin: 50px 0;
+      font-weight: 600;
+    }
+
+    .btn-request {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background-color: var(--blue-secondary);
+      color: #ffffff;
+      padding: 12px 0;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 0 0 6px 6px;
+      margin-top: 15px;
+      transition: background-color 0.2s;
+    }
+
+    .btn-request:hover {
+      background-color: var(--blue-primary);
+    }
+
+    /* Mobile & Tablet Responsiveness Enhancements */
+    @media (max-width: 768px) {
+      .directory-section {
+        padding: 20px 15px;
+      }
+
+      .directory-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .directory-header p {
+        font-size: 1rem;
+      }
+
+      .cleaners-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .cleaner-photo {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 2. Header Placeholder at the very top inside <body> -->
+  <div id="header-placeholder"></div>
+
+  <!-- MAIN CLEANERS & BLUE COLLAR WORKERS SECTION -->
+  <section class="directory-section">
+    <div class="directory-header">
+      <h1>Blue Pages Worker Directory</h1>
+      <p>Browse available service profiles updated directly from our latest worker registrations.</p>
+    </div>
+
+    <div id="loading" class="loading-msg">Loading profiles from database...</div>
+    <div id="cleaners-container" class="cleaners-grid"></div>
+  </section>
+
+  <!-- 3. Footer Placeholder at the very bottom right before </body> -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 4. Loader script tag directly underneath the footer placeholder -->
+  <script src="include.js"></script>
+<!-- CSV Auto-Parse Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      Papa.parse("profile.csv", {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function (results) {
+          const container = document.getElementById("cleaners-container");
+          const loadingMsg = document.getElementById("loading");
+          if (loadingMsg) loadingMsg.style.display = "none";
+
+          if (!results.data || results.data.length === 0) {
+            container.innerHTML = "<p style='text-align:center; grid-column: 1/-1;'>No profiles found in the database.</p>";
+            return;
+          }
+
+          // Clear existing static placeholder content before appending CSV rows
+          container.innerHTML = "";
+
+          results.data.forEach(cleaner => {
+            // Mapping CSV Column Names exactly from profile.csv
+            const workerName = cleaner['First Name'] || cleaner.FirstName || cleaner.Name || 'Anonymous Worker';
+            const workerCategory = cleaner['Job Type'] || cleaner.Category || 'Blue Collar';
+            const workerLocation = cleaner['Preferred work area'] || cleaner['Preferred Location for facetoface Tutorials'] || cleaner.Location || 'Not specified';
+            const workerSchedule = cleaner['Sched'] || cleaner.Schedule || 'Flexible';
+            const workerNarrative = cleaner['Job Narrative'] || cleaner.Narrative || cleaner.Bio || 'No background description provided.';
+
+            // Profile Picture processing
+            let photo = cleaner['Profile Picture'] || cleaner.PhotoURL || 'images/default-avatar.jpg';
+            if (!photo || photo.trim() === "" || photo.startsWith("wix:image://")) {
+              photo = "images/default-avatar.jpg";
+            }
+
+            const cardHTML = `
+              <div class="cleaner-card">
+                <img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.src='images/default-avatar.jpg'">
+                <div class="cleaner-info">
+                  <h3 class="cleaner-name">${workerName}</h3>
+                  <div class="cleaner-meta">
+                    <p><strong>Category:</strong> ${workerCategory}</p>
+                    <p><strong>Location:</strong> ${workerLocation}</p>
+                    <p><strong>Schedule:</strong> ${workerSchedule}</p>
+                  </div>
+                  <p class="cleaner-narrative">${workerNarrative}</p>
+                </div>
+                <a href="request.html" class="btn-request">Request Contact Details</a>
+              </div>
+            `;
+            container.innerHTML += cardHTML;
+          });
+        },
+        error: function(err) {
+          const loadingMsg = document.getElementById("loading");
+          if (loadingMsg) {
+            loadingMsg.innerText = "Failed to load profiles. Please ensure profile.csv is uploaded in your repository root.";
+          }
+          console.error("CSV Parsing Error:", err);
+        }
+      });
+    });
+  </script>
+ 
+</body>
+</html>
