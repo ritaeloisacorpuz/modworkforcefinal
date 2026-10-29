@@ -1,0 +1,114 @@
+/* ==========================================
+   GLOBAL THEME & STYLES (MODULAR SITE ENGINE)
+   ========================================== */
+
+:root {
+    /* Theme Colors */
+    --bg-color: #9DE9EA;          /* Light Green / Cyan background */
+    --accent-dark-green: #37BDBF; /* Dark Green Accent */
+    --accent-orange: #F9AD3B;     /* Warm Accent */
+    --text-btn-brick: #F26524;    /* Brick Orange for Text, Accent Buttons & Dark Elements */
+    
+    /* Secondary & Contrast Colors */
+    --bg-white: #ffffff;
+    --text-dark: #222222;
+    --text-light: #ffffff;
+}
+
+/* Base Typography & Theme Application */
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+}
+
+/* Headings Theme */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: var(--text-btn-brick);
+}
+
+/* Paragraphs & Text Elements */
+p, span, li, a {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Modular Button Styling */
+.btn-primary, .btn-dark, .btn-secondary {
+    background-color: var(--text-btn-brick);
+    color: var(--text-light) !important;
+    border: 2px solid var(--text-btn-brick);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover, .btn-dark:hover, .btn-secondary:hover {
+    background-color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: var(--text-dark) !important;
+}
+
+.btn-light, .btn-outline {
+    background-color: var(--bg-white);
+    color: var(--text-btn-brick) !important;
+    border: 2px solid var(--text-btn-brick);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-light:hover, .btn-outline:hover {
+    background-color: var(--accent-dark-green);
+    color: var(--text-light) !important;
+}
+
+/* Structural Theme Cards & Sections */
+.hero-section {
+    background-color: var(--bg-color);
+}
+
+.sub-nav-bar {
+    background-color: var(--accent-dark-green);
+}
+
+.feature-card, .promo-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--accent-dark-green);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover, .promo-card:hover {
+    border-color: var(--text-btn-brick);
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS & DEVICE ENGINE
+   (Ipads, Mobile, Kindle, E-Readers)
+   ========================================== */
+
+/* Universal Responsive Dynamic Resizing */
+img, svg, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablets, iPads, and E-Readers (Kindle) */
+@media screen and (max-width: 1024px) {
+    .hero-section, .features-grid, .promos-grid {
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+    }
+    
+    .sub-nav-bar {
+        flex-direction: column !important;
+    }
+}
+
+/* Small Mobile Screens */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 0 10px;
+    }
+    
+    .btn-primary, .btn-secondary, .btn-light, .btn-dark, .btn-outline, .sub-nav-button {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+}
