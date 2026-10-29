@@ -186,3 +186,46 @@ a[href="about.html"]:hover {
     color: #ffffff !important;
     border-color: #5A8AFF !important;
 }
+/* ==========================================
+   PROMO CARDS SOLID BLOCK THEME OVERRIDES
+   ========================================== */
+
+/* Force solid dark blue background & light blue text for promo cards */
+.promo-card {
+    background-color: #042040 !important;
+    color: #CDE9F7 !important;
+    border: none !important;
+    border-radius: 12px;
+    padding: 1.75rem 1.25rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Card titles in crisp white */
+.promo-card h4 {
+    color: #ffffff !important;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.35rem;
+}
+
+/* Paragraph text in light blue */
+.promo-card p {
+    color: #CDE9F7 !important;
+    text-align: center !important;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Ensure card images stay centered with subtle border radius */
+.promo-card img {
+    border-radius: 8px;
+    background-color: #ffffff; /* Gives non-transparent logos a clean white canvas */
+}
+
+/* Hover elevation effect */
+.promo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
