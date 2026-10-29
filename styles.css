@@ -3,7 +3,7 @@
    ========================================== */
 
 :root {
-  /* Base Backgrounds */
+   /* Base Backgrounds */
    --bg-main: #CDE9F7;          /* General background (Light Blue) */
    --bg-flesh: #FDFFF0;         /* Alternative light background (Flesh/Off-White) */
    
@@ -12,7 +12,7 @@
    
    /* Text & Button Colors */
    --text-dark: #042040;        /* Text on light background & Button backgrounds (Dark Blue) */
-   --text-light: #CDE9F7;       /* Text on dark background (Light Blue) */ 
+   --text-light: #CDE9F7;       /* Text on dark background (Light Blue) */
 }
 
 /* Base Typography & Theme Application */
