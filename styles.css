@@ -249,3 +249,53 @@ body {
 .sub-nav-bar {
     background-color: #FDFFF0 !important;
 }
+/* ==========================================
+   HEADER THEME & COLOR INTEGRATION
+   ========================================== */
+
+/* Header Container Background & Underline Accent */
+.site-header {
+    background-color: var(--bg-main, #FDFFF0);
+    border-bottom: 2px solid var(--accent-blue, #5A8AFF);
+}
+
+/* Brand Logo Text Colors */
+.brand-logo .logo-main {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.brand-logo .logo-sub {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Header Links Color & Transition */
+.nav-menu a {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* Header Links Hover & Focus States */
+.nav-menu a:hover,
+.nav-menu a:focus {
+    color: var(--accent-blue, #5A8AFF);
+}
+
+/* Mobile Header Background Adaptations */
+@media screen and (max-width: 768px) {
+    .site-header {
+        background-color: var(--bg-main, #FDFFF0);
+    }
+    
+    .nav-menu a {
+        border-radius: 4px;
+    }
+
+    .nav-menu a:hover {
+        background-color: var(--text-light, #CDE9F7);
+        color: var(--text-dark, #042040);
+    }
+}
