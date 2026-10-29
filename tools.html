@@ -1,376 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Promos & Packages - CarboLoad</title>
-  
-  <!-- 1. Link external stylesheet inside <head> -->
-  <link rel="stylesheet" href="styles.css">
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <style>
-    /* ==========================================
-       MODULAR PAGE LAYOUT & FONT SIZES ONLY
-       ========================================== */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    /* Global Layout & Typography Rules for Page Bones */
-    p {
-      text-align: justify;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      text-align: center;
-    }
-    img {
-      object-position: center;
-      object-fit: cover;
-    }
+    <!-- Core SEO Meta Tags -->
+    <title>MOD Workforce | Small Business Tools and Resources</title>
+    <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="robots" content="index, follow">
 
-    .promos-page {
-      width: 100%;
-    }
+    <!-- Canonical Tag (Points to primary URL without .html) -->
+    <link rel="canonical" href="https://www.modworkforce.com/">
 
-    /* Hero Section */
-    .hero-section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-    .hero-container h1 {
-      font-size: 3rem;
-      font-weight: 400;
-      margin-bottom: 15px;
-    }
-    .hero-subtext {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.15rem; /* Lowest allowed size constraint */
-      line-height: 1.6;
-    }
+    <!-- Social & LLM Preview Metadata (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta property="og:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta property="og:url" content="https://www.modworkforce.com/">
+    <meta property="og:site_name" content="MOD Workforce">
+    <meta property="og:image" content="https://www.modworkforce.com/images/og-image.jpg">
 
-    /* Cards Grid & Content Sections */
-    .packages-grid-section, 
-    .our-promos-text-section, 
-    .promo-details-grid-section, 
-    .bottom-contact-section {
-      padding: 60px 8%;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      font-weight: 400;
-    }
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-    }
-    .package-card {
-      text-align: center;
-    }
-    .card-img-wrapper img {
-      width: 100%;
-      height: 220px;
-      margin-bottom: 15px;
-      border-radius: 4px;
-      display: block;
-    }
-    .package-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-    }
-    .package-card p {
-      font-size: 1.15rem;
-      line-height: 1.5;
-    }
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta name="twitter:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="twitter:image" content="https://www.modworkforce.com/images/og-image.jpg">
 
-    /* Text Section Layout */
-    .text-content p {
-      margin-bottom: 16px;
-      font-size: 1.15rem;
-      line-height: 1.6;
-    }
+    <!-- Linked External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 
-    /* Details Grid Section Layout */
-    .details-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 35px;
-    }
-    .detail-item {
-      text-align: center;
-      padding: 20px;
-    }
-    .icon-box {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-    .detail-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-    .detail-item p {
-      font-size: 1.15rem;
-      line-height: 1.5;
-    }
-    .disclaimer {
-      font-size: 1.15rem !important;
-      margin-top: 6px;
-      opacity: 0.8;
-    }
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    /* Contact Form Section Layout */
-    .bottom-contact-section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+    <!-- Schema.org Knowledge Graph / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.modworkforce.com/#organization",
+          "name": "MOD Workforce",
+          "url": "https://www.modworkforce.com/",
+          "telephone": "+639564001626",
+          "email": "modworkforce@hawthorneconsultancymanila.com",
+          "priceRange": "$$",
+          "description": "Website for tools and resources for small businesses."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.modworkforce.com/#website",
+          "url": "https://www.modworkforce.com/",
+          "name": "MOD Workforce",
+          "publisher": {
+            "@id": "https://www.modworkforce.com/#organization"
+          }
+        }
+      ]
     }
-    .contact-sub {
-      font-size: 1.15rem;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 30px;
-      font-size: 1.25rem;
-    }
-    .main-contact-form {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .form-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 15px;
-    }
-    .form-group label {
-      font-size: 1.15rem;
-      margin-bottom: 6px;
-      text-align: left;
-    }
-    .form-group input, 
-    .form-group textarea {
-      padding: 10px;
-      font-size: 1.15rem;
-      border-radius: 4px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    textarea.form-control {
-      height: 120px;
-      resize: vertical;
-    }
-    .form-actions {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .btn-send {
-      padding: 12px 35px;
-      font-size: 1.15rem;
-      font-weight: 600;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+    </script>
 
-    @media screen and (max-width: 768px) {
-      .form-columns {
-        grid-template-columns: 1fr;
-      }
-      .packages-grid-section, 
-      .our-promos-text-section, 
-      .promo-details-grid-section, 
-      .bottom-contact-section {
-        padding: 40px 5%;
-      }
-    }
-  </style>
+    <!-- Skeletal Layout & Positioning Rules (Bones Only) -->
+    <style>
+        /* Base Structural Defaults */
+        body, main, section, p, div, span, li, a, input, textarea, button {
+            font-size: max(1.15rem, 100%);
+            line-height: 1.6;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1.25rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        img, svg, video {
+            object-position: center;
+            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tools-page {
+            width: 100%;
+        }
+
+        /* Hero Section Layout */
+        .tools-hero-section {
+            padding: 80px 20px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tools-hero-container h1 {
+            font-size: max(2.2rem, 140%);
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .tools-hero-subtext {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Container & Grid Sections */
+        .packages-grid-section, 
+        .our-promos-text-section, 
+        .promo-details-grid-section, 
+        .bottom-contact-section {
+            padding: 60px 8%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: max(1.8rem, 125%);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 220px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+
+        .package-card h3 {
+            font-size: max(1.25rem, 110%);
+            margin-bottom: 10px;
+        }
+
+        .package-card p {
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        /* Text Section Layout */
+        .text-content p {
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        /* Details Grid Section Layout */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .detail-item {
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .icon-box {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .detail-item h3 {
+            font-size: max(1.2rem, 105%);
+            margin-bottom: 10px;
+        }
+
+        .disclaimer {
+            margin-top: 6px;
+            opacity: 0.85;
+            text-align: center;
+        }
+
+        /* Contact Form Section Layout */
+        .bottom-contact-section h2 {
+            font-size: max(1.8rem, 125%);
+            margin-bottom: 10px;
+        }
+
+        .contact-sub {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            font-size: 1.35rem;
+        }
+
+        .main-contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            padding: 10px;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        textarea.form-control {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-send {
+            padding: 12px 35px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        @media screen and (max-width: 768px) {
+            .form-columns {
+                grid-template-columns: 1fr;
+            }
+            .packages-grid-section, 
+            .our-promos-text-section, 
+            .promo-details-grid-section, 
+            .bottom-contact-section {
+                padding: 40px 5%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- 2. Header Placeholder at the very top inside <body> -->
-  <div id="header-placeholder"></div>
 
-  <!-- MAIN CONTENT AREA -->
-  <main class="promos-page">
-    
-    <!-- Hero Section -->
-    <section class="hero-section dark-bg">
-      <div class="hero-container">
-        <h1>Promos &amp; Packages</h1>
-        <p class="hero-subtext">
-          We have the right menu for the person you need to be --- be it for every day or only for today. Whether it is for an active day of trekking or your food sustenance for exams week, for your child's meal plan or your elder's complicated diet. We got you!
-        </p>
-      </div>
-    </section>
+    <!-- Header Placeholder Container -->
+    <div id="header-placeholder"></div>
 
-    <!-- Promos Overview Cards Grid -->
-    <section class="packages-grid-section">
-      <div class="container">
-        <h2 class="section-title">Promos &amp; Packages</h2>
-        <div class="cards-grid">
-          <div class="package-card">
-            <div class="card-img-wrapper">
-              <img src="images/college-girl-healthy-meal-plan.jpg" alt="MODern Mom Package">
+    <!-- Main Content Canvas -->
+    <main class="tools-page">
+      
+      <!-- Hero Section (Dark Canvas) -->
+      <section class="tools-hero-section dark-bg">
+        <div class="tools-hero-container">
+          <h1>Small Business Tools &amp; Solutions</h1>
+          <p class="tools-hero-subtext">
+            We provide the right tools and operational frameworks for small business owners and startup entrepreneurs. Whether you are launching a new enterprise, streamlining employee training, managing operational costs, or searching for reliable suppliers—MOD Workforce offers the practical tools to support your business journey.
+          </p>
+        </div>
+      </section>
+
+      <!-- Tools & Solutions Grid (Light Canvas) -->
+      <section class="packages-grid-section">
+        <div class="container">
+          <h2 class="section-title">Essential Business Tools</h2>
+          <div class="cards-grid">
+            
+            <div class="package-card">
+              <div class="card-img-wrapper">
+                <img src="danica-blue-pages-head.png" alt="Free Website Builder Tool">
+              </div>
+              <h3>Free Website Builder</h3>
+              <p>In the digital age, an online presence is essential. Use our free web application to create a clean, responsive brochure website for your business at zero upfront cost.</p>
             </div>
-            <h3>College Meal Plan Subscription</h3>
-            <p>Your baby's all grown up. She is away for college and far from the family kitchen. There's no need to be worried about her diet. Don't fret, because you can still make sure she gets the nutrition she needs by subscribing to our College meal plan. Inform us about her nutrient needs, her schedule and meal preferences and we will take care of everything.</p>
-          </div>
-          <div class="package-card">
-            <div class="card-img-wrapper">
-              <img src="images/baby-eating-healthy-food.jpg" alt="Healthy-baby-food">
+
+            <div class="package-card">
+              <div class="card-img-wrapper">
+                <img src="danna-english-tutors.png" alt="Business Calculators Tool">
+              </div>
+              <h3>Business Calculators</h3>
+              <p>Understand your numbers without needing a finance degree. Calculate break-even points, operational margins, and investment returns to keep your cash flow healthy.</p>
             </div>
-            <h3>Children's Brain Food Meal Subscription</h3>
-            <p>We develop and provide Home-made Baby Food & Toddler's snacks, fully customizable and prepacked, you never have to worry about your child's nutritional needs. You can be as busy as you want to be with work, with your charity or your hobbies and still make sure your little one will get all the nutrient he needs. Be supermom, we can be your sidekick.</p>
-          </div>
-          <div class="package-card">
-            <div class="card-img-wrapper">
-              <img src="images/senior-healthy-meal.jpeg" alt="Pescriptive-meal">
+
+            <div class="package-card">
+              <div class="card-img-wrapper">
+                <img src="elisha-mathtutor-final.png" alt="Employee Training Tool">
+              </div>
+              <h3>Employee e-Training</h3>
+              <p>Standardize your workforce onboarding. Train entry-level hires or undergrads using structured online modules so they are job-ready from day one.</p>
             </div>
-            <h3>Senior Meal Plan Subscription</h3>
-            <p>Low sodium, low sugar. No red meat ? Ground to bits? Preparing our elders' meals to comply with their dietary requirements while still tasting delicious can be complicated and if you are busy, you just won't be able to cope with it. Subscribe to our meal plan and we will make sure you get what they need, when they want it and tasting exactly how they prefer it.</p>
-          </div>
-          <div class="package-card">
-            <div class="card-img-wrapper">
-              <img src="images/doctor-prescribes-healthy-meal.jpg" alt="Senior Meal Plan">
+
+            <div class="package-card">
+              <div class="card-img-wrapper">
+                <img src="angelica-science-tutors.png" alt="Business Setup Guide Tool">
+              </div>
+              <h3>Business Setup Guide</h3>
+              <p>Step-by-step guidance on business registration, DTI permits, supplier sourcing, and operational setup designed specifically for small business owners.</p>
             </div>
-            <h3>Prescriptives Food Line Subscription</h3>
-            <p>If you don't want to eat medicine as food, you have to start eating food like it is your medicine. Is your family predisposed to diabetes? Cancer? High blood? Don't wait until you're sick, start eating the right food that will prevent it. We can prepare your meals that will achieve your health goals. If you want to lose weight, have clear skin or detox, We can make it happen.</p>
+
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Detailed Copywriting Section -->
-    <section class="our-promos-text-section dark-bg">
-      <div class="container text-content">
-        <h2>Our Promos</h2>
-        <p>We offer instant rewards, freebies for accumulated points, exclusive discounts and special privileges for availing of our meal subscriptions.</p>
-        <p>We extend these promos to you so that you will keep availing of our meal plans that will give you more free time, allow you to have more rest and save your energy for things that truly matter to you.</p>
-      </div>
-    </section>
+      <!-- Strategy & Framework Section (Dark Canvas) -->
+      <section class="our-promos-text-section dark-bg">
+        <div class="container text-content">
+          <h2>The Modular Scaling Advantage</h2>
+          <p>We advocate modularization—allowing entrepreneurs to scale their services, supplies, and manpower in pace with actual business growth.</p>
+          <p>By keeping fixed overhead low and utilizing on-demand business tools, small business owners avoid premature cash drain while positioning their venture for sustainable expansion.</p>
+        </div>
+      </section>
 
-    <!-- Perks & Features Grid -->
-    <section class="promo-details-grid-section">
-      <div class="container">
-        <div class="details-grid">
-          <div class="detail-item">
-            <div class="icon-box"><i class="fa-percent"></i></div>
-            <h3>Meal Subscription Discount</h3>
-            <p>Get 5% off on your 10th meal or get a free popcorn on the 20th cleaning service.</p>
-            <p class="disclaimer">Discounts and freebies applicable to the same cost-item only.</p>
-          </div>
-          <div class="detail-item">
-            <div class="icon-box"><i class="fa-solid fa-glass-water"></i></div>
-            <h3>Beverage Bonus</h3>
-            <p>Get a free artisan iced tea after the 12th meal with a minimum of Php 1,000 meal bill per freebie.</p>
-            <p class="disclaimer">Freebie can vary, depending on availability.</p>
-          </div>
-          <div class="detail-item">
-            <div class="icon-box"><i class="fa-solid fa-bowl-food"></i></div>
-            <h3>Senior Soup Special</h3>
-            <p>Free one (1) soup for every meal subscription with minimum billing of Php 1,000.</p>
-            <p class="disclaimer">Freebie is instant reward given at the end of the meal subscription.</p>
+      <!-- Perks & Features Grid (Light Canvas) -->
+      <section class="promo-details-grid-section">
+        <div class="container">
+          <div class="details-grid">
+            <div class="detail-item">
+              <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <h3>On-Demand Tools</h3>
+              <p>Access business templates and calculators whenever you need them without recurring subscription fees.</p>
+              <p class="disclaimer">Free to use for all registered platform members.</p>
+            </div>
+            <div class="detail-item">
+              <div class="icon-box"><i class="fa-solid fa-users-gear"></i></div>
+              <h3>Workforce Search</h3>
+              <p>Locate vetted freelancers and blue-collar workers ready to assist with your operational tasks.</p>
+              <p class="disclaimer">Direct contact requests made available via our directory.</p>
+            </div>
+            <div class="detail-item">
+              <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+              <h3>Standardized Training</h3>
+              <p>Equip your hires with essential workplace skills through our digital training modules.</p>
+              <p class="disclaimer">Updated regularly with small business operational standards.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact Form Section -->
-    <section class="bottom-contact-section dark-bg">
-      <div class="container">
-        <h2>Inquire About Our Meal Subscriptions</h2>
-        <p class="contact-sub">Have questions about our packages and meal subscriptions? Send us a message below.</p>
-        
-        <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-viber"></i></a>
-        </div>
+      <!-- Contact Inquiry Form Section (Dark Canvas) -->
+      <section class="bottom-contact-section dark-bg">
+        <div class="container">
+          <h2>Inquire About Our Business Tools</h2>
+          <p class="contact-sub">Have questions about our tools, employee training, or setup guides? Send us a message below.</p>
+          
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-viber"></i></a>
+          </div>
 
-        <form id="packageInquiryForm" action="https://forms.thebluepagesmanila.com" method="POST" class="main-contact-form">
-          <!-- Hidden Cloudflare Payload Headers -->
-          <input type="hidden" name="_subject" value="Package & Promo Inquiry Submission">
-          <input type="hidden" name="_to" value="rita.eloisa.corpuz@student.ateneo.edu">
+          <form id="packageInquiryForm" action="https://forms.thebluepagesmanila.com" method="POST" class="main-contact-form">
+            <!-- Hidden Payload Configuration -->
+            <input type="hidden" name="_subject" value="Business Tools Inquiry Submission">
+            <input type="hidden" name="_to" value="modworkforce@hawthorneconsultancymanila.com">
+            
+            <div class="form-columns">
+              <div class="form-group">
+                <label for="full_name">Full Name *</label>
+                <input type="text" id="full_name" name="full_name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="contact_email">Email Address *</label>
+                <input type="email" id="contact_email" name="email" class="form-control" required>
+              </div>
+            </div>
 
-          <div class="form-columns">
             <div class="form-group">
-              <label for="full_name">Full Name *</label>
-              <input type="text" id="full_name" name="full_name" class="form-control" required>
+              <label for="promo_interest">Tool or Resource Interested In</label>
+              <input type="text" id="promo_interest" name="promo_interest" class="form-control" placeholder="e.g. Website Builder / Business Calculators">
             </div>
+
             <div class="form-group">
-              <label for="contact_email">Email Address *</label>
-              <input type="email" id="contact_email" name="email" class="form-control" required>
+              <label for="inquiry_message">Message</label>
+              <textarea id="inquiry_message" name="message" class="form-control"></textarea>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="promo_interest">Promo or Package Interested In</label>
-            <input type="text" id="promo_interest" name="promo_interest" class="form-control" placeholder="e.g. College Meal Plan Subscription">
-          </div>
-          <div class="form-group">
-            <label for="inquiry_message">Message</label>
-            <textarea id="inquiry_message" name="message" class="form-control"></textarea>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn-send">Send Inquiry</button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
 
-  <!-- 3. Footer Placeholder at the very bottom right before </body> -->
-  <div id="footer-placeholder"></div>
+            <div class="form-actions">
+              <button type="submit" class="btn-send">Send Inquiry</button>
+            </div>
+          </form>
+        </div>
+      </section>
 
-  <!-- 4. Loader script directly underneath footer placeholder -->
-  <script src="include.js"></script>
+    </main>
 
-  <!-- CLOUDFLARE INQUIRY FORM SUBMISSION SCRIPT -->
-  <script>
-    document.getElementById('packageInquiryForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerText;
-      submitBtn.innerText = "Sending Inquiry...";
-      submitBtn.disabled = true;
+    <!-- Footer Placeholder Container -->
+    <div id="footer-placeholder"></div>
 
-      try {
-        const formData = new FormData(this);
-        const payload = {};
-        for (let [key, value] of formData.entries()) {
-          payload[key] = value;
+    <!-- Component Loader Script -->
+    <script src="include.js"></script>
+
+    <!-- Cloudflare Inquiry Form Handler -->
+    <script>
+      document.getElementById('packageInquiryForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.innerText = "Sending Inquiry...";
+        submitBtn.disabled = true;
+
+        try {
+          const formData = new FormData(this);
+          const payload = {};
+          for (let [key, value] of formData.entries()) {
+            payload[key] = value;
+          }
+
+          const response = await fetch(this.action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          const result = await response.json();
+          if (result.success) {
+            alert('Inquiry sent successfully!');
+            this.reset();
+          } else {
+            alert('Error: ' + (result.error || 'Submission failed.'));
+          }
+        } catch (err) {
+          alert('Inquiry submission failed. Please try again.');
+        } finally {
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
         }
+      });
+    </script>
 
-        const response = await fetch(this.action, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-
-        const result = await response.json();
-        if (result.success) {
-          alert('Inquiry sent successfully!');
-          this.reset();
-        } else {
-          alert('Error: ' + (result.error || 'Submission failed.'));
-        }
-      } catch (err) {
-        alert('Inquiry submission failed. Please try again.');
-      } finally {
-        submitBtn.innerText = originalBtnText;
-        submitBtn.disabled = false;
-      }
-    });
-  </script>
 </body>
 </html>
