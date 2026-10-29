@@ -325,3 +325,52 @@ body {
         color: var(--text-dark, #042040);
     }
 }
+/* ==========================================
+   FOOTER THEME, COLORS & HOVER STATES
+   ========================================== */
+
+/* Dark Blue Footer Canvas */
+footer.site-footer {
+    background-color: var(--text-dark, #042040) !important;
+    color: var(--text-light, #CDE9F7) !important;
+    border-top: 1px solid rgba(205, 233, 247, 0.2);
+}
+
+/* Footer Section Headings */
+footer.site-footer .footer-col h4 {
+    color: #ffffff !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Text Paragraphs & Body Details */
+footer.site-footer p,
+footer.site-footer small {
+    color: var(--text-light, #CDE9F7) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Hyperlinks in Footer Columns */
+footer.site-footer a {
+    color: var(--text-light, #CDE9F7) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+/* Link Hover States */
+footer.site-footer a:hover,
+footer.site-footer a:focus {
+    color: var(--accent-blue, #5A8AFF) !important;
+    text-decoration: underline;
+}
+
+/* Horizontal Divider Accent Lines */
+footer.site-footer hr.footer-divider {
+    border-top: 1px solid rgba(205, 233, 247, 0.25);
+}
+
+/* Logo Image Framing in Dark Background */
+footer.site-footer .footer-brand-logo {
+    border: 2px solid var(--accent-blue, #5A8AFF);
+    background-color: #ffffff;
+}
