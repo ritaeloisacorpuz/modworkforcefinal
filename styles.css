@@ -4,15 +4,16 @@
 
 :root {
    /* Base Backgrounds */
-   --bg-white: #ffffff;
-   --bg-light-neutral: #fdfff0;  /* Optional subtle contrast for cards */
+   --bg-blue: #CDE9F7;
+   --bg-light-neutral: #ffffff;  /* Optional subtle contrast for cards */
    
    /* Accent Colors */
-   --accent-blue: #CDE9F7;       /* Accent 1: BLUE
+   --accent-flesh: #fdfff0;       /* Accent 1: BLUE
 --accent-blue: #FDFFF0;      
    
    /* Text Colors */
    --text-dark: #042040;
+    --text-light: #CDE9F7;
    
 }
 
