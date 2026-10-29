@@ -1,376 +1,46 @@
 /* ==========================================
-   GLOBAL THEME & STYLES (MODULAR SITE ENGINE)
+   ABOUT PAGE THEME & COLOR STYLES
    ========================================== */
 
-:root {
-   /* Base Backgrounds */
-   --bg-main: #FDFFF0;          /* General background (Light Blue) */
-   
-   /* Accent Colors */
-   --accent-blue: #5A8AFF;      /* Special Accent */
-   
-   /* Text & Button Colors */
-   --text-dark: #042040;        /* Text on light background & Button backgrounds (Dark Blue) */
-   --text-light: #CDE9F7;       /* Text on dark background (Light Blue) */
-}
-
-/* Base Typography & Theme Application */
-body {
-   font-family: 'Helvetica', 'Arial', sans-serif;
-   background-color: var(--bg-white);
-   color: var(--text-dark);
-}
-
-/* Headings Theme - Accent Brick Orange */
-h1, h2, h3, h4, h5, h6 {
-   font-family: 'Helvetica', 'Arial', sans-serif;
-   color: var(--accent-brick);
-}
-
-/* Paragraphs & Text Elements */
-p, span, li, a {
-   font-family: 'Helvetica', 'Arial', sans-serif;
-}
-
-/* Modular Button Styling with Accent Highlights */
-.btn-primary, .btn-dark, .btn-secondary {
-   background-color: var(--accent-brick);
-   color: var(--text-light) !important;
-   border: 2px solid var(--accent-brick);
-   transition: all 0.3s ease;
-}
-
-.btn-primary:hover, .btn-dark:hover, .btn-secondary:hover {
-   background-color: var(--accent-yellow);
-   border-color: var(--accent-yellow);
-   color: var(--text-dark) !important;
-}
-
-.btn-light, .btn-outline {
-   background-color: var(--bg-white);
-   color: var(--accent-brick) !important;
-   border: 2px solid var(--accent-cyan);
-   transition: all 0.3s ease;
-}
-
-.btn-light:hover, .btn-outline:hover {
-   background-color: var(--accent-cyan);
-   color: var(--text-light) !important;
-}
-
-/* Section Backgrounds (All Forced to White) */
-.hero-section, 
+/* Main Page Section Backgrounds */
 .section-container, 
-.promos-section {
-   background-color: var(--bg-white);
-}
-
-/* Sub-Navigation Bar - White Background with Cyan Top/Bottom Accents */
-.sub-nav-bar {
-   background-color: var(--bg-white);
-   border-top: 3px solid var(--accent-cyan);
-   border-bottom: 3px solid var(--accent-cyan);
-}
-
-/* Feature & Promo Cards - White Background with Accent Highlights */
-.feature-card, .promo-card {
-   background-color: var(--bg-white);
-   border: 2px solid var(--accent-cyan);
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-   transition: border-color 0.3s ease, transform 0.2s ease;
-}
-
-.feature-card:hover, .promo-card:hover {
-   border-color: var(--accent-yellow);
-   transform: translateY(-2px);
-}
-
-/* Feature Icon Accent Details */
-.feature-icon {
-   border-bottom: 2px solid var(--accent-yellow);
-   padding-bottom: 0.5rem;
-}
-
-/* ==========================================
-   MOBILE RESPONSIVENESS & DEVICE ENGINE
-   (iPads, Mobile, Kindle, E-Readers)
-   ========================================== */
-
-img, svg, video {
-   max-width: 100%;
-   height: auto;
-}
-
-/* Tablets, iPads, and E-Readers (Kindle) */
-@media screen and (max-width: 1024px) {
-   .hero-section, .features-grid, .promos-grid {
-       flex-direction: column !important;
-       grid-template-columns: 1fr !important;
-   }
-   
-   .sub-nav-bar {
-       flex-direction: column !important;
-   }
-}
-
-/* Small Mobile Screens */
-@media screen and (max-width: 600px) {
-   body {
-       padding: 0 10px;
-   }
-   
-   .btn-primary, .btn-secondary, .btn-light, .btn-dark, .btn-outline, .sub-nav-button {
-       width: 100% !important;
-       box-sizing: border-box;
-   }
-}
-/* ==========================================
-   SUB-NAVBAR & ABOUT US BUTTON OVERRIDES
-   ========================================== */
-
-/* Alternating Sub-Nav Menu Box Colors */
-.sub-nav-bar {
-    padding: 1.5rem 1rem;
-    gap: 1rem;
-}
-
-/* Odd links (1st, 3rd, etc.): Dark Blue background with Light Blue text */
-.sub-nav-bar a:nth-child(odd) {
-    background-color: #042040 !important;
-    color: #CDE9F7 !important;
-    border: 2px solid #042040;
-    padding: 0.85rem 1.25rem;
-    border-radius: 6px;
-    font-weight: bold;
-}
-
-/* Even links (2nd, 4th, etc.): Light Blue background with Dark Blue text */
-.sub-nav-bar a:nth-child(even) {
-    background-color: #CDE9F7 !important;
-    color: #042040 !important;
-    border: 2px solid #042040;
-    padding: 0.85rem 1.25rem;
-    border-radius: 6px;
-    font-weight: bold;
-}
-
-/* Hover effects for sub-navigation boxes */
-.sub-nav-bar a:nth-child(odd):hover {
-    background-color: #5A8AFF !important;
-    color: #ffffff !important;
-    border-color: #5A8AFF;
-}
-
-.sub-nav-bar a:nth-child(even):hover {
-    background-color: #5A8AFF !important;
-    color: #ffffff !important;
-    border-color: #5A8AFF;
-}
-
-/* Enforce Dark Blue Background & High Contrast for About Us Buttons */
-.btn-primary, 
-.btn-secondary, 
-a[href="about.html"] {
-    background-color: #042040 !important;
-    color: #CDE9F7 !important;
-    border: 2px solid #042040 !important;
-    font-weight: bold;
-}
-
-/* Hover state for About Us Buttons */
-.btn-primary:hover, 
-.btn-secondary:hover, 
-a[href="about.html"]:hover {
-    background-color: #5A8AFF !important;
-    color: #ffffff !important;
-    border-color: #5A8AFF !important;
-}
-/* ==========================================
-   PROMO CARDS SOLID BLOCK THEME OVERRIDES
-   ========================================== */
-
-/* Force solid dark blue background & light blue text for promo cards */
-.promo-card {
-    background-color: #042040 !important;
-    color: #CDE9F7 !important;
-    border: none !important;
-    border-radius: 12px;
-    padding: 1.75rem 1.25rem;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Card titles in crisp white */
-.promo-card h4 {
-    color: #ffffff !important;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.35rem;
-}
-
-/* Paragraph text in light blue */
-.promo-card p {
-    color: #CDE9F7 !important;
-    text-align: center !important;
-    font-size: 1.15rem;
-    line-height: 1.5;
-    margin-bottom: 0;
-}
-
-/* Ensure card images stay centered with subtle border radius */
-.promo-card img {
-    border-radius: 8px;
-    background-color: #ffffff; /* Gives non-transparent logos a clean white canvas */
-}
-
-/* Hover elevation effect */
-.promo-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-/* ==========================================
-   GLOBAL PAGE & CONTAINER BACKGROUND THEME
-   ========================================== */
-
-/* Set the overall page background */
-body {
-    background-color: #FDFFF0 !important;
-}
-
-/* Ensure all major sections let the body background show through, 
-   or explicitly paint them with the flesh theme color */
-.hero-section,
-.section-container,
-.promos-section {
-    background-color: #FDFFF0 !important;
-}
-
-/* Sub-navigation container styling */
-.sub-nav-bar {
-    background-color: #FDFFF0 !important;
-}
-/* ==========================================
-   HEADER THEME & COLOR INTEGRATION
-   ========================================== */
-
-/* Header Container Background & Underline Accent */
-.site-header {
+.faq-section {
     background-color: var(--bg-main, #FDFFF0);
-    border-bottom: 2px solid var(--accent-blue, #5A8AFF);
 }
 
-/* Brand Logo Text Colors */
-/* ==========================================
-   HEADER THEME & COLOR INTEGRATION
-   ========================================== */
+/* Headings Theme Color Application */
+.section-container h2,
+.faq-header,
+.cleaner-card h3 {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
 
-/* Header Container Background (Light Blue) & Border Accent */
-.site-header {
+/* Signature Block Text Colors */
+.signature-block strong,
+.signature-block div {
+    color: var(--text-dark, #042040);
+}
+
+/* Team Divider Accent Line */
+.team-divider {
+    background-color: var(--accent-blue, #5A8AFF);
+}
+
+/* Avatar Circle Canvas Styling */
+.cleaner-avatar-wrapper {
     background-color: var(--text-light, #CDE9F7);
-    border-bottom: 2px solid var(--accent-blue, #5A8AFF);
-}
-
-/* Brand Logo Text Colors */
-.brand-logo .logo-main {
-    color: var(--text-dark, #042040);
-    font-family: 'Helvetica', 'Arial', sans-serif;
-}
-
-.brand-logo .logo-sub {
-    color: var(--text-dark, #042040);
-    font-family: 'Helvetica', 'Arial', sans-serif;
-}
-
-/* Header Links Color & Transition */
-.nav-menu a {
-    color: var(--text-dark, #042040);
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    font-weight: 500;
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-
-/* Header Links Hover & Focus States */
-.nav-menu a:hover,
-.nav-menu a:focus {
-    color: var(--accent-blue, #5A8AFF);
-}
-
-/* Mobile Header Background Adaptations */
-@media screen and (max-width: 768px) {
-    .site-header {
-        background-color: var(--text-light, #CDE9F7);
-    }
-    
-    .nav-menu a {
-        border-radius: 4px;
-    }
-
-    .nav-menu a:hover {
-        background-color: var(--text-dark, #042040);
-        color: var(--text-light, #CDE9F7);
-    }
-}
-/* Mobile Header Background Adaptations */
-@media screen and (max-width: 768px) {
-    .site-header {
-        background-color: var(--bg-main, #FDFFF0);
-    }
-    
-    .nav-menu a {
-        border-radius: 4px;
-    }
-
-    .nav-menu a:hover {
-        background-color: var(--text-light, #CDE9F7);
-        color: var(--text-dark, #042040);
-    }
-}
-/* ==========================================
-   FOOTER THEME, COLORS & HOVER STATES
-   ========================================== */
-
-/* Dark Blue Footer Canvas */
-footer.site-footer {
-    background-color: var(--text-dark, #042040) !important;
-    color: var(--text-light, #CDE9F7) !important;
-    border-top: 1px solid rgba(205, 233, 247, 0.2);
-}
-
-/* Footer Section Headings */
-footer.site-footer .footer-col h4 {
-    color: #ffffff !important;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-}
-
-/* Text Paragraphs & Body Details */
-footer.site-footer p,
-footer.site-footer small {
-    color: var(--text-light, #CDE9F7) !important;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-}
-
-/* Hyperlinks in Footer Columns */
-footer.site-footer a {
-    color: var(--text-light, #CDE9F7) !important;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-}
-
-/* Link Hover States */
-footer.site-footer a:hover,
-footer.site-footer a:focus {
-    color: var(--accent-blue, #5A8AFF) !important;
-    text-decoration: underline;
-}
-
-/* Horizontal Divider Accent Lines */
-footer.site-footer hr.footer-divider {
-    border-top: 1px solid rgba(205, 233, 247, 0.25);
-}
-
-/* Logo Image Framing in Dark Background */
-footer.site-footer .footer-brand-logo {
     border: 2px solid var(--accent-blue, #5A8AFF);
-    background-color: #ffffff;
+}
+
+/* FAQ Container Block Theme */
+.faq-item {
+    background-color: var(--text-light, #CDE9F7);
+    border-left: 4px solid var(--accent-blue, #5A8AFF);
+}
+
+.faq-question,
+.faq-answer {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
