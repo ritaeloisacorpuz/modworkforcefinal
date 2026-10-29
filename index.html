@@ -9,7 +9,7 @@
     <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
     <meta name="robots" content="index, follow">
 
-    <!-- Canonical Tag (Points to primary URL without .html) -->
+    <!-- Canonical Tag -->
     <link rel="canonical" href="https://www.modworkforce.com/">
 
     <!-- Social & LLM Preview Metadata (Open Graph) -->
@@ -56,21 +56,214 @@
       ]
     }
     </script>
+
+    <!-- Structural & Layout Rules Embedded for True Modularity -->
+    <style>
+        /* Global Structural Alignment Rules */
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            text-align: justify;
+            font-size: 1.15rem; /* Enforcing minimum font size requirement */
+            line-height: 1.6;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        img {
+            object-position: center;
+            object-fit: cover;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        a {
+            font-size: 1.15rem; /* Enforcing minimum font size */
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* Typography Hierarchy (Size Guardrails >= 1.15rem) */
+        h1 { font-size: 2.75rem; }
+        h2 { font-size: 2.25rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.35rem; }
+
+        /* Container Layouts */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            box-sizing: border-box;
+        }
+
+        /* Hero Section Layout */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-logo-wrapper {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-logo {
+            max-width: 180px;
+            height: auto;
+            margin: 0; /* Left-aligned within logo wrapper */
+        }
+
+        .tagline {
+            font-size: 1.35rem;
+            font-style: italic;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .hero-action-area {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .hero-image-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-hand-img {
+            max-width: 100%;
+            max-height: 450px;
+            border-radius: 8px;
+        }
+
+        /* Sub-Navigation Bar Layout */
+        .sub-nav-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1.5rem;
+        }
+
+        .sub-nav-bar a {
+            padding: 0.85rem 1.25rem;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Feature Cards Grid Layout */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Promos Section Grid Layout */
+        .promos-section {
+            padding: 4rem 1.5rem;
+        }
+
+        .promos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .promo-card {
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .promo-card img {
+            width: 100%;
+            max-width: 180px;
+            aspect-ratio: 1 / 1;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        /* Button Positioning Classes */
+        .btn-primary, .btn-secondary, .btn-outline {
+            padding: 0.85rem 2rem;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 1.5rem auto 0 auto;
+            display: block;
+            width: fit-content;
+            text-align: center;
+        }
+
+        .subtext {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 1.5rem auto;
+            max-width: 900px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Dynamic Header Placeholder (Pulls header.html) -->
+    <!-- Header Placeholder -->
     <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
-            <!-- Requirement 3: MOD Logo placed on top left above text -->
             <div class="hero-logo-wrapper">
                 <img src="logo-modworkforce-white.jpg" alt="MOD Logo" class="hero-logo">
             </div>
-
-            <h2>The Modern Workforce </h2>
+            <h2>The Modern Workforce</h2>
             <h1>MODworkforce</h1>
             <h3>MODern Workforce</h3>
             <p class="tagline">"The future of Modern Work is modular"</p>
@@ -79,172 +272,102 @@
                 <a href="about.html" class="btn-primary">About Us</a>
             </div>
         </div>
-
-        <!-- Requirement 4: Pink Hand Image Option -->
         <div class="hero-image-wrapper">
             <img src="single&sassycategoryimage_edited.png" alt="modworkforce-target-client" class="hero-hand-img">
         </div>
     </section>
 
-    <!-- Requirement 1: Clickable Sub Navigation Buttons with easily editable text & '#' links -->
+    <!-- Sub-Navigation Links -->
     <nav class="sub-nav-bar" aria-label="Quick Links">
-        <a href="website-builder.html">Business Tool #1 Website Builder Application</a>
-        <a href="training.html" class="sub-nav-button btn-dark">Business Tool #2 Training Library for your Employees </a>
-        <a href="calculator.html" class="sub-nav-button btn-light"> Business Tool #3 Business Calculators</a>
+        <a href="website-builder.html" class="sub-nav-button btn-light">Business Tool #1 Website Builder Application</a>
+        <a href="training.html" class="sub-nav-button btn-dark">Business Tool #2 Training Library for your Employees</a>
+        <a href="calculator.html" class="sub-nav-button btn-light">Business Tool #3 Business Calculators</a>
         <a href="https://www.hawthorneconsultancymanila.com/recruitment-hub-clerks" class="sub-nav-button btn-dark">Business Tool #4 Guide in Setting up a Business</a>
     </nav>
-<section class="section-container">
-        <h2>What is MODworkforce?</h2>
-        <p class="subtext">
-            A family of database for the MODern workforce needs of small businesses and busy professionals. <br> Find the help you need at the price you can afford. <br> The modern workforce is modular --- pay when you need it, only for the work you require. <br> Ideal for start-ups and small businesses that cannot absorb large overheads. <br> Also very useful to affluent households in need of upscale home support and home assistance <br> that does not merit regular employment. <br> This is the Workforce you need to live the Life you want and build the Business of your dreams.<br> Our websites are also highly beneficial to freelancers and workers in the grey market. <br> All good for everyone around. </p>
-        <a href="about.html" class="btn-secondary">About Us</a>
-    </section>
+
+    <!-- Modular Description Section -->
     <section class="section-container">
         <h2>What is MODworkforce?</h2>
         <p class="subtext">
-            A family of database for the MODern workforce needs of small businesses and busy professionals. <br> Find the help you need at the price you can afford. <br> The modern workforce is modular --- pay when you need it, only for the work you require. <br> Ideal for start-ups and small businesses that cannot absorb large overheads. <br> Also very useful to affluent households in need of upscale home support and home assistance <br> that does not merit regular employment. <br> This is the Workforce you need to live the Life you want and build the Business of your dreams.<br> Our websites are also highly beneficial to freelancers and workers in the grey market. <br> All good for everyone around. </p>
+            A family of database for the MODern workforce needs of small businesses and busy professionals.<br> 
+            Find the help you need at the price you can afford.<br> 
+            The modern workforce is modular --- pay when you need it, only for the work you require.<br> 
+            Ideal for start-ups and small businesses that cannot absorb large overheads.<br> 
+            Also very useful to affluent households in need of upscale home support and home assistance that does not merit regular employment.<br> 
+            This is the Workforce you need to live the Life you want and build the Business of your dreams.<br> 
+            Our websites are also highly beneficial to freelancers and workers in the grey market.<br> 
+            All good for everyone around.
+        </p>
         <a href="about.html" class="btn-secondary">About Us</a>
     </section>
-  <!-- Why You Should Book Section -->
+
+    <!-- Features Section -->
     <section class="section-container">
         <h2>MODworkforce <br>The MODern Workforce</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">
-                <img src="costefficient.svg" alt="Cost Efficient" style="width: 100%; height: 100%; max-width: 32px; max-height: 32px; object-fit: contain;">
-        </div>
+                    <img src="costefficient.svg" alt="Cost Efficient" style="width: 32px; height: 32px;">
+                </div>
                 <h3>Cost-efficient</h3>
-                <p>Pay for services only when you need it. </p>
+                <p>Pay for services only when you need it.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                <img src="flexible.svg" alt="flexible" style="width: 100%; height: 100%; max-width: 32px; max-height: 32px; object-fit: contain;">
-        </div>
+                    <img src="flexible.svg" alt="flexible" style="width: 32px; height: 32px;">
+                </div>
                 <h3>Flexible</h3>
                 <p>Add or decrease manpower needs as the market fluctuates.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                <img src="reduced-risk.svg" alt="Reduced Hiring Risk" style="width: 100%; height: 100%; max-width: 32px; max-height: 32px; object-fit: contain;">
-        </div>
-                <h3>Reduced Hiring Risk </h3>
+                    <img src="reduced-risk.svg" alt="Reduced Hiring Risk" style="width: 32px; height: 32px;">
+                </div>
+                <h3>Reduced Hiring Risk</h3>
                 <p>Test manpower performance before long term employment or business commitment.</p>
             </div>
         </div>
     </section>
 
-    <!-- Promos Section -->
+    <!-- Promos Directory Section -->
     <section class="promos-section">
         <div class="section-container" style="padding:0;">
             <h2>Manpower-on-Demand Websites</h2>
             <div class="promos-grid">
                 <div class="promo-card">
-                    <img src="logo-bluepages-blue.jpg" alt="blue-collar-workers" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; height: auto !important;">
+                    <img src="logo-bluepages-blue.jpg" alt="blue-collar-workers">
                     <h4>The Blue Pages</h4>
                     <p>www.thebluepagesmanila.com <br> A Talent Directory of Blue Collar Workers in the Metro - handyman, electricians, plumbers, locksmiths, caregivers, chefs, etc.</p>
                 </div>
                 <div class="promo-card">
-                    <img src="Clerica Institute of secretarial studies.png" alt="maid-on-demand-logo" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; height: auto !important;">
+                    <img src="Clerica Institute of secretarial studies.png" alt="maid-on-demand-logo">
                     <h4>Clerica Database</h4>
-                    <p>A Talent Directory found in Hawthorne Consultancy, this database provides a selection of admin personnel, secretaries and clerical workers. </p>
+                    <p>A Talent Directory found in Hawthorne Consultancy, this database provides a selection of admin personnel, secretaries and clerical workers.</p>
                 </div>
                 <div class="promo-card">
-                    <img src="logo_mod_final.png" alt="encoders-and-clerks" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; height: auto !important;">
+                    <img src="logo_mod_final.png" alt="encoders-and-clerks">
                     <h4>Maid-on-Demand</h4>
-                    <p> www.maid-on-demand.com <br> On-call cleaning ladies available for day jobs, stay-out and available on-demand only. </p>
+                    <p>www.maid-on-demand.com <br> On-call cleaning ladies available for day jobs, stay-out and available on-demand only.</p>
                 </div>
                 <div class="promo-card">
-                    <img src="logo_powertutorial2.png" alt="tutors" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; height: auto !important;">
-                    <h4>Power Tutorial </h4>
-                    <p>Give your children a headstart in life by availing of affordable educational assistance. <br> https://www.mybiblioteque.com/powertutorial </p>
+                    <img src="logo_powertutorial2.png" alt="tutors">
+                    <h4>Power Tutorial</h4>
+                    <p>Give your children a headstart in life by availing of affordable educational assistance. <br> https://www.mybiblioteque.com/powertutorial</p>
                 </div>
                 <div class="promo-card">
-                    <img src="logo-hawthorne.png" alt="executives" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; height: auto !important;">
-                    <h4>Professional Consultants & Experts</h4>
-                    <p>www.hawthorneconsultancymanila.com <br> Allows small businesses access to the expertise of high professionals. </p>
+                    <img src="logo-hawthorne.png" alt="executives">
+                    <h4>Professional Consultants &amp; Experts</h4>
+                    <p>www.hawthorneconsultancymanila.com <br> Allows small businesses access to the expertise of high professionals.</p>
                 </div>
             </div>
             <a href="about.html" class="btn-outline">About Us</a>
-        </div>
-    </section>
-    <!-- Why You Should Book Section -->
-    <section class="section-container">
-        <h2>MODworkforce <br>The MODern Workforce</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                <img src="costefficient.svg" alt="Cost Efficient" style="width: 100%; height: 100%; max-width: 32px; max-height: 32px; object-fit: contain;">
-        </div>
-                <h3>Cost-efficient</h3>
-                <p>Pay for services only when you need it. </p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                <img src="flexible.svg" alt="flexible" style="width: 100%; height: 100%; max-width: 32px; max-height: 32px; object-fit: contain;">
-        </div>
-                <h3>Flexible</h3>
-                <p>Add or decrease manpower needs as the market fluctuates.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                <img src="reduced-risk.svg" alt="Reduced Hiring Risk" style="width: 100%; height: 100%; max-width: 32px; max-height: 32px; object-fit: contain;">
-        </div>
-                <h3>Reduced Hiring Risk </h3>
-                <p>Test manpower performance before long term employment or business commitment.</p>
-            </div>
         </div>
     </section>
 
-    <!-- Promos Section -->
-    <section class="promos-section">
-        <div class="section-container" style="padding:0;">
-            <h2>Manpower-on-Demand Websites</h2>
-            <div class="promos-grid">
-                <div class="promo-card">
-                    <img src="logo-bluepages-blue.jpg" alt="blue-collar-workers" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; height: auto !important;">
-                    <h4>The Blue Pages</h4>
-                    <p>www.thebluepagesmanila.com <br> A Talent Directory of Blue Collar Workers in the Metro - handyman, electricians, plumbers, locksmiths, caregivers, chefs, etc.</p>
-                </div>
-                <div class="promo-card">
-                    <img src="Clerica Institute of secretarial studies.png" alt="maid-on-demand-logo" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; height: auto !important;">
-                    <h4>Clerica Database</h4>
-                    <p>A Talent Directory found in Hawthorne Consultancy, this database provides a selection of admin personnel, secretaries and clerical workers. </p>
-                </div>
-                <div class="promo-card">
-                    <img src="logo_mod_final.png" alt="encoders-and-clerks" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; height: auto !important;">
-                    <h4>Maid-on-Demand</h4>
-                    <p> www.maid-on-demand.com <br> On-call cleaning ladies available for day jobs, stay-out and available on-demand only. </p>
-                </div>
-                <div class="promo-card">
-                    <img src="logo_powertutorial2.png" alt="tutors" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; height: auto !important;">
-                    <h4>Power Tutorial </h4>
-                    <p>Give your children a headstart in life by availing of affordable educational assistance. <br> https://www.mybiblioteque.com/powertutorial </p>
-                </div>
-                <div class="promo-card">
-                    <img src="logo-hawthorne.png" alt="executives" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; height: auto !important;">
-                    <h4>Professional Consultants & Experts</h4>
-                    <p>www.hawthorneconsultancymanila.com <br> Allows small businesses access to the expertise of high professionals. </p>
-                </div>
-            </div>
-            <a href="about.html" class="btn-outline">About Us</a>
-        </div>
-    </section>
-    <!-- Dynamic Footer Placeholder (Pulls footer.html) -->
+    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- JavaScript to Load Separate Header and Footer Components -->
-    <script>
-        function loadComponent(id, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(id).innerHTML = data;
-                })
-                .catch(err => console.error('Error loading ' + file + ':', err));
-        }
-
-        loadComponent('header-placeholder', 'header.html');
-        loadComponent('footer-placeholder', 'footer.html');
-    </script>
+    <!-- Component Loader Script -->
+    <script src="include.js"></script>
 </body>
 </html>
