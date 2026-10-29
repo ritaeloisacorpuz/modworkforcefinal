@@ -4,8 +4,8 @@
 
 :root {
    /* Base Backgrounds */
-   --bg-main: #CDE9F7;          /* General background (Light Blue) */
-   --bg-flesh: #FDFFF0;         /* Alternative light background (Flesh/Off-White) */
+   --bg-main: #FDFFF0;          /* General background (Light Blue) */
+   --bg-flesh: ;         /* Alternative light background (Flesh/Off-White) */
    
    /* Accent Colors */
    --accent-blue: #5A8AFF;      /* Special Accent */
