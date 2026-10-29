@@ -1,41 +1,279 @@
-<footer class="site-footer">
-    <div class="footer-col">
-        <h4>MENU</h4>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="https://thebluepagesmanila.com/">The Blue Pages</a></li>
-            <li><a href="https://maid-on-demand.com/">Maid-on-Demand</a></li>
-            <li><a href="https://www.mybiblioteque.com/meet-our-tutors">Power Tutors</a></li>
-            <li><a href="https://www.hawthorneconsultancymanila.com/recruitment-hub-clerks">Clerica Database</a></li>
-            <li><a href="https://www.hawthorneconsultancymanila.com/">Hawthorne Professional Network</a></li>
-         
-        </ul>
-     <div class="footer-contact-info">
-            <p>📧 modworkforce@hawthorneconsultancymanila.com</p>
-            <p>📞 0956-400-1626</p>
-            <p>🌐 www.modworkforce.com</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Core SEO Meta Tags -->
+    <title>MOD Workforce | Small Business Tools and Resources</title>
+    <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical Tag (Points to primary URL without .html) -->
+    <link rel="canonical" href="https://www.modworkforce.com/">
+
+    <!-- Social & LLM Preview Metadata (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta property="og:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta property="og:url" content="https://www.modworkforce.com/">
+    <meta property="og:site_name" content="MOD Workforce">
+    <meta property="og:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta name="twitter:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="twitter:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org Knowledge Graph / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.modworkforce.com/#organization",
+          "name": "MOD Workforce",
+          "url": "https://www.modworkforce.com/",
+          "telephone": "+639564001626",
+          "email": "modworkforce@hawthorneconsultancymanila.com",
+          "priceRange": "$$",
+          "description": "Website for tools and resources for small businesses."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.modworkforce.com/#website",
+          "url": "https://www.modworkforce.com/",
+          "name": "MOD Workforce",
+          "publisher": {
+            "@id": "https://www.modworkforce.com/#organization"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structural CSS Rules for Layout & Modular Bounds -->
+    <style>
+        /* Global Structural Defaults across Component */
+        footer.site-footer p {
+            text-align: justify;
+            font-size: max(1.15rem, 100%);
+            line-height: 1.6;
+        }
+        
+        footer.site-footer h1, 
+        footer.site-footer h2, 
+        footer.site-footer h3, 
+        footer.site-footer h4, 
+        footer.site-footer h5, 
+        footer.site-footer h6 {
+            text-align: center;
+        }
+
+        footer.site-footer img, 
+        footer.site-footer video, 
+        footer.site-footer svg {
+            object-position: center;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Enforce Minimum Font Floor Across Entire Footer */
+        footer.site-footer, 
+        footer.site-footer * {
+            font-size: max(1.15rem, 100%);
+        }
+
+        /* Layout Grid and Box Alignment */
+        footer.site-footer {
+            padding: 60px 8% 30px 8%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer.site-footer .footer-top-grid,
+        footer.site-footer .footer-bottom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer.site-footer .footer-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer.site-footer .footer-col h4 {
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        footer.site-footer .footer-col p {
+            margin-bottom: 10px;
+        }
+
+        footer.site-footer .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer.site-footer .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        footer.site-footer hr.footer-divider {
+            border: 0;
+            margin: 30px 0;
+        }
+
+        footer.site-footer .footer-brand-center {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer.site-footer .footer-brand-logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        footer.site-footer .footer-brand-center p {
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        footer.site-footer .footer-brand-center small {
+            display: block;
+            text-align: center;
+        }
+
+        /* Responsive Breakpoints for Mobile & E-Readers */
+        @media screen and (max-width: 768px) {
+            footer.site-footer {
+                padding: 30px 5% 20px 5%;
+            }
+
+            footer.site-footer .footer-top-grid,
+            footer.site-footer .footer-bottom-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            footer.site-footer .footer-col h4 {
+                text-align: center;
+            }
+
+            footer.site-footer .footer-col ul {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Upper Placeholder for Structural Integration -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Semantic Footer Structure -->
+    <footer class="site-footer" role="contentinfo">
+      
+      <!-- Upper Footer Section -->
+      <div class="footer-top-grid">
+        <div class="footer-col">
+          <h4>MENU</h4>
+          <nav role="navigation" aria-label="Footer Menu Links">
+            <ul itemscope itemtype="https://schema.org/SiteNavigationElement">
+              <li itemprop="name"><a itemprop="url" href="index.html">Home</a></li>
+              <li itemprop="name"><a itemprop="url" href="menu.html">Menu</a></li>
+              <li itemprop="name"><a itemprop="url" href="packages.html">Meal Packages</a></li>
+              <li itemprop="name"><a itemprop="url" href="order.html">Order</a></li>
+              <li itemprop="name"><a itemprop="url" href="payment.html">Payment Submission</a></li>
+              <li itemprop="name"><a itemprop="url" href="blog.html">Blog</a></li>
+              <li itemprop="name"><a itemprop="url" href="about.html">About myCarboLoad</a></li>
+              <li itemprop="name"><a itemprop="url" href="career.html">The Founder</a></li>
+              <li itemprop="name"><a itemprop="url" href="nutrition-guide.html">Nutrition Guide</a></li>
+            </ul>
+          </nav>
         </div>
-    </div>
-    <div class="footer-col">
-        <h4>PAYMENT POLICY</h4>
-        <br>
-     <p>All Hawthorne payments are only accepted through deposit to the authorized Hawthorne passbook-access-only Peso Savings Account Number (3731027071). Otherwise, it was not received by the Consultant because this account is used across all of the Consultant’s businesses and brands and there are no other Hawthorne bank accounts – be it personal or corporate – that is in use apart from this. Payments to this account can be made Over-the-Counter, via online banking or fund transfer, as long as it is deposited to this bank account number only. Cash and/or Cheque payments paid in person will not be accepted, nor will payments through other payment channels like GCash, PayMaya or Paypal will also NOT be accepted. Likewise, also note that ALL Hawthorne payments including all its brands do not accept payment in any of our websites because Hawthorne did NOT activate website payments in any of its websites. This Hawthorne bank account number is indicated in the contract signed by the Lead Consultant in an on-site, face-to-face meeting. No other representative has been authorized to accept any payment in behalf of Hawthorne nor execute any financial transaction nor issue any receipt or invoice in behalf of Hawthorne Consultancy. This payment rule applies not only to the Hawthorne Consultancy business but also to the following Hawthorne brands --- Clerica, Canterbury Academy, Lingua Franca, myBiblioteque, Power Tutorial, MOD, Maldita Speaks. </p>
-        <br>
-    <p>There are only two modifications to this payment rule which is in the case of Power Tutorial and MOD, wherein for these two only the twenty-five percent (25%) Booking Fee Deposit- which serves as Consultant’s Fee - is paid to the Hawthorne bank account, because the seventy-five percent (75%) balance payment is paid directly to the tutor ( for Power Tutorial) or client ( for MOD).</p>
-        <br>
-        <p>ANNOUNCEMENT: Cavant Consultancy has permanently dissolved its professional identity and has been fully replaced by Hawthorne Consultancy. The Cavant Consultancy start-up was originally established as an incubator of Hawthorne’s brand identity and professional network. As a launchpad, Cavant did not enter into any commercial contracts or engaged external clients, it merely formed the core architecture of Hawthorne’s current service network and product line-up. </p>
-        <br>
-    </div>
-    <div class="footer-col">
-        <h4>RECEIPT & INVOICE POLICY</h4>
-        <br>
-        <p>Hawthorne only issues Invoices but DOES NOT issue Receipts because the "Official Receipt" (OR) has been phased out as a primary document for the sale of services and it has been replaced by the Invoice, which is now the primary document for both the sale of goods and services according to Revenue Regulations (RR) No. 7-2024 which was issued to implement the Ease of Paying Taxes (EoPT) Act (Republic Act No. 11976). Official Receipts are now just supplementary documents and are not valid proofs of sale for claiming tax credits. Download Circular Here. References are in this BIR Page: https://bir-cdn.bir.gov.ph/BIR/pdf/RR%20No.%2011-2024.pdf <p>
-        <br>  
-        <p>All official invoices issued by Hawthorne Training Consultancy are treated as accountable forms and are subject to controlled issuance. Each official invoice bears a unique serial number, and blocks or ranges of these serial numbers shall be assigned to specific clients and this series is indicated in the notarized client contract signed both by Hawthorne and the client. Once assigned, the block of invoice number series shall be used exclusively for the designated client and must not be transferred, reassigned, or reused under any circumstances for another client. Should the serial number range of the invoices indicated in the client contract be depleted, an appendix to the contract will be prepared indicating the new block of the invoices’ serial number series that will be designated for the said client and this addendum should be notarized and become a part of the original contract. The assignment of blocks of invoice number series per client is intended to ensure traceability, prevent duplication or unauthorized issuance, and establish clear accountability for every transaction recorded.</p>
-        <br>
-         <p>Further, each Hawthorne-issued invoice is ONLY VALID IF the details and notes are handwritten by the Lead Consultant in blue ink, including the printed name and signature. Furthermore, it is ONLY VALID IF it bears the paid amount BOTH in words and in figures. There are no other signatories for the invoice apart from the Lead Consultant.​ </p>
-        <br>
-        <p>This notice is communicated in all Hawthorne and MODWORKFORCE materials---website, contracts, e-mails, mobile messages, receipts and all marketing materials such as brochures, letterheads and proposals.</p>
-        <br>
-    </div>
-</footer>
+        
+        <div class="footer-col">
+          <h4>PAYMENT POLICY</h4>
+          <p>All Hawthorne payments are only accepted through deposit to the authorized Hawthorne passbook-only Savings Account Number (3731027071). Payments can be made Over the Counter, via online banking or fund transfer, but it has to be deposited to this bank account only. Cash and/or Cheque payments paid in person will not be accepted, it has to be deposited to the authorized Hawthorne bank account. Payments through other payment channels will not be accepted. Likewise, also note that ALL Hawthorne payments including all its brands do not accept payment in any of our websites because all website payments are disabled. This Hawthorne bank account number is indicated in the contract signed by the Lead Consultant and only the Lead Consultant is authorized to sign any contract or issue any receipt in behalf of Hawthorne Consultancy and these contracts are signed only by the Lead Consultant on-site in a face-to-face meeting. No other representative has been authorized to accept any payment in behalf of Hawthorne nor execute any financial transaction in behalf of Hawthorne. This payment rule applies not only to the Hawthorne Consultancy business but also to the following Hawthorne brands --- Clerica, Canterbury Global Academy, myBiblioteque, Maldita Speaks, MODworkforce, myCarboload and others. There is only one authorized bank account for all Hawthorne payments for all its brands.
+There are only two modifications to this payment rule which is in the case of Power Tutorial and Maid-on-Demand, wherein for these two only the twenty-five percent (25%) Booking Fee Deposit- which serves as Consultant’s Fee - is paid to the Hawthorne bank account, because the seventy-five percent (75%) balance payment is paid directly to the tutor ( for Power Tutorial) or client-partner ( for Maid-on-Demand).</p>
+          <p><strong>Contact us:</strong> modworkforce@hawthorneconsultancymanila.com</p>
+          <p><strong>Phone:</strong> 0956-400-1626</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>RECEIPT/INVOICE POLICY</h4>
+          <p>All company-issued official receipts in Hawthorne Training Consultancy are treated as accountable forms and are subject to controlled issuance. Each official receipt bears a unique serial number, and blocks or ranges of these serial numbers shall be assigned to specific clients and this series is indicated in the notarized client contract signed both by Hawthorne and the client. Once assigned, receipt series shall be used exclusively for the designated client and must not be transferred, reassigned, or reused under any circumstances for another client. Should the serial number range of the receipts indicated in the client contract be depleted, an appendix to the contract will be prepared indicating the new block of the receipts’ serial number series that will be designated for the said client and this addendum should be notarized and become a part of the original contract. Further, each Hawthorne-issued receipt is only valid if the details and notes are handwritten by the Lead Consultant in blue ink, including the printed name and signature. Furthermore, it should always bear the paid amount both in words and in figures. There are no other signatories for the receipt apart from the Lead Consultant. The assignment of receipt series per client is intended to ensure traceability, prevent duplication or unauthorized issuance, and establish clear accountability for every transaction recorded.
+This notice is communicated in all Hawthorne materials---website, contracts, e-mails, mobile messages, receipts and all marketing materials such as brochures, letterheads and proposals.
+ANNOUNCEMENT Cavant Consultancy has permanently dissolved its professional identity and has been fully replaced by Hawthorne Consultancy. The Cavant Consultancy start-up was originally established as an incubator of Hawthorne’s brand identity and professional network. As a launchpad, Cavant did not enter into any commercial contracts or engaged external clients, it merely formed the core architecture of Hawthorne’s current service network and product line-up.</p>
+        </div>
+      </div>
+      
+      <hr class="footer-divider">
+      
+      <!-- Centered Branding Section -->
+      <div class="footer-brand-center">
+        <a href="index.html">
+          <img src="images/logo_carboload.jpg" alt="MOD Workforce / CarboLoad Logo" class="footer-brand-logo">
+        </a>
+        <p>Functional Foods Line | myCarboLoad</p>
+        <small>©2026 myCarboLoad is a brand developed by Hawthorne Consultancy for a private client.</small>
+      </div>
+      
+      <hr class="footer-divider">
+      
+      <!-- Lower Footer Section -->
+      <div class="footer-bottom-grid">
+        <div class="footer-col">
+          <h4>HAWTHORNE BRANDS</h4>
+          <nav role="navigation" aria-label="Hawthorne Brands Links">
+            <ul itemscope itemtype="https://schema.org/SiteNavigationElement">
+              <li itemprop="name"><a itemprop="url" href="https://www.mybiblioteque.com" target="_blank" rel="noopener">myBiblioteque</a></li>
+              <li itemprop="name"><a itemprop="url" href="https://www.canterburyglobalacademy.com" target="_blank" rel="noopener">Canterbury Global Academy</a></li>
+              <li itemprop="name"><a itemprop="url" href="https://www.hawthorneconsultancymanila.com" target="_blank" rel="noopener">Hawthorne Consultancy</a></li>
+              <li itemprop="name"><a itemprop="url" href="https://www.maid-on-demand.com" target="_blank" rel="noopener">Maid-on-Demand</a></li>
+              <li itemprop="name"><a itemprop="url" href="https://thebluepagesmanila.com" target="_blank" rel="noopener">The Blue Pages</a></li> 
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>ABOUT HAWTHORNE</h4>
+          <p>Hawthorne is a marketing solutions consultancy firm. As a network organization, it does not have many direct employees, it is composed of worker-affiliates, mostly independent freelancers, consultants and entrepreneurs to whom it collaborates with in different projects. This ensures that Hawthorne gets the best expertise in every field to better service their clients’ unique business needs for every specific project, which varies each time. Hawthorne leads the way in developing innovative services, unique business models and novel ways of creating revenue streams by offering best-in-class expertise.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>HAWTHORNE & myCarboLoad</h4>
+          <p>myCarboLoad is a brand owned by Hawthorne's client-partner. This brand is open for investment from investors who believe that food plays a vital role in a person's success. We want investors who can share in this vision of making food that helps people become who they want to be. If you are interested to invest, visit the company consultant's investor relations page at www.hawthorneconsultancymanila.com.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Structural Placeholder & Loader Script Injection -->
+    <div id="footer-placeholder"></div>
+    <script src="include.js"></script>
+
+</body>
+</html>
