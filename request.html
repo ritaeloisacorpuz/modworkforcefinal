@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Worker Form - The Blue Pages Directory</title>
+  
+  <!-- Link external stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ==========================================================================
+       REQUEST PAGE STRUCTURAL LAYOUT & FONT SIZES
+       ========================================================================== */
+    .booking-page-wrapper {
+      padding: 60px 5% 80px 5%;
+    }
+    .booking-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    /* Page Header Section */
+    .booking-header-text {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .booking-header-text h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    .booking-header-text .subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+    .booking-header-text .instructions {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    /* Main Booking Form Card Structure */
+    .booking-card {
+      padding: 45px 8%;
+      border-radius: 12px;
+      margin-bottom: 80px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+    .form-banner-text {
+      font-size: 1.25rem;
+      margin-bottom: 35px;
+    }
+    /* Form Inputs Layout */
+    .form-group {
+      margin-bottom: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+    .form-row.two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .field-item select,
+    .field-item input {
+      width: 100%;
+      border: none;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      background: transparent;
+      padding: 8px 0;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    /* Checkboxes & Radios */
+    .checkbox-group, .radio-group {
+      gap: 10px;
+    }
+    .group-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .custom-checkbox, .custom-radio {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      cursor: pointer;
+      margin-bottom: 6px;
+    }
+    .custom-checkbox input, .custom-radio input {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+    /* Preferred Date Options Section */
+    .date-options-subtext {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 35px 0 25px 0;
+    }
+    .date-option-block {
+      margin-bottom: 20px;
+    }
+    .option-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .datetime-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 15px;
+    }
+    .field-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .field-item label {
+      font-size: 0.75rem;
+      margin-bottom: 4px;
+    }
+    /* Submit Button & Alert Message */
+    .form-submit-wrapper {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .btn-submit-booking {
+      padding: 12px 60px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: transparent;
+      border-width: 2px;
+      border-style: solid;
+      transition: all 0.2s ease;
+    }
+    #formStatus {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    /* Instructions Section Layout */
+    .instructions-section {
+      padding-top: 40px;
+    }
+    .instructions-main-title {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 50px;
+      text-align: left;
+    }
+    .step-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      padding: 30px 0;
+    }
+    .step-row.reverse {
+      flex-direction: row-reverse;
+    }
+    .step-media {
+      flex: 1;
+      max-width: 380px;
+    }
+    /* Fixed aspect ratio and uniform dimensions for step images */
+    .step-media img {
+      width: 100%;
+      height: 220px;            /* Sets a uniform fixed height across all cards */
+      object-fit: cover;        /* Ensures the image fills the box perfectly without stretching or distorting */
+      object-position: center;  /* Keeps the focus centered */
+      border-radius: 8px;       /* Keeps subtle rounded corners matching the design */
+      box-sizing: border-box;
+    }
+    .step-content {
+      flex: 1.2;
+    }
+    .step-content p {
+      text-align: justify;
+    }
+    .step-number {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .step-heading {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .step-text {
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .step-divider {
+      border: none;
+      border-top-width: 1px;
+      border-top-style: solid;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body class="request-page">
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+  <!-- MAIN CONTENT AREA -->
+  <main class="booking-page-wrapper bg-light-blue">
+    <div class="booking-container">
+      
+      <!-- Page Title & Instructions -->
+      <div class="booking-header-text">
+        <h1 class="text-primary italic font-serif">Contact Details Request Form</h1>
+        <p class="subtitle text-primary">Request for your Selected Worker's Contact Details</p>
+        <p class="instructions text-primary">
+          Send us a form request for the contact details of the Blue Pages Worker you found in our free and open Talent Directory of Blue Collar Workers. After you pay us for the minimal Admin fee, you will receive via e-mail the Worker's contact details, NBI Clearance/Baranggay Clearance
+and Government ID. 
+You may use his/her contact details to directly discuss your job request with the Worker. The Government ID is for identity verification while the NBI/Barangay clearance or Second ID documents are just add-on benefits to the fee you paid, but use it wisely for your safety. Input the details of the service you need and follow the payment instructions below to pay for the service worker's contact details. Make sure you notify us via Viber and mobile text message at 0956-400-1626 to alert us that you have made a contact detail request so we can check our que immediately.
+        </p>
+      </div>
+      <!-- Main Booking Form Card -->
+      <div class="booking-card bg-accent-yellow border-blue">
+        <p class="form-banner-text text-primary">Let us know what you need and who you want.</p>
+        
+        <!-- Form -->
+        <form id="bookingForm" class="booking-form">
+          <input type="hidden" name="_to" value="rita.eloisa.corpuz@student.ateneo.edu">
+          <input type="hidden" name="_subject" value="New Contact Details Request – The Blue Pages Manila">
+          
+          <!-- First Name & Last Name -->
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label for="firstName" class="text-primary">First name *</label>
+              <input type="text" id="firstName" name="firstName" class="border-bottom-dark" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName" class="text-primary">Last name *</label>
+              <input type="text" id="lastName" name="lastName" class="border-bottom-dark" required>
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email" class="text-primary">Email *</label>
+            <input type="email" id="email" name="email" class="border-bottom-dark" required>
+          </div>
+          <!-- Cellphone Number -->
+          <div class="form-group">
+            <label for="cellphone" class="text-primary">Cellphone Number *</label>
+            <input type="tel" id="cellphone" name="cellphone" class="border-bottom-dark" required>
+          </div>
+          <!-- Type of Cleaning Service Requested -->
+          <div class="form-group checkbox-group">
+            <label class="group-label text-primary">Indicate Type of Service You will discuss with the Worker *</label>
+            <label class="custom-checkbox text-primary">
+              <input type="checkbox" name="serviceType" value="Home Repair">
+              Home Repair
+            </label>
+            <label class="custom-checkbox text-primary">
+              <input type="checkbox" name="serviceType" value="Home Assistance">
+             Home Assistance
+            </label>
+            <label class="custom-checkbox text-primary">
+              <input type="checkbox" name="serviceType" value="Home Renovation">
+             Home Renovation
+            </label>
+            <label class="custom-checkbox text-primary">
+              <input type="checkbox" name="serviceType" value="Odd Chores">
+             Odd Chores
+            </label>
+            <label class="custom-checkbox text-primary">
+              <input type="checkbox" name="serviceType" value="Others">
+              Others
+            </label>
+          </div>
+          <!-- If others, please explain -->
+          <div class="form-group">
+            <label for="othersExplanation" class="text-primary">If others or Odd Chores, please explain</label>
+            <input type="text" id="othersExplanation" name="othersExplanation" class="border-bottom-dark">
+          </div>
+          <!-- Location of site to be cleaned -->
+          <div class="form-group radio-group">
+            <label class="group-label text-primary">Location of site to be serviced</label>
+            <label class="custom-radio text-primary">
+              <input type="radio" name="location" value="Makati">
+              Makati
+            </label>
+            <label class="custom-radio text-primary">
+              <input type="radio" name="location" value="BGC">
+              BGC
+            </label>
+            <label class="custom-radio text-primary">
+              <input type="radio" name="location" value="Ortigas">
+              Ortigas
+            </label>
+            <label class="custom-radio text-primary">
+              <input type="radio" name="location" value="San Juan-Mandaluyong">
+              San Juan-Mandaluyong
+            </label>
+            <label class="custom-radio text-primary">
+              <input type="radio" name="location" value="Quezon City">
+              Quezon City
+            </label>
+            <label class="custom-radio text-primary">
+              <input type="radio" name="location" value="Manila-Pasay">
+              Manila-Pasay
+            </label>
+            <label class="custom-radio text-primary">
+              <input type="radio" name="location" value="Other areas">
+              Other areas
+            </label>
+          </div>
+          <!-- Complete Address -->
+          <div class="form-group">
+            <label for="address" class="text-primary">Complete Address of site to be serviced*</label>
+            <input type="text" id="address" name="address" class="border-bottom-dark" required>
+          </div>
+          <!-- Property Size -->
+          <div class="form-group">
+            <label for="propertySize" class="text-primary">Indicate details of work you will need including special instructions. We will inform the service worker in advance before your negotiation with him so that your negotiation with him will be faster. However, all final details and negotiation details will be between the two of you.*</label>
+            <input type="text" id="propertySize" name="propertySize" class="border-bottom-dark" required>
+          </div>
+          <!-- Special Instructions -->
+          <div class="form-group">
+            <label for="specialInstructions" class="text-primary">Indicate name of your selected Worker.</label>
+            <input type="text" id="specialInstructions" name="specialInstructions" class="border-bottom-dark">
+          </div>
+          <!-- Date Options Subtext -->
+          <p class="date-options-subtext text-primary italic font-serif">
+            Indicate five (5) preferred service dates with time below. We will inform the service worker in advance before your negotiation with him so that your negotiation with him and appointment setting will be faster. However, all final details and negotiation details will be between the two of you.
+          </p>
+          <!-- Date Option #1 to #5 -->
+          <div class="date-option-block">
+            <label class="option-title text-primary">Option #1</label>
+            <div class="datetime-grid">
+              <div class="field-item">
+                <label class="text-primary">Month</label>
+                <select name="opt1_month" class="border-bottom-dark">
+                  <option value="" disabled selected></option>
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Day</label>
+                <input type="number" name="opt1_day" min="1" max="31" class="border-bottom-dark">
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Year</label>
+                <input type="number" name="opt1_year" min="2026" max="2030" class="border-bottom-dark">
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Time</label>
+                <input type="time" name="opt1_time" class="border-bottom-dark">
+              </div>
+            </div>
+          </div>
+          <div class="date-option-block">
+            <label class="option-title text-primary">Option #2</label>
+            <div class="datetime-grid">
+              <div class="field-item">
+                <label class="text-primary">Month</label>
+                <select name="opt2_month" class="border-bottom-dark">
+                  <option value="" disabled selected></option>
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Day</label>
+                <input type="number" name="opt2_day" min="1" max="31" class="border-bottom-dark">
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Year</label>
+                <input type="number" name="opt2_year" min="2026" max="2030" class="border-bottom-dark">
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Time</label>
+                <input type="time" name="opt2_time" class="border-bottom-dark">
+              </div>
+            </div>
+          </div>
+          <div class="date-option-block">
+            <label class="option-title text-primary">Option #3</label>
+            <div class="datetime-grid">
+              <div class="field-item">
+                <label class="text-primary">Month</label>
+                <select name="opt3_month" class="border-bottom-dark">
+                  <option value="" disabled selected></option>
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Day</label>
+                <input type="number" name="opt3_day" min="1" max="31" class="border-bottom-dark">
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Year</label>
+                <input type="number" name="opt3_year" min="2026" max="2030" class="border-bottom-dark">
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Time</label>
+                <input type="time" name="opt3_time" class="border-bottom-dark">
+              </div>
+            </div>
+          </div>
+          <div class="date-option-block">
+            <label class="option-title text-primary">Option #4</label>
+            <div class="datetime-grid">
+              <div class="field-item">
+                <label class="text-primary">Month</label>
+                <select name="opt4_month" class="border-bottom-dark">
+                  <option value="" disabled selected></option>
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Day</label>
+                <input type="number" name="opt4_day" min="1" max="31" class="border-bottom-dark">
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Year</label>
+                <input type="number" name="opt4_year" min="2026" max="2030" class="border-bottom-dark">
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Time</label>
+                <input type="time" name="opt4_time" class="border-bottom-dark">
+              </div>
+            </div>
+          </div>
+          <div class="date-option-block">
+            <label class="option-title text-primary">Option #5</label>
+            <div class="datetime-grid">
+              <div class="field-item">
+                <label class="text-primary">Month</label>
+                <select name="opt5_month" class="border-bottom-dark">
+                  <option value="" disabled selected></option>
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Day</label>
+                <input type="number" name="opt5_day" min="1" max="31" class="border-bottom-dark">
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Year</label>
+                <input type="number" name="opt5_year" min="2026" max="2030" class="border-bottom-dark">
+              </div>
+              <div class="field-item">
+                <label class="text-primary">Time</label>
+                <input type="time" name="opt5_time" class="border-bottom-dark">
+              </div>
+            </div>
+          </div>
+          <!-- Submit Button & Feedback Status -->
+          <div class="form-submit-wrapper">
+            <button type="submit" class="btn-submit-booking btn-outline-primary" id="submitBtn">Submit</button>
+            <div id="formStatus"></div>
+          </div>
+        </form>
+      </div>
+      <!-- Instructions Section -->
+      <section class="instructions-section">
+        <h2 class="instructions-main-title text-primary">Payment Instructions for the Download Fee</h2>
+        
+        <div class="step-row">
+          <div class="step-media">
+            <img src="images/view-blue-collar-website.jpg" alt="Get the Details">
+          </div>
+          <div class="step-content">
+            <span class="step-number text-primary">STEP # 01</span>
+            <h3 class="step-heading text-primary">Send us the Request Form</h3>
+            <p class="step-text text-primary">
+              Fill out the Request for Contact Details form above this page. Don't forget to send a mobile text message and a viber alert to 0956-400-1626 as well to notify us and make sure your request is checked immediately. 
+​
+Once we receive the mobile text or viber message notification from you, we will verify to make sure the contact details submitted by the Worker is updated, just to make sure it is contactable and has not changed since sign-up. If it is updated, we will give you instructions to proceed with payment.
+            </p>
+          </div>
+        </div>
+        <hr class="step-divider border-top-blue">
+        <div class="step-row reverse">
+          <div class="step-media">
+            <img src="images/payment-blue-collar-services.jpg" alt="Pay Instructions">
+          </div>
+          <div class="step-content">
+            <span class="step-number text-primary">STEP # 02</span>
+            <h3 class="step-heading text-primary">Pay the Admin Fee through the Hawthorne Account</h3>
+            <p class="step-text text-primary">
+              After we receive your alert to 0956-400-1626 and confirmed that the contact details are live, we will message you a "go-ahead" to pay the ADMIN FEE of Php150 to the Hawthorne Passbook-Access only Peso Savings Account (3731027071). Admin Fee payments can be made Over-the-Counter, via online banking or fund transfer, but it has to be to this passbook savings account only. Other payments through any channel or any other bank of account will not be accepted. Cash, GCASH, cheque or any Admin Fee payment in person will also not be a legitimate payment option. 
+          </div>
+        </div>
+        <hr class="step-divider border-top-blue">
+        <div class="step-row">
+          <div class="step-media">
+            <img src="images/surfing-blue-collar-website.jpg" alt="Order Instructions">
+          </div>
+          <div class="step-content">
+            <span class="step-number text-primary">STEP # 03</span>
+            <h3 class="step-heading text-primary">You will receive from the Blue Pages Admin the Worker's contact details, government ID, copy of the NBI/Barangay Clearance or secondary ID documents via email</h3>
+            <p class="step-text text-primary">
+              Once confirmed paid, The Blue Pages will send to you via e-mail the Contact Details, NBI Clearance and Government ID of the Worker. From thereon, you will coordinate everything directly to the Worker already. 
+            </p>
+          </div>
+        </div>
+        <hr class="step-divider border-top-blue">
+        <div class="step-row reverse">
+          <div class="step-media">
+            <img src="images/negotiate-blue-collar-work-services.jpg" alt="Wait for Email Advice">
+          </div>
+          <div class="step-content">
+            <span class="step-number text-primary">STEP # 04</span>
+            <h3 class="step-heading text-primary">Customer to directly contact the Blue Collar Worker</h3>
+            <p class="step-text text-primary">
+              
+You may then directly contact the Worker and discuss the job request you have. It is up to you to negotiate the price and the details of the job execution. Schedule setting is also up to you and the Worker to discuss and arrange. 
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+  <!-- Include Loader Script -->
+  <script src="include.js"></script>
+
+  <!-- CLOUDFLARE FORM SUBMISSION SCRIPT -->
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submitBtn');
+      const originalBtnText = submitBtn.innerText;
+      submitBtn.innerText = "Sending...";
+      submitBtn.disabled = true;
+      try {
+        const formData = new FormData(this);
+        const payload = {};
+        for (let [key, value] of formData.entries()) {
+          if (payload[key]) {
+            payload[key] = payload[key] + ", " + value;
+          } else {
+            payload[key] = value;
+          }
+        }
+        const response = await fetch('https://forms.thebluepagesmanila.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (result.success) {
+          alert('Request form sent successfully!');
+          this.reset();
+        } else {
+          alert('Error: ' + result.error);
+        }
+      } catch (err) {
+        alert('Form submission failed. Please try again.');
+      } finally {
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

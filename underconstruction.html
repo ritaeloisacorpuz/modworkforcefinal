@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Construction - myCarboLoad</title>
+  
+  <!-- 1. Link external stylesheet inside <head> -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* ==========================================
+       GLOBAL LAYOUT DEFAULTS (SKELETON)
+       ========================================== */
+    h1, h2, h3, h4, h5, h6 {
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* ==========================================
+       UNDER CONSTRUCTION PAGE LAYOUT & SIZES ONLY
+       ========================================== */
+    .construction-page-container {
+      width: 100%;
+      padding: 60px 20px 80px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      min-height: 70vh;
+    }
+
+    .construction-content-wrapper {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .construction-title {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 40px;
+      letter-spacing: 0.5px;
+    }
+
+    .coming-soon-banner-box {
+      position: relative;
+      max-width: 550px;
+      margin: 0 auto;
+      padding: 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .coming-soon-banner-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Overlapping Student Graphic at Bottom Right */
+   .carboload-logo {
+      position: absolute;
+      bottom: -40px;
+      right: 15%;
+      width: 150px;
+      height: auto;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* RESPONSIVE DESIGN (TABLET & MOBILE) */
+    @media (max-width: 768px) {
+      .construction-page-container {
+        padding: 40px 15px 60px 15px;
+      }
+
+      .construction-title {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+      }
+
+      .coming-soon-banner-box {
+        max-width: 100%;
+      }
+
+      .carboload-logo {
+        width: 110px;
+        bottom: -30px;
+        right: 5%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .construction-title {
+        font-size: 1.3rem;
+      }
+
+      .carboload-logo {
+        width: 90px;
+        bottom: -20px;
+        right: 2%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 2. Header Placeholder at the very top inside <body> -->
+  <div id="header-placeholder"></div>
+
+  <!-- MAIN UNDER CONSTRUCTION CONTENT -->
+  <main class="construction-page-container">
+    <div class="construction-content-wrapper">
+      
+      <h1 class="construction-title">This Page is Under Construction</h1>
+
+      <div class="coming-soon-banner-box">
+        <img src="images/coming-soon-banner.jpeg" alt="Coming Soon">
+      </div>
+
+      <!-- Student with books overlapping graphic -->
+      <img src="images/logo_carboload.jpg" alt="blue-pages-logo" class="carboload-logo">
+
+    </div>
+  </main>
+
+  <!-- 3. Footer Placeholder at the very bottom right before </body> -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 4. Loader script directly underneath footer placeholder -->
+  <script src="include.js"></script>
+
+</body>
+</html>
