@@ -572,3 +572,88 @@ footer.site-footer .footer-brand-logo {
     background-color: #ffffff !important;
     color: var(--text-dark, #042040) !important;
 }
+/* ==========================================
+   EMPLOYEE RECRUITMENT PAGE THEME & SHADES
+   ========================================== */
+
+/* Hero Section Canvas */
+.employee-hero-section {
+    background-color: var(--bg-main, #FDFFF0);
+}
+
+.employee-hero-card {
+    background-color: var(--text-dark, #042040) !important;
+    border: 1px solid var(--accent-blue, #5A8AFF);
+}
+
+.employee-hero-card h1 {
+    color: #ffffff !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.employee-hero-card p {
+    color: var(--text-light, #CDE9F7) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Alternating Section Block Shading (Matching Screenshot Rhythm) */
+.step-block.bg-dark-block {
+    background-color: var(--text-dark, #042040) !important;
+}
+
+.step-block.bg-dark-block .step-num {
+    color: var(--accent-blue, #5A8AFF) !important;
+}
+
+.step-block.bg-dark-block .step-title {
+    color: #ffffff !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.step-block.bg-dark-block .step-desc {
+    color: var(--text-light, #CDE9F7) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.step-block.bg-dark-block .action-link {
+    color: #ffffff !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.step-block.bg-dark-block .action-link:hover {
+    color: var(--accent-blue, #5A8AFF) !important;
+}
+
+/* Light Section Block Shading */
+.step-block.bg-light-block {
+    background-color: var(--text-light, #CDE9F7) !important;
+}
+
+.step-block.bg-light-block .step-num {
+    color: var(--text-dark, #042040) !important;
+    opacity: 0.8;
+}
+
+.step-block.bg-light-block .step-title {
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.step-block.bg-light-block .step-desc {
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.step-block.bg-light-block .action-link {
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.step-block.bg-light-block .action-link:hover {
+    color: var(--accent-blue, #5A8AFF) !important;
+}
+
+/* Image Frames on Step Cards */
+.step-image img {
+    border: 2px solid var(--accent-blue, #5A8AFF);
+}
