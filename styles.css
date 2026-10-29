@@ -228,3 +228,24 @@ a[href="about.html"]:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
+/* ==========================================
+   GLOBAL PAGE & CONTAINER BACKGROUND THEME
+   ========================================== */
+
+/* Set the overall page background */
+body {
+    background-color: #FDFFF0 !important;
+}
+
+/* Ensure all major sections let the body background show through, 
+   or explicitly paint them with the flesh theme color */
+.hero-section,
+.section-container,
+.promos-section {
+    background-color: #FDFFF0 !important;
+}
+
+/* Sub-navigation container styling */
+.sub-nav-bar {
+    background-color: #FDFFF0 !important;
+}
