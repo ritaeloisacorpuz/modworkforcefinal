@@ -203,35 +203,62 @@
             justify-content: center;
             align-items: center;
         }
-
-        /* Promos Section Grid Layout */
+/* Promos Section Grid Layout (Fixed Widths & Alignment) */
         .promos-section {
             padding: 4rem 1.5rem;
         }
 
         .promos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.75rem;
             margin: 2.5rem 0;
+            align-items: stretch;
         }
 
         .promo-card {
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 1.75rem 1.25rem;
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-sizing: border-box;
+            word-break: break-word;
+            overflow: hidden;
         }
 
         .promo-card img {
             width: 100%;
-            max-width: 180px;
+            max-width: 160px;
             aspect-ratio: 1 / 1;
-            border-radius: 6px;
+            border-radius: 8px;
             margin-bottom: 1rem;
+            object-fit: cover;
         }
 
+        .promo-card h4 {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .promo-card p {
+            text-align: center !important;
+            font-size: 1.15rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+            width: 100%;
+        }
+
+        .promo-url {
+            display: block;
+            text-align: center;
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            word-break: break-all;
+        }
+       
         /* Button Positioning Classes */
         .btn-primary, .btn-secondary, .btn-outline {
             padding: 0.85rem 2rem;
