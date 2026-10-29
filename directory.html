@@ -1,199 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOD Workforce - Supplier Directory</title>
-  
-  <!-- 1. Link the external stylesheet -->
-  <link rel="stylesheet" href="styles.css">
-  
-  <!-- PapaParse Library to fetch and parse the CSV file -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-  
-  <style>
-    :root {
-      --blue-primary: #1e3a8a;
-      --blue-secondary: #2563eb;
-      --blue-light: #f0f7ff;
-      --blue-border: #bfdbfe;
-      --text-dark: #1f2937;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Core SEO Meta Tags -->
+    <title>MOD Workforce | Small Business Tools and Resources</title>
+    <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical Tag (Points to primary URL without .html) -->
+    <link rel="canonical" href="https://www.modworkforce.com/">
+
+    <!-- Social & LLM Preview Metadata (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta property="og:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta property="og:url" content="https://www.modworkforce.com/">
+    <meta property="og:site_name" content="MOD Workforce">
+    <meta property="og:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta name="twitter:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="twitter:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Linked Shared Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- PapaParse Library for CSV Profile Parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+    <!-- Schema.org Knowledge Graph / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.modworkforce.com/#organization",
+          "name": "MOD Workforce",
+          "url": "https://www.modworkforce.com/",
+          "telephone": "+639564001626",
+          "email": "modworkforce@hawthorneconsultancymanila.com",
+          "priceRange": "$$",
+          "description": "Website for tools and resources for small businesses."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.modworkforce.com/#website",
+          "url": "https://www.modworkforce.com/",
+          "name": "MOD Workforce",
+          "publisher": {
+            "@id": "https://www.modworkforce.com/#organization"
+          }
+        }
+      ]
     }
+    </script>
 
-    .directory-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      box-sizing: border-box;
-    }
+    <!-- Internal Skeletal Layout Rules (Bones, Grid & Font Floor) -->
+    <style>
+        /* Base Defaults for Modular Portability */
+        body, main, section, p, div, span, li, a {
+            font-size: max(1.15rem, 100%);
+            line-height: 1.6;
+        }
 
-    .directory-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+        p {
+            text-align: justify;
+            margin-bottom: 0.75rem;
+        }
 
-    .directory-header h1 {
-      color: var(--blue-primary);
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+        }
 
-    .directory-header p {
-      color: #4b5563;
-      font-size: 1.1rem;
-    }
+        img, svg, video {
+            object-position: center;
+            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    /* Responsive Grid Layout */
-    .cleaners-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 30px;
-    }
+        /* Directory Section Container */
+        .directory-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
 
-    .cleaner-card {
-      border: 1px solid var(--blue-border);
-      border-radius: 8px;
-      overflow: hidden;
-      background-color: #ffffff;
-      box-shadow: 0 4px 10px rgba(30, 58, 138, 0.08);
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+        .directory-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-    .cleaner-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(30, 58, 138, 0.15);
-    }
+        .directory-header h1 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
 
-    .cleaner-photo {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      background-color: var(--blue-light);
-    }
+        .directory-header p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
 
-    .cleaner-info {
-      padding: 20px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
+        /* Responsive Grid Layout */
+        .cleaners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
 
-    .cleaner-name {
-      font-size: 1.3rem;
-      color: var(--blue-primary);
-      margin-bottom: 10px;
-      font-weight: 700;
-      border-bottom: 2px solid var(--blue-light);
-      padding-bottom: 6px;
-    }
+        .cleaner-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-    .cleaner-meta {
-      font-size: 0.9rem;
-      color: #4b5563;
-      margin-bottom: 15px;
-      background-color: var(--blue-light);
-      padding: 10px 12px;
-      border-radius: 6px;
-    }
+        .cleaner-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
 
-    .cleaner-meta p {
-      margin-bottom: 6px;
-    }
+        .cleaner-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
 
-    .cleaner-meta p:last-child {
-      margin-bottom: 0;
-    }
+        .cleaner-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .cleaner-meta strong {
-      color: var(--blue-secondary);
-    }
+        .cleaner-name {
+            margin-bottom: 10px;
+            font-weight: 700;
+            padding-bottom: 6px;
+            text-align: left;
+        }
 
-    .cleaner-narrative {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: var(--text-dark);
-      margin-top: auto;
-      white-space: pre-line;
-    }
+        .cleaner-meta {
+            margin-bottom: 15px;
+            padding: 10px 12px;
+            border-radius: 6px;
+        }
 
-    .loading-msg {
-      font-size: 1.1rem;
-      color: var(--blue-secondary);
-      text-align: center;
-      margin: 50px 0;
-      font-weight: 600;
-    }
+        .cleaner-meta p {
+            margin-bottom: 6px;
+            text-align: left;
+        }
 
-    .btn-request {
-      display: block;
-      width: 100%;
-      text-align: center;
-      background-color: var(--blue-secondary);
-      color: #ffffff;
-      padding: 12px 0;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 0 0 6px 6px;
-      margin-top: 15px;
-      transition: background-color 0.2s;
-    }
+        .cleaner-meta p:last-child {
+            margin-bottom: 0;
+        }
 
-    .btn-request:hover {
-      background-color: var(--blue-primary);
-    }
+        .cleaner-narrative {
+            line-height: 1.5;
+            margin-top: auto;
+            white-space: pre-line;
+            text-align: justify;
+        }
 
-    /* Mobile & Tablet Responsiveness Enhancements */
-    @media (max-width: 768px) {
-      .directory-section {
-        padding: 20px 15px;
-      }
+        .loading-msg {
+            text-align: center;
+            margin: 50px 0;
+            font-weight: 600;
+        }
 
-      .directory-header h1 {
-        font-size: 1.75rem;
-      }
+        .btn-request {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px 0;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 0 0 6px 6px;
+            margin-top: 15px;
+            box-sizing: border-box;
+            transition: background-color 0.2s ease;
+        }
 
-      .directory-header p {
-        font-size: 1rem;
-      }
-
-      .cleaners-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .cleaner-photo {
-        height: 220px;
-      }
-    }
-  </style>
+        /* Mobile & Tablet Responsiveness Enhancements */
+        @media screen and (max-width: 768px) {
+            .directory-section {
+                padding: 20px 15px;
+            }
+            .cleaners-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .cleaner-photo {
+                height: 220px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- 2. Header Placeholder at the very top inside <body> -->
+
+  <!-- Header Placeholder Container -->
   <div id="header-placeholder"></div>
 
-  <!-- MAIN CLEANERS & BLUE COLLAR WORKERS SECTION -->
-  <section class="directory-section">
+  <!-- Main Directory Section -->
+  <main class="directory-section">
     <div class="directory-header">
       <h1>Supplier Directory</h1>
-      <p>Browse here to find the supplier you need for your small business. </p>
+      <p>Browse here to find the supplier you need for your small business.</p>
       <p>If you are a potential supplier, create your profile here to get new clients by clicking the button below.</p>
-      <a href="underconstruction.html" class="btn-outline">Create your Supplier Profile in MOD WOrkforce</a>
+      <a href="underconstruction.html" class="btn-outline">Create your Supplier Profile in MOD Workforce</a>
     </div>
 
     <div id="loading" class="loading-msg">Loading profiles from database...</div>
     <div id="cleaners-container" class="cleaners-grid"></div>
-  </section>
+  </main>
 
-  <!-- 3. Footer Placeholder at the very bottom right before </body> -->
+  <!-- Footer Placeholder Container -->
   <div id="footer-placeholder"></div>
 
-  <!-- 4. Loader script tag directly underneath the footer placeholder -->
+  <!-- Component Loader Script -->
   <script src="include.js"></script>
-<!-- CSV Auto-Parse Script -->
+
+  <!-- CSV Auto-Parse Script -->
   <script>
     // Helper function to format image URLs from Google Drive, Wix, or direct links
     function formatImageUrl(rawUrl) {
@@ -237,7 +279,6 @@
           }
 
           container.innerHTML = "";
-
           results.data.forEach(cleaner => {
             const workerName = cleaner['First Name'] || cleaner.FirstName || cleaner.Name || 'Anonymous Worker';
             const workerCategory = cleaner['Job Type'] || cleaner.Category || 'Blue Collar';
@@ -245,12 +286,11 @@
             const workerSchedule = cleaner['Sched'] || cleaner.Schedule || 'Flexible';
             const workerNarrative = cleaner['Job Narrative'] || cleaner.Narrative || cleaner.Bio || 'No background description provided.';
 
-            // Format the photo URL using the helper function
             const rawPhoto = cleaner['Profile Picture'] || cleaner['PhotoURL'] || cleaner['Photo'] || cleaner['Image'];
             const photo = formatImageUrl(rawPhoto);
 
             const cardHTML = `
-              <div class="cleaner-card">
+              <div class="cleaner-card promo-card">
                 <img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.onerror=null; this.src='images/default-avatar.jpg';">
                 <div class="cleaner-info">
                   <h3 class="cleaner-name">${workerName}</h3>
@@ -261,7 +301,7 @@
                   </div>
                   <p class="cleaner-narrative">${workerNarrative}</p>
                 </div>
-                <a href="request.html" class="btn-request">Request Contact Details</a>
+                <a href="request.html" class="btn-request btn-primary">Request Contact Details</a>
               </div>
             `;
             container.innerHTML += cardHTML;
@@ -277,3 +317,6 @@
       });
     });
   </script>
+
+</body>
+</html>
