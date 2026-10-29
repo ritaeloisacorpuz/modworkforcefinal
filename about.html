@@ -4,137 +4,365 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>About Us & FAQs | MOD Workforce</title>
-    <meta name="description" content="Learn about MOD Workforce's mission and get answers to frequently asked questions.">
+    <!-- Core SEO Meta Tags -->
+    <title>MOD Workforce | Small Business Tools and Resources</title>
+    <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
     <meta name="robots" content="index, follow">
 
-    <!-- Linked directly to your shared style sheet -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Canonical Tag (Points to primary URL without .html) -->
+    <link rel="canonical" href="https://www.modworkforce.com/">
+
+    <!-- Social & LLM Preview Metadata (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta property="og:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta property="og:url" content="https://www.modworkforce.com/">
+    <meta property="og:site_name" content="MOD Workforce">
+    <meta property="og:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta name="twitter:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="twitter:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Linked External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org Knowledge Graph / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.modworkforce.com/#organization",
+          "name": "MOD Workforce",
+          "url": "https://www.modworkforce.com/",
+          "telephone": "+639564001626",
+          "email": "modworkforce@hawthorneconsultancymanila.com",
+          "priceRange": "$$",
+          "description": "Website for tools and resources for small businesses."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.modworkforce.com/#website",
+          "url": "https://www.modworkforce.com/",
+          "name": "MOD Workforce",
+          "publisher": {
+            "@id": "https://www.modworkforce.com/#organization"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Skeletal Layout & Positioning Rules (Bones Only) -->
+    <style>
+        /* Global Base Requirements for Modular Portability */
+        body, main, section, p, div, span, li, a {
+            font-size: max(1.15rem, 100%);
+            line-height: 1.6;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1.25rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        img, svg, video {
+            object-position: center;
+            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Containers */
+        .section-container {
+            padding: 4rem 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        /* Section 1: Our Mission Layout */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .mission-image img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+        }
+
+        .signature-block {
+            margin-top: 2rem;
+            text-align: right;
+        }
+
+        .signature-block strong {
+            display: block;
+            font-size: max(1.2rem, 105%);
+        }
+
+        .signature-block div {
+            font-size: max(1.15rem, 100%);
+            line-height: 1.4;
+        }
+
+        /* Section 2: Business Tools Horizontal Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .tool-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .tool-avatar-wrapper {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tool-card h3 {
+            font-size: max(1.25rem, 110%);
+            margin-bottom: 0.25rem;
+            text-align: center;
+        }
+
+        .tool-subtitle {
+            font-size: max(1.15rem, 100%);
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        .tool-divider {
+            width: 40px;
+            height: 2px;
+            margin: 0.5rem auto 1rem auto;
+        }
+
+        .tool-description {
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tool-card .tool-link {
+            display: inline-block;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        /* Section 3: Learn More (Fluid Light Blue Block Canvas) */
+        .learn-more-block {
+            width: 100%;
+            padding: 4rem 8%;
+            box-sizing: border-box;
+            margin-top: 2rem;
+        }
+
+        .learn-more-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .learn-more-item {
+            margin-bottom: 2rem;
+        }
+
+        .learn-more-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .learn-more-question {
+            font-weight: bold;
+            font-size: max(1.3rem, 110%);
+            margin-bottom: 0.75rem;
+            text-align: left;
+        }
+
+        .learn-more-answer {
+            text-align: justify;
+            margin-bottom: 0;
+        }
+
+        /* Responsive Breakpoints for Tablets, Mobile & E-Readers */
+        @media screen and (max-width: 1024px) {
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem 1.5rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .mission-image img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .signature-block {
+                text-align: center;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .section-container, .learn-more-block {
+                padding: 3rem 5%;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Dynamic Header Placeholder -->
+    <!-- Header Placeholder Container -->
     <div id="header-placeholder"></div>
 
-    <!-- Section 1: Our Mission -->
-    <section class="section-container" style="background-color: #ffffff;">
-        <h2>Our Mission</h2>
-        <div class="mission-grid">
-            <div class="mission-image">
-                <img src="arleen-maid-on-demand-operations.jpg" alt="Arleen Ayala - Operations Director">
-            </div>
-            <div class="mission-text">
-                <p>We want to bring to you the help you need. </p>
-                <p>We want to bridge the gap between clients who need quality services and freelancers who want additional income.</p>
-                <p>Be it for their small businesses or their personal lives, we want to give everyone the access to quality service at a price point they can afford while supporting freelancers in augmenting their income. </p>
-                
-                <div class="signature-block">
-                    <img src="#" alt="" class="signature-img">
-                    <strong>Arleen Ayala</strong>
-                    <div>Operations Director in Maid-on-Demand</div>
-                    <div>Owner, Exemplary Cleaning Services</div>
-                    <div>DTI Business Permit No. 8097043</div>
+    <main>
+        <!-- Section 1: Our Mission -->
+        <section class="section-container">
+            <h2>Our Mission</h2>
+            <div class="mission-grid">
+                <div class="mission-image">
+                    <img src="arleen-maid-on-demand-operations.jpg" alt="Arleen Ayala - Operations Director">
+                </div>
+                <div class="mission-text">
+                    <p>We want to bring to you the help you need.</p>
+                    <p>We want to bridge the gap between clients who need quality services and freelancers who want additional income.</p>
+                    <p>Be it for their small businesses or their personal lives, we want to give everyone the access to quality service at a price point they can afford while supporting freelancers in augmenting their income.</p>
+                    
+                    <div class="signature-block">
+                        <strong>Arleen Ayala</strong>
+                        <div>Operations Director in Maid-on-Demand</div>
+                        <div>Owner, Exemplary Cleaning Services</div>
+                        <div>DTI Business Permit No. 8097043</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section 2: Meet the Cleaners -->
-    <section class="section-container" style="background-color: #ffffff; border-top: 1px solid #eee;">
-        <h2>The MOD Workforce Business Tools</h2>
-        <div class="cleaners-grid">
-            <!-- Cleaner 1 -->
-            <div class="cleaner-card">
-                <div class="cleaner-avatar-wrapper" style="background-color: #d8d3c5;">
-                    <img src="danica-blue-pages-head.png" alt="Danica">
+        <!-- Section 2: Business Tools -->
+        <section class="section-container">
+            <h2>The MOD Workforce Business Tools</h2>
+            <div class="tools-grid">
+                <!-- Tool 1 -->
+                <div class="tool-card">
+                    <div class="tool-avatar-wrapper">
+                        <img src="danica-blue-pages-head.png" alt="Danica">
+                    </div>
+                    <h3>Free Website Builder</h3>
+                    <div class="tool-subtitle">Business Tool #1</div>
+                    <div class="tool-divider"></div>
+                    <div class="tool-description">In the information age, internet presence is a must but you don't have to spend a cent to have one. Use our free website builder and you can immediately have a simple brochure website at no cost to you.</div>
+                    <a href="website-builder.html" class="tool-link">Go to the Website Builder Application</a>
                 </div>
-                <h3>Free Website Builder</h3>
-                <div class="cleaner-role">Business Tool #1</div>
-                <div class="team-divider"></div>
-                <div class="team-name">In the information age, internet presence is a must but you don't have to spend a cent to have one. Use our free website builder and you can immediately have a simple brochure website at no cost to you.</div>
-            <a href="website-builder.html" class="btn-outline">Go to the Website Builder Application</a>
-            </div>
 
-            <!-- Cleaner 2 -->
-            <div class="cleaner-card">
-                <div class="cleaner-avatar-wrapper" style="background-color: #dce7a8;">
-                    <img src="danna-english-tutors.png" alt="Danna">
+                <!-- Tool 2 -->
+                <div class="tool-card">
+                    <div class="tool-avatar-wrapper">
+                        <img src="danna-english-tutors.png" alt="Danna">
+                    </div>
+                    <h3>Business Calculators</h3>
+                    <div class="tool-subtitle">Business Tool #2</div>
+                    <div class="tool-divider"></div>
+                    <div class="tool-description">You don't need a business degree to set up a business, you just need to know your numbers. Know just how much you can spend, when a cost is too much and when an investment is worth the expense.</div>
+                    <a href="underconstruction.html" class="tool-link">Go to the Business Calculators</a>
                 </div>
-                <h3>Business Calculators</h3>
-                <div class="cleaner-role">Business Tool #2</div>
-                <div class="team-divider"></div>
-                <div class="team-name">You don't need a business degree to set up a business, you just need to know your numbers. Know just how much you can spend, when a cost is too much and when an investment is worth the expense.</div>
-            <a href="underconstruction.html" class="btn-outline">Go to the Business Calculators</a>
-            </div>
 
-            <!-- Cleaner 3 -->
-            <div class="cleaner-card">
-                <div class="cleaner-avatar-wrapper" style="background-color: #c9e29a;">
-                    <img src="elisha-mathtutor-final.png" alt="Elisha">
+                <!-- Tool 3 -->
+                <div class="tool-card">
+                    <div class="tool-avatar-wrapper">
+                        <img src="elisha-mathtutor-final.png" alt="Elisha">
+                    </div>
+                    <h3>Employee Training</h3>
+                    <div class="tool-subtitle">Business Tool #3</div>
+                    <div class="tool-divider"></div>
+                    <div class="tool-description">Run a quick e-Training for your employees. If you're a small businessman just starting out, you can hire undergrads and high school graduates, just have them e-Trained here and they'll be good to go.</div>
+                    <a href="training.html" class="tool-link">Go to the Employee Training Page</a>
                 </div>
-                <h3>Employee Training</h3>
-                <div class="cleaner-role">Business Tool #3</div>
-                <div class="team-divider"></div>
-                <div class="team-name">Run a quick e-Training for your employees. If you're a small businessman just starting out, you can hire undergrads and high school graduates, just have them e-Trained here and they'l be good to go.</div>
-            <a href="training.html" class="btn-outline">Go to the Employee Training Page</a>
-            </div>
 
-            <!-- Cleaner 4 -->
-            <div class="cleaner-card">
-                <div class="cleaner-avatar-wrapper" style="background-color: #f7ed73;">
-                    <img src="angelica-science-tutors.png" alt="Angelica">
+                <!-- Tool 4 -->
+                <div class="tool-card">
+                    <div class="tool-avatar-wrapper">
+                        <img src="angelica-science-tutors.png" alt="Angelica">
+                    </div>
+                    <h3>Business Set-up Guide</h3>
+                    <div class="tool-subtitle">Business Tool #4</div>
+                    <div class="tool-divider"></div>
+                    <div class="tool-description">Setting up a business need not be complicated. It's tougher than being an employee but with the right guidance, anyone with resilience, some streetsmart and discipline can do it. Let us help you here.</div>
+                    <a href="underconstruction.html" class="tool-link">Go to the Guide to Setting up your Business Page</a>
                 </div>
-                <h3>Business Set-up Guide</h3>
-                <div class="cleaner-role">Business Tool #4<br></div>
-                <div class="team-divider"></div>
-                <div class="team-name">Setting up a business need not be complicated. It's tougher than being an employee but with the right guidance, anyone with resilience, some streetsmart and discpline can do it. Let us help you here.</div>
-            <a href="underconstruction.html" class="btn-outline">Go to the Guide to Setting up your Business Page</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section 3: FAQs -->
-    <section class="faq-section">
-        <h1 class="faq-header">Learn More about MOD Workforce</h1>
-
-        <div class="faq-item">
-            <div class="faq-question">What is MOD Workforce?</div>
-            <div class="faq-answer">
-                MOD Workforce is a website for small businessowners and entrepreneurs who are planning to or is already running a small business. This website offers solutions and alternatives that will assist in making their entrepreneurial journey quicker and easier. We tackle the unique needs of small business owners that are grossly different from conglomerates and established corporations so that we can offer the appropriate fix for every need they might have.
+        <!-- Section 3: Learn More Block (Entire Fluid Light Blue Background) -->
+        <section class="learn-more-block">
+            <div class="learn-more-content">
+                <h1>Learn More about MOD Workforce</h1>
+                <div class="learn-more-item">
+                    <div class="learn-more-question">What is MOD Workforce?</div>
+                    <p class="learn-more-answer">
+                        MOD Workforce is a website for small business owners and entrepreneurs who are planning to or are already running a small business. This website offers solutions and alternatives that will assist in making their entrepreneurial journey quicker and easier. We tackle the unique needs of small business owners that are grossly different from conglomerates and established corporations so that we can offer the appropriate fix for every need they might have.
+                    </p>
+                </div>
+                <div class="learn-more-item">
+                    <div class="learn-more-question">What is the MOD Workforce formula?</div>
+                    <p class="learn-more-answer">
+                        The MOD Workforce formula is "Modularization". The formula for success in entrepreneurship when you are not wealthy nor well-connected is proper scaling. Here at MOD Workforce, that is our cornerstone --- We believe that "Modularizing" the availment of services, supplies and manpower is the key to allowing an entrepreneur to scale their business in pace with their growth. It is the only way to avoid bankruptcy before a small businessman achieves the flow of profits they need to be able to make that jump into the big leagues.
+                    </p>
+                </div>
+                <div class="learn-more-item">
+                    <div class="learn-more-question">How can MOD Workforce implement this formula for success?</div>
+                    <p class="learn-more-answer">
+                        In MOD Workforce, we scour the job market and the business ecosystem to compile, organize and put together the resources you need to make your business work. From business set-up to manpower hiring and training, institutionalization of business operations and supplier sourcing, we will provide it to you at the click of a mouse.
+                    </p>
+                </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-        <div class="faq-item">
-            <div class="faq-question">What is the MOD Workforce formula?</div>
-            <div class="faq-answer">
-                The MOd Workforce formula is "Modularization". The formula for success in entrepreneurship when you are not wealthy nor well-connected is proper scaling. Here at MOD Workforce, that is our cornerstone --- We believe that "Modularizing" the availment of services, supplies and manpower is the key to allowing an entrepreneur to scale their business in pace with their growth. It is the only way to avoid bankruptcy before  a small businessman achieves the flow of profits they need to be able to make that jump into the big leagues. 
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">How can MOD WOrkforce implement this formula for success?</div>
-            <div class="faq-answer">
-                In MOD Workforce, we scour the job market and the business ecosystem to compile, organize and put together the resources you need to make your business work. From business set-up to manpower hiring and training, institutionalization of business operations and supplier sourcing, we will provide it to you at the click of the mouse. 
-            </div>
-        </div>
-    </section>
-
-    <!-- Dynamic Footer Placeholder -->
+    <!-- Footer Placeholder Container -->
     <div id="footer-placeholder"></div>
 
-    <!-- Component Loader -->
-    <script>
-        function loadComponent(id, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(id).innerHTML = data;
-                })
-                .catch(err => console.error('Error loading ' + file + ':', err));
-        }
+    <!-- Component Loader Script -->
+    <script src="include.js"></script>
 
-        loadComponent('header-placeholder', 'header.html');
-        loadComponent('footer-placeholder', 'footer.html');
-    </script>
 </body>
 </html>
