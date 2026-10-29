@@ -666,3 +666,83 @@ hr.section-divider {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
+/* ==========================================
+   BUSINESS TOOLS PAGE THEME & SHADES
+   ========================================== */
+
+/* Dark Block Canvases (Hero, Strategy, Form) */
+.tools-page .dark-bg {
+    background-color: var(--text-dark, #042040) !important;
+}
+
+.tools-page .dark-bg h1,
+.tools-page .dark-bg h2 {
+    color: #ffffff !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.tools-page .dark-bg p,
+.tools-page .dark-bg label {
+    color: var(--text-light, #CDE9F7) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Light Block Canvases (Grid Sections) */
+.packages-grid-section,
+.promo-details-grid-section {
+    background-color: var(--bg-main, #FDFFF0) !important;
+}
+
+.packages-grid-section h2,
+.package-card h3,
+.detail-item h3 {
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.package-card p,
+.detail-item p {
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Card Image Frames */
+.card-img-wrapper img {
+    border: 1px solid var(--accent-blue, #5A8AFF);
+}
+
+/* Feature Icons Styling */
+.detail-item .icon-box {
+    color: var(--accent-blue, #5A8AFF) !important;
+}
+
+/* Social Media Icons in Inquiry Block */
+.social-icons a {
+    color: var(--text-light, #CDE9F7) !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: var(--accent-blue, #5A8AFF) !important;
+}
+
+/* Contact Form Input Fields */
+.main-contact-form input,
+.main-contact-form textarea {
+    background-color: #ffffff !important;
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Submit Action Button */
+.btn-send {
+    background-color: var(--accent-blue, #5A8AFF) !important;
+    color: #ffffff !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.btn-send:hover,
+.btn-send:focus {
+    background-color: #ffffff !important;
+    color: var(--text-dark, #042040) !important;
+}
