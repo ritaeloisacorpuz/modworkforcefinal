@@ -125,3 +125,64 @@ img, svg, video {
        box-sizing: border-box;
    }
 }
+/* ==========================================
+   SUB-NAVBAR & ABOUT US BUTTON OVERRIDES
+   ========================================== */
+
+/* Alternating Sub-Nav Menu Box Colors */
+.sub-nav-bar {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+}
+
+/* Odd links (1st, 3rd, etc.): Dark Blue background with Light Blue text */
+.sub-nav-bar a:nth-child(odd) {
+    background-color: #042040 !important;
+    color: #CDE9F7 !important;
+    border: 2px solid #042040;
+    padding: 0.85rem 1.25rem;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Even links (2nd, 4th, etc.): Light Blue background with Dark Blue text */
+.sub-nav-bar a:nth-child(even) {
+    background-color: #CDE9F7 !important;
+    color: #042040 !important;
+    border: 2px solid #042040;
+    padding: 0.85rem 1.25rem;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Hover effects for sub-navigation boxes */
+.sub-nav-bar a:nth-child(odd):hover {
+    background-color: #5A8AFF !important;
+    color: #ffffff !important;
+    border-color: #5A8AFF;
+}
+
+.sub-nav-bar a:nth-child(even):hover {
+    background-color: #5A8AFF !important;
+    color: #ffffff !important;
+    border-color: #5A8AFF;
+}
+
+/* Enforce Dark Blue Background & High Contrast for About Us Buttons */
+.btn-primary, 
+.btn-secondary, 
+a[href="about.html"] {
+    background-color: #042040 !important;
+    color: #CDE9F7 !important;
+    border: 2px solid #042040 !important;
+    font-weight: bold;
+}
+
+/* Hover state for About Us Buttons */
+.btn-primary:hover, 
+.btn-secondary:hover, 
+a[href="about.html"]:hover {
+    background-color: #5A8AFF !important;
+    color: #ffffff !important;
+    border-color: #5A8AFF !important;
+}
