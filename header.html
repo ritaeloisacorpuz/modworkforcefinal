@@ -1,19 +1,208 @@
-<header class="site-header">
-    <div class="brand-logo">
-        MODworkforce
-        <span>MODern Workforce</span>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <ul class="nav-menu">
-        <li><a href="index.html">MODworkforce Home </a></li>
-        <li><a href="directory.html">Supplier Directory</a></li>
-        <li><a href="contractor.html">Independent Contractor Directory</a></li>
-        <li><a href="employee.html">Employee Search</a></li>
-        <li><a href="swap.html">Swap Map</a></li>
-         <li><a href="tools.html">Business Tools</a></li>
-         <li><a href="hr.html">Human Resources Guide</a></li>
-    </ul>
+    <!-- Core SEO Meta Tags -->
+    <title>MOD Workforce | Small Business Tools and Resources</title>
+    <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="robots" content="index, follow">
 
-    <!-- Upper right hand corner: Log In & Blue Pages removed -->
-    <div class="header-right"></div>
-</header>
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://www.modworkforce.com/">
+
+    <!-- Social & LLM Preview Metadata (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta property="og:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta property="og:url" content="https://www.modworkforce.com/">
+    <meta property="og:site_name" content="MOD Workforce">
+    <meta property="og:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta name="twitter:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="twitter:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Linked External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org Knowledge Graph / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.modworkforce.com/#organization",
+          "name": "MOD Workforce",
+          "url": "https://www.modworkforce.com/",
+          "telephone": "+639564001626",
+          "email": "modworkforce@hawthorneconsultancymanila.com",
+          "priceRange": "$$",
+          "description": "Website for tools and resources for small businesses."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.modworkforce.com/#website",
+          "url": "https://www.modworkforce.com/",
+          "name": "MOD Workforce",
+          "publisher": {
+            "@id": "https://www.modworkforce.com/#organization"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structural CSS Rules for Layout & Modular Bounds -->
+    <style>
+        /* Global Structural Defaults */
+        p {
+            text-align: justify;
+            font-size: max(1.15rem, 100%);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+        }
+
+        img, video, svg {
+            object-position: center;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Enforce Minimum Font Floor across the Component */
+        .site-header, .site-header * {
+            font-size: max(1.15rem, 100%);
+        }
+
+        /* Desktop Header Layout & Positioning */
+        .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            margin: 0 0 1.5rem 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .brand-logo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-decoration: none;
+            line-height: 1.1;
+        }
+
+        .brand-logo .logo-main {
+            font-size: max(1.8rem, 120%);
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-logo .logo-sub {
+            font-size: max(1.15rem, 100%);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Nav Menu Horizontal Layout (Desktop) */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 0;
+        }
+
+        .nav-menu li {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Vertical Divider Lines between desktop menu items */
+        .nav-menu li:not(:last-child)::after {
+            content: "";
+            display: inline-block;
+            height: 1.8rem;
+            width: 1px;
+            background-color: currentColor;
+            opacity: 0.4;
+            margin: 0 0.8rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            padding: 0.5rem 0.2rem;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        /* Compact Layout Overrides for Mobile Viewports */
+        @media screen and (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 0.75rem 0.5rem;
+            }
+
+            .brand-logo {
+                text-align: center;
+                margin-bottom: 0.75rem;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.4rem 0.6rem;
+                width: 100%;
+            }
+
+            /* Hide vertical dividers on mobile grid to keep it compact */
+            .nav-menu li:not(:last-child)::after {
+                display: none;
+            }
+
+            .nav-menu li {
+                margin: 0.1rem 0.2rem;
+            }
+
+            .nav-menu a {
+                padding: 0.3rem 0.5rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Semantic Markup & Schema SiteNavigationElement -->
+    <header class="site-header" role="banner">
+        <a href="index.html" class="brand-logo" aria-label="MOD Workforce Home">
+            <span class="logo-main">MODworkforce</span>
+            <span class="logo-sub">MODern Workforce</span>
+        </a>
+        
+        <nav role="navigation" aria-label="Main Navigation">
+            <ul class="nav-menu" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <li itemprop="name"><a itemprop="url" href="index.html">MODworkforce Home</a></li>
+                <li itemprop="name"><a itemprop="url" href="directory.html">Supplier Directory</a></li>
+                <li itemprop="name"><a itemprop="url" href="contractor.html">Independent Contractor Directory</a></li>
+                <li itemprop="name"><a itemprop="url" href="employee.html">Employee Search</a></li>
+                <li itemprop="name"><a itemprop="url" href="swap.html">Swap Map</a></li>
+                <li itemprop="name"><a itemprop="url" href="tools.html">Business Tools</a></li>
+                <li itemprop="name"><a itemprop="url" href="hr.html">Human Resources Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+</html>
