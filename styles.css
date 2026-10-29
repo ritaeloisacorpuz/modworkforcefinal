@@ -420,3 +420,61 @@ footer.site-footer .footer-brand-logo {
     color: var(--text-dark, #042040);
     font-family: 'Helvetica', 'Arial', sans-serif;
 }
+/* ==========================================
+   ABOUT PAGE THEME, COLOR & FLUID CANVASES
+   ========================================== */
+
+/* Headings Theme Paint */
+.section-container h2,
+.tool-card h3 {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Subtitle & Signature Colors */
+.tool-subtitle,
+.signature-block strong,
+.signature-block div {
+    color: var(--text-dark, #042040);
+}
+
+/* Accent Lines below Business Tools Titles */
+.tool-divider {
+    background-color: var(--accent-blue, #5A8AFF);
+}
+
+/* Tool Avatar Outer Circle Styling */
+.tool-avatar-wrapper {
+    background-color: var(--text-light, #CDE9F7);
+    border: 2px solid var(--accent-blue, #5A8AFF);
+}
+
+/* Action Hyperlink Theme */
+.tool-card .tool-link {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    transition: color 0.2s ease-in-out;
+}
+
+.tool-card .tool-link:hover,
+.tool-card .tool-link:focus {
+    color: var(--accent-blue, #5A8AFF);
+    text-decoration: underline;
+}
+
+/* Learn More Section: Whole Block Light Blue Painting */
+.learn-more-block {
+    background-color: var(--text-light, #CDE9F7) !important;
+}
+
+.learn-more-block h1 {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin-bottom: 2.5rem;
+}
+
+.learn-more-question,
+.learn-more-answer {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
