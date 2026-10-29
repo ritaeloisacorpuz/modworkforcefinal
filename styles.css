@@ -374,3 +374,49 @@ footer.site-footer .footer-brand-logo {
     border: 2px solid var(--accent-blue, #5A8AFF);
     background-color: #ffffff;
 }
+/* ==========================================
+   ABOUT PAGE THEME & COLOR STYLES
+   ========================================== */
+
+/* Main Page Section Backgrounds */
+.section-container, 
+.faq-section {
+    background-color: var(--bg-main, #FDFFF0);
+}
+
+/* Headings Theme Color Application */
+.section-container h2,
+.faq-header,
+.cleaner-card h3 {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Signature Block Text Colors */
+.signature-block strong,
+.signature-block div {
+    color: var(--text-dark, #042040);
+}
+
+/* Team Divider Accent Line */
+.team-divider {
+    background-color: var(--accent-blue, #5A8AFF);
+}
+
+/* Avatar Circle Canvas Styling */
+.cleaner-avatar-wrapper {
+    background-color: var(--text-light, #CDE9F7);
+    border: 2px solid var(--accent-blue, #5A8AFF);
+}
+
+/* FAQ Container Block Theme */
+.faq-item {
+    background-color: var(--text-light, #CDE9F7);
+    border-left: 4px solid var(--accent-blue, #5A8AFF);
+}
+
+.faq-question,
+.faq-answer {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
