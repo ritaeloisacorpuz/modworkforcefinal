@@ -478,3 +478,66 @@ footer.site-footer .footer-brand-logo {
     color: var(--text-dark, #042040);
     font-family: 'Helvetica', 'Arial', sans-serif;
 }
+/* ==========================================
+   DIRECTORY PAGE THEME & COLOR STYLES
+   ========================================== */
+
+/* Main Header Titles & Paragraph Colors */
+.directory-header h1 {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.directory-header p {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Loading Indicator Color */
+.loading-msg {
+    color: var(--accent-blue, #5A8AFF);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Directory Card Theme Painting */
+.cleaner-card {
+    background-color: var(--bg-main, #FDFFF0);
+    border: 1px solid var(--accent-blue, #5A8AFF);
+}
+
+.cleaner-photo {
+    background-color: var(--text-light, #CDE9F7);
+}
+
+.cleaner-name {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    border-bottom: 2px solid var(--accent-blue, #5A8AFF);
+}
+
+.cleaner-meta {
+    background-color: var(--text-light, #CDE9F7);
+    color: var(--text-dark, #042040);
+}
+
+.cleaner-meta strong {
+    color: var(--text-dark, #042040);
+}
+
+.cleaner-narrative {
+    color: var(--text-dark, #042040);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Request Contact Button Styling */
+.btn-request {
+    background-color: var(--text-dark, #042040) !important;
+    color: var(--text-light, #CDE9F7) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.btn-request:hover,
+.btn-request:focus {
+    background-color: var(--accent-blue, #5A8AFF) !important;
+    color: #ffffff !important;
+}
