@@ -5,15 +5,14 @@
 :root {
    /* Base Backgrounds */
    --bg-white: #ffffff;
-   --bg-light-neutral: #f9f9f9;  /* Optional subtle contrast for cards */
+   --bg-light-neutral: #fdfff0;  /* Optional subtle contrast for cards */
    
    /* Accent Colors */
-   --accent-cyan: #37BDBF;       /* Accent 1: Dark Green / Cyan */
-   --accent-yellow: #F9AD3B;     /* Accent 2: Warm Yellow / Gold */
-   --accent-brick: #F26524;      /* Accent 3: Brick Orange */
+   --accent-blue: #CDE9F7;       /* Accent 1: BLUE
+ 
    
    /* Text Colors */
-   --text-dark: #222222;
+   --text-dark: #042040;
    --text-light: #ffffff;
 }
 
