@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Core SEO Meta Tags -->
+    <title>MOD Workforce | Small Business Tools and Resources</title>
+    <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical Tag (Points to primary URL without .html) -->
+    <link rel="canonical" href="https://www.modworkforce.com/">
+
+    <!-- Social & LLM Preview Metadata (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta property="og:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta property="og:url" content="https://www.modworkforce.com/">
+    <meta property="og:site_name" content="MOD Workforce">
+    <meta property="og:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta name="twitter:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="twitter:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Linked Shared Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- PapaParse Library for CSV Profile Parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+    <!-- Schema.org Knowledge Graph / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.modworkforce.com/#organization",
+          "name": "MOD Workforce",
+          "url": "https://www.modworkforce.com/",
+          "telephone": "+639564001626",
+          "email": "modworkforce@hawthorneconsultancymanila.com",
+          "priceRange": "$$",
+          "description": "Website for tools and resources for small businesses."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.modworkforce.com/#website",
+          "url": "https://www.modworkforce.com/",
+          "name": "MOD Workforce",
+          "publisher": {
+            "@id": "https://www.modworkforce.com/#organization"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Internal Skeletal Layout Rules (Bones, Grid & Font Floor) -->
+    <style>
+        /* Base Defaults for Modular Portability */
+        body, main, section, p, div, span, li, a {
+            font-size: max(1.15rem, 100%);
+            line-height: 1.6;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 0.75rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+        }
+
+        img, svg, video {
+            object-position: center;
+            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Directory Section Container */
+        .directory-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        .directory-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .directory-header h1 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .directory-header p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Grid Layout */
+        .cleaners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .cleaner-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cleaner-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .cleaner-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .cleaner-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cleaner-name {
+            margin-bottom: 10px;
+            font-weight: 700;
+            padding-bottom: 6px;
+            text-align: left;
+        }
+
+        .cleaner-meta {
+            margin-bottom: 15px;
+            padding: 10px 12px;
+            border-radius: 6px;
+        }
+
+        .cleaner-meta p {
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .cleaner-meta p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cleaner-narrative {
+            line-height: 1.5;
+            margin-top: auto;
+            white-space: pre-line;
+            text-align: justify;
+        }
+
+        .loading-msg {
+            text-align: center;
+            margin: 50px 0;
+            font-weight: 600;
+        }
+
+        .btn-request {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px 0;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 0 0 6px 6px;
+            margin-top: 15px;
+            box-sizing: border-box;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Mobile & Tablet Responsiveness Enhancements */
+        @media screen and (max-width: 768px) {
+            .directory-section {
+                padding: 20px 15px;
+            }
+            .cleaners-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .cleaner-photo {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <!-- Header Placeholder Container -->
+  <div id="header-placeholder"></div>
+
+  <!-- Main Directory Section -->
+  <main class="directory-section">
+    <div class="directory-header">
+      <h1>Supplier Directory</h1>
+      <p>Browse here to find the supplier you need for your small business.</p>
+      <p>If you are a potential supplier, create your profile here to get new clients by clicking the button below.</p>
+      <a href="underconstruction.html" class="btn-outline">Create your Supplier Profile in MOD Workforce</a>
+    </div>
+
+    <div id="loading" class="loading-msg">Loading profiles from database...</div>
+    <div id="cleaners-container" class="cleaners-grid"></div>
+  </main>
+
+  <!-- Footer Placeholder Container -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Component Loader Script -->
+  <script src="include.js"></script>
+
+  <!-- CSV Auto-Parse Script -->
+  <script>
+    // Helper function to format image URLs from Google Drive, Wix, or direct links
+    function formatImageUrl(rawUrl) {
+      if (!rawUrl || typeof rawUrl !== 'string') return 'images/default-avatar.jpg';
+      
+      let trimmed = rawUrl.trim();
+      if (trimmed === '') return 'images/default-avatar.jpg';
+
+      // 1. Convert Wix Image Protocol to CDN URL
+      if (trimmed.startsWith('wix:image://v1/')) {
+        const parts = trimmed.replace('wix:image://v1/', '').split('/');
+        const fileId = parts[0];
+        return `https://static.wixstatic.com/media/${fileId}`;
+      }
+
+      // 2. Convert Google Drive Sharing Links to Direct Image URLs
+      if (trimmed.includes('drive.google.com')) {
+        const match = trimmed.match(/\/d\/([a-zA-Z0-9_-]+)/) || trimmed.match(/id=([a-zA-Z0-9_-]+)/);
+        if (match && match[1]) {
+          return `https://lh3.googleusercontent.com/d/${match[1]}`;
+        }
+      }
+
+      // 3. Standard HTTP/HTTPS or local relative image path
+      return trimmed;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      Papa.parse("profile.csv", {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function (results) {
+          const container = document.getElementById("cleaners-container");
+          const loadingMsg = document.getElementById("loading");
+          if (loadingMsg) loadingMsg.style.display = "none";
+
+          if (!results.data || results.data.length === 0) {
+            container.innerHTML = "<p style='text-align:center; grid-column: 1/-1;'>No profiles found in the database.</p>";
+            return;
+          }
+
+          container.innerHTML = "";
+          results.data.forEach(cleaner => {
+            const workerName = cleaner['First Name'] || cleaner.FirstName || cleaner.Name || 'Anonymous Worker';
+            const workerCategory = cleaner['Job Type'] || cleaner.Category || 'Blue Collar';
+            const workerLocation = cleaner['Preferred work area'] || cleaner['Preferred Location for facetoface Tutorials'] || cleaner.Location || 'Not specified';
+            const workerSchedule = cleaner['Sched'] || cleaner.Schedule || 'Flexible';
+            const workerNarrative = cleaner['Job Narrative'] || cleaner.Narrative || cleaner.Bio || 'No background description provided.';
+
+            const rawPhoto = cleaner['Profile Picture'] || cleaner['PhotoURL'] || cleaner['Photo'] || cleaner['Image'];
+            const photo = formatImageUrl(rawPhoto);
+
+            const cardHTML = `
+              <div class="cleaner-card promo-card">
+                <img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.onerror=null; this.src='images/default-avatar.jpg';">
+                <div class="cleaner-info">
+                  <h3 class="cleaner-name">${workerName}</h3>
+                  <div class="cleaner-meta">
+                    <p><strong>Category:</strong> ${workerCategory}</p>
+                    <p><strong>Location:</strong> ${workerLocation}</p>
+                    <p><strong>Schedule:</strong> ${workerSchedule}</p>
+                  </div>
+                  <p class="cleaner-narrative">${workerNarrative}</p>
+                </div>
+                <a href="request.html" class="btn-request btn-primary">Request Contact Details</a>
+              </div>
+            `;
+            container.innerHTML += cardHTML;
+          });
+        },
+        error: function(err) {
+          const loadingMsg = document.getElementById("loading");
+          if (loadingMsg) {
+            loadingMsg.innerText = "Failed to load profiles. Please ensure profile.csv is uploaded in your repository root.";
+          }
+          console.error("CSV Parsing Error:", err);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
