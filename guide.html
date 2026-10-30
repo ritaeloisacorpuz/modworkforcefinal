@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Core SEO Meta Tags -->
+    <title>MOD Workforce | Small Business Tools and Resources</title>
+    <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical Tag (Points to primary URL without .html) -->
+    <link rel="canonical" href="https://www.modworkforce.com/">
+
+    <!-- Social & LLM Preview Metadata (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta property="og:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta property="og:url" content="https://www.modworkforce.com/">
+    <meta property="og:site_name" content="MOD Workforce">
+    <meta property="og:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta name="twitter:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="twitter:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org Knowledge Graph / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.modworkforce.com/#organization",
+          "name": "MOD Workforce",
+          "url": "https://www.modworkforce.com/",
+          "telephone": "+639564001626",
+          "email": "modworkforce@hawthorneconsultancymanila.com",
+          "priceRange": "$$",
+          "description": "Website for tools and resources for small businesses."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.modworkforce.com/#website",
+          "url": "https://www.modworkforce.com/",
+          "name": "MOD Workforce",
+          "publisher": {
+            "@id": "https://www.modworkforce.com/#organization"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- INTERNAL STRUCTURAL LAYOUT & SKELETON CSS ONLY (NO FONTS / NO COLORS) -->
+    <style>
+        /* ==========================================
+           GLOBAL LAYOUT DEFAULTS (SKELETON)
+           ========================================== */
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            font-size: 1.15rem; /* Minimum allowed font size */
+        }
+        img {
+            object-fit: cover;
+            object-position: center; /* Enforced center object-position */
+        }
+
+        /* ==========================================
+           TRAINING PAGE LAYOUT & FONT SIZES ONLY
+           ========================================== */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 40px;
+        }
+        .section-header h1,
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .section-header p {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Video Hero Block */
+        .video-hero {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .video-hero video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .hero-caption {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Training Modules Grid */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .module-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 16px;
+        }
+        .module-card img {
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 16px;
+        }
+        .module-card .card-body {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .module-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: left; /* Card titles left aligned for list legibility */
+        }
+        .module-card p {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+        .read-more {
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: auto;
+        }
+
+        /* Action Button Container */
+        .btn-container {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        .btn-pill {
+            padding: 14px 32px;
+            border-radius: 25px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        /* Programs & Resources Grid */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .program-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .program-card img {
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .program-card h4 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .program-card p {
+            font-size: 1.15rem;
+            text-align: center;
+        }
+
+        /* Mobile Responsive Layout Adjustments */
+        @media (max-width: 850px) {
+            .modules-grid,
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            .video-hero {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 2. Header Placeholder at the very top inside <body> -->
+    <div id="header-placeholder"></div>
+
+    <!-- MAIN PAGE CONTENT -->
+    <main class="container">
+        
+        <!-- Section 1: Hero Header & Video Block -->
+        <header class="section-header">
+            <h1>Workforce Training Hub</h1>
+            <p>Practical Skills & Operational Excellence Guides</p>
+        </header>
+
+        <div class="video-hero">
+            <video controls width="100%">
+                <source src="Videos/Functional-Foods-Final.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <p class="hero-caption">
+            Standard Operating Procedures & Operational Excellence Overview
+        </p>
+
+        <!-- Section 2: Modules Grid -->
+        <div class="modules-grid">
+            <div class="module-card">
+                <img src="images/healthy-food-sushi.jpeg" alt="Operational Standards">
+                <div class="card-body">
+                    <h3>Standard Operating Procedures & Daily Management</h3>
+                    <p>Learn how clear daily workflows and standardized instructions elevate business throughput while maintaining operational consistency across team members.</p>
+                    <a href="sop-training.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <img src="images/healthy-food-chocolate-bars.jpeg" alt="Supply Chain Management">
+                <div class="card-body">
+                    <h3>Supply Chain & Vendor Logistics Optimization</h3>
+                    <p>Discover cost-effective inventory practices, local supplier negotiation tactics, and inventory tracking systems designed for small business growth.</p>
+                    <a href="supply-chain.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <img src="images/red-mango.jpg" alt="Customer Relations">
+                <div class="card-body">
+                    <h3>Customer Service Excellence & Retention Tactics</h3>
+                    <p>Build lasting relationships with clients through proven communication frameworks, resolution strategies, and quality service standards.</p>
+                    <a href="customer-service.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <img src="images/mister-donut.jpg" alt="Team Leadership">
+                <div class="card-body">
+                    <h3>Team Onboarding & On-Demand Support Staffing</h3>
+                    <p>Manage flexible staff efficiently. Learn key recruitment processes and fast-track onboarding schedules to handle peak operational demands.</p>
+                    <a href="staffing-guide.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <img src="images/padis-point.jpg" alt="Compliance and Safety">
+                <div class="card-body">
+                    <h3>Workplace Compliance, Safety, and Quality Control</h3>
+                    <p>Ensure legal compliance and safety in daily operations while enforcing clear quality checks for services and physical deliverables.</p>
+                    <a href="compliance-safety.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <img src="images/starbucks.jpg" alt="Digital Tools">
+                <div class="card-body">
+                    <h3>Digital Automation & Small Business Productivity Tools</h3>
+                    <p>Leverage affordable modern tools for scheduling, financial tracking, and team collaboration to maximize efficiency with minimal overhead.</p>
+                    <a href="digital-tools.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="btn-container">
+            <a href="about.html" class="btn-pill">Get to Know Our Instructors</a>
+        </div>
+
+        <!-- Section 3: Programs Grid -->
+        <section class="section-header">
+            <h2>Featured Resource Modules</h2>
+            <p>Targeted learning paths designed for business scalability.</p>
+        </section>
+
+        <div class="programs-grid">
+            <div class="program-card">
+                <img src="images/logo_carboload.jpg" alt="Core Operations">
+                <h4>Core Operations</h4>
+                <p>Optimize Daily Workflow & Productivity</p>
+            </div>
+            <div class="program-card">
+                <img src="images/logo_brainfood.jpg" alt="Leadership Track">
+                <h4>Leadership Track</h4>
+                <p>Unlock Your Team's Full Potential</p>
+            </div>
+            <div class="program-card">
+                <img src="images/logo_nutrikitchen.jpg" alt="Quality Standards">
+                <h4>Quality Standards</h4>
+                <p>Delivering Excellence Every Single Time</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 3. Footer Placeholder at the very bottom right before </body> -->
+    <div id="footer-placeholder"></div>
+
+    <!-- 4. Loader script directly underneath footer placeholder -->
+    <script src="include.js"></script>
+</body>
+</html>
