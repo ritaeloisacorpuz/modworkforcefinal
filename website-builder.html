@@ -1,359 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>myCarboLoad Founder</title>
-  
-  <!-- Link external stylesheet for look, feel, color themes, font types, and general responsiveness -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Core SEO Meta Tags -->
+    <title>MOD Workforce | Small Business Tools and Resources</title>
+    <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="robots" content="index, follow">
 
-  <style>
-    /* ============================================================
-       STRUCTURAL & LAYOUT CSS (Bones of the Career Page)
-       Strictly contains layout, dimensions, spacing, positioning,
-       and font sizes. No font families, colors, or color themes.
-       ============================================================ */
+    <!-- Canonical Tag (Points to primary URL without .html) -->
+    <link rel="canonical" href="https://www.modworkforce.com/">
 
-    /* Default Alignments requested */
-    p {
-      text-align: justify;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      text-align: center;
-    }
-    img {
-      object-position: center top;
-      object-fit: cover;
-    }
+    <!-- Social & LLM Preview Metadata (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta property="og:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta property="og:url" content="https://www.modworkforce.com/">
+    <meta property="og:site_name" content="MOD Workforce">
+    <meta property="og:image" content="https://www.modworkforce.com/images/og-image.jpg">
 
-    /* Container Spacing */
-    .career-container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta name="twitter:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="twitter:image" content="https://www.modworkforce.com/images/og-image.jpg">
 
-    .section-wrapper {
-      padding: 50px 30px;
-      margin-bottom: 40px;
-      border-radius: 12px;
-    }
+    <!-- Linked External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 
-    /* --- SECTION 1: ABOUT / HERO SECTION --- */
-    .about-hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 30px;
-      align-items: center;
+    <!-- Schema.org Knowledge Graph / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.modworkforce.com/#organization",
+          "name": "MOD Workforce",
+          "url": "https://www.modworkforce.com/",
+          "telephone": "+639564001626",
+          "email": "modworkforce@hawthorneconsultancymanila.com",
+          "priceRange": "$$",
+          "description": "Website for tools and resources for small businesses."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.modworkforce.com/#website",
+          "url": "https://www.modworkforce.com/",
+          "name": "MOD Workforce",
+          "publisher": {
+            "@id": "https://www.modworkforce.com/#organization"
+          }
+        }
+      ]
     }
+    </script>
 
-    .about-image-container {
-      width: 100%;
-      height: 100%;
-      min-height: 400px;
-      border-radius: 12px;
-      overflow: hidden;
-    }
+    <!-- Skeletal Layout & Positioning Rules (Bones Only) -->
+    <style>
+        /* Base Structural Defaults */
+        body, main, section, p, div, span, li, a, button {
+            font-size: max(1.15rem, 100%);
+            line-height: 1.6;
+        }
 
-    .about-image-container img {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
+        p {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
 
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+        }
 
-    .about-content h1 {
-      font-size: 2.5rem;
-      text-align: left;
-    }
+        img, svg, video {
+            object-position: center;
+            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    .about-content p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
+        /* Container Spacing */
+        .career-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
 
-    .about-buttons-wrapper {
-      display: flex;
-      gap: 15px;
-      margin-top: 15px;
-    }
+        .section-wrapper {
+            padding: 50px 30px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-sizing: border-box;
+        }
 
-    .btn-action {
-      padding: 10px 24px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-align: center;
-      display: inline-block;
-      cursor: pointer;
-    }
+        /* --- SECTION 1: HERO / ABOUT SECTION --- */
+        .about-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 30px;
+            align-items: center;
+        }
 
-    /* --- SECTION 2: CAREER SUMMARY --- */
-    .summary-section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 25px;
-    }
+        .about-image-container {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
 
-    .summary-section p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      max-width: 850px;
-      margin: 0 auto 20px auto;
-    }
+        .about-image-container img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
 
-    .summary-btn-wrapper {
-      text-align: center;
-      margin-top: 30px;
-    }
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
 
-    /* --- SECTION 3: PROFESSIONAL EXPERIENCE --- */
-    .experience-section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-    }
+        .about-content h1 {
+            font-size: max(2.2rem, 135%);
+            text-align: left;
+        }
 
-    .experience-item {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 30px;
-      margin-bottom: 35px;
-    }
+        .about-buttons-wrapper {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
 
-    .job-meta h3 {
-      font-size: 1rem;
-      text-align: left;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 6px;
-    }
+        .btn-action {
+            padding: 12px 28px;
+            border-radius: 20px;
+            font-weight: 600;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
 
-    .job-meta p {
-      font-size: 0.9rem;
-      text-align: left;
-      margin-bottom: 4px;
-    }
+        /* --- SECTION 2: SUMMARY SECTION --- */
+        .summary-section h2 {
+            font-size: max(2rem, 125%);
+            margin-bottom: 25px;
+        }
 
-    .job-meta .job-dates {
-      font-size: 0.85rem;
-      font-style: italic;
-    }
+        .summary-section p {
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+        }
 
-    .job-details ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
+        .summary-btn-wrapper {
+            text-align: center;
+            margin-top: 30px;
+        }
 
-    .job-details li {
-      font-size: 0.9rem;
-      line-height: 1.5;
-      margin-bottom: 12px;
-      text-align: justify;
-    }
+        /* --- SECTION 3: FEATURES & SPECIFICATIONS --- */
+        .experience-section h2 {
+            font-size: max(2rem, 125%);
+            margin-bottom: 40px;
+        }
 
-    .experience-footer-link {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.95rem;
-      font-weight: bold;
-    }
+        .experience-item {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
 
-    /* --- SECTION 4: RECOMMENDATION LETTERS --- */
-    .recommendations-section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
+        .job-meta h3 {
+            font-size: max(1.15rem, 100%);
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
 
-    .section-divider-line {
-      width: 40px;
-      height: 2px;
-      margin: 0 auto 40px auto;
-    }
+        .job-meta p {
+            text-align: left;
+            margin-bottom: 4px;
+        }
 
-    .recommendations-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      text-align: center;
-    }
+        .job-meta .job-dates {
+            font-style: italic;
+        }
 
-    .recommender-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        .job-details ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
 
-    .recommender-avatar {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
+        .job-details li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
 
-    .recommender-avatar img {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
+        .experience-footer-link {
+            text-align: center;
+            margin-top: 40px;
+            font-weight: bold;
+        }
 
-    .recommender-card h3 {
-      font-size: 1.1rem;
-      font-style: italic;
-      margin-bottom: 8px;
-    }
+        .experience-footer-link a {
+            text-decoration: underline;
+        }
 
-    .recommender-card p {
-      font-size: 0.85rem;
-      text-align: center;
-      line-height: 1.4;
-      margin-bottom: 12px;
-    }
+        /* --- SECTION 4: TEMPLATES & GUIDES --- */
+        .recommendations-section h2 {
+            font-size: max(2rem, 125%);
+            margin-bottom: 10px;
+        }
 
-    .recommender-card a {
-      font-size: 0.8rem;
-      text-decoration: underline;
-    }
+        .section-divider-line {
+            width: 60px;
+            height: 3px;
+            margin: 0 auto 40px auto;
+        }
 
-    /* Layout Responsive Rules for standard structural breaks */
-    @media screen and (max-width: 850px) {
-      .about-hero-grid {
-        grid-template-columns: 1fr;
-      }
-      .experience-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-      .recommendations-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-    }
-  </style>
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .recommender-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recommender-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .recommender-avatar img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .recommender-card h3 {
+            font-size: max(1.2rem, 105%);
+            margin-bottom: 8px;
+        }
+
+        .recommender-card p {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .recommender-card a {
+            text-decoration: underline;
+        }
+
+        /* Layout Responsive Rules */
+        @media screen and (max-width: 850px) {
+            .about-hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-content h1 {
+                text-align: center;
+            }
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .job-meta h3, .job-meta p {
+                text-align: center;
+            }
+            .recommendations-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .section-wrapper {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Structural Rule 2: Header Placeholder -->
+  <!-- Header Placeholder Container -->
   <div id="header-placeholder"></div>
 
   <main class="career-container">
-
-    <!-- Section 1: About Inigo -->
+    
+    <!-- Section 1: Hero / Overview -->
     <section class="section-wrapper career-hero-card">
       <div class="about-hero-grid">
         <div class="about-image-container">
-          <img src="images/founder-healthy-meal-plan.jpg" alt="founder-healthy-meal-plan">
+          <img src="danica-blue-pages-head.png" alt="Free Website Builder Tool">
         </div>
         <div class="about-content">
-          <h1>About the Founder</h1>
-          <p>Iñigo completed his primary and secondary school at La Salle Green Hills (LSGH) and earned a Bachelor's Degree in International Studies with a Major in Japanese Studies from De La Salle University, Manila (DLSU-M).</p>
-          <p>He looks forward to establishing a career in the financial services industry or a related industry that nurtures his interest in numbers. A Japanese company would be of special interest to him because he wishes to practice his Japanese, for which he has received an N5 Proficiency Level Certification from the Japanese Government through the Japan Educational Exchanges and Services (JEES) for passing the Japanese Language Proficiency Test (JLPT) in July 2023.</p>
-          <p>In line with his intention to join the financial sector, he took on internships in PriceWaterhouseCoopers Business Services Philippines (PwC BSP) and Asia United Bank (AUB). These on-the-job trainings provided him the chance to experience first-hand the workings inside a financial institution.</p>
+          <h1>Free Brochure Website Builder Application</h1>
+          <p>Establish a professional online presence for your small business without paying recurring web development or hosting fees. Our Website Builder Application allows entrepreneurs to build lightweight, fast-loading brochure websites quickly.</p>
+          <p>Designed using plain code standards, the resulting webpages follow a fully modular architecture. You can easily transport your created HTML content across different domains while keeping its structural integrity and responsive layout completely intact.</p>
+          <p>Empower your business with a self-hosted digital showcase that automatically adapts to your site's color scheme and styling rules.</p>
           <div class="about-buttons-wrapper">
-            <a href="images/cv.pdf" class="btn-action btn-primary-action">Download CV</a>
-            <a href="blog.html" class="btn-action btn-secondary-action">VLOG</a>
+            <a href="underconstruction.html" class="btn-action btn-primary-action">Launch App</a>
+            <a href="tools.html" class="btn-action btn-secondary-action">Business Tools</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 2: Career Summary -->
+    <!-- Section 2: Application Overview Summary -->
     <section class="section-wrapper dark-bg summary-section">
-      <h2>Career Summary</h2>
-      <p>Iñigo is a Japanese Studies graduate trained in cultural literacy and interdisciplinary analysis, and thus, he has the ability
-to navigate diverse cultural environments and thrive in multicultural settings. He can speak, read and write basic Japanese,
-has good research capabilities, and demonstrates a keen attention to detail, making him fully prepared to pursue a career
-in business, education, international relations, translation, and other related fields.</p>
-      <p>Soon after his internships in Asia United Bank and PriceWaterhouseCoopers, he pursued a career in the financial services industry and is now working in one of the biggest financial services & accounting companies in the Philippines while continuing to attend Japanese Language classes in the University of the Philippines' Linguistics Department.</p>
+      <h2>Application Overview</h2>
+      <p>Our Website Builder Application generates lightweight, mobile-responsive static webpages that load instantly on all modern browsers and mobile devices. By separating content structure from site appearance, your website stays fast, secure, and easy to maintain.</p>
+      <p>Built for small business owners, micro-enterprises, and independent contractors who need an online brochure to display services, pricing plans, contact information, and business inquiries.</p>
       <div class="summary-btn-wrapper">
-        <a href="underconstruction.html" class="btn-action btn-light-action">Download Language Certificate issued by the Japanese Government</a>
+        <a href="underconstruction.html" class="btn-action btn-light-action">Download Website Builder Setup Documentation</a>
       </div>
     </section>
 
-    <!-- Section 3: Professional Experience -->
+    <!-- Section 3: Core Features & Specifications -->
     <section class="section-wrapper dark-bg experience-section">
-      <h2>Professional Experience</h2>
-
+      <h2>Key Features &amp; Specifications</h2>
+      
       <div class="experience-item">
         <div class="job-meta">
-          <h3>Asia United Bank</h3>
-          <p>Intern</p>
-          <p class="job-dates">( 2025 )</p>
+          <h3>Modular Architecture</h3>
+          <p>Core Engine</p>
+          <p class="job-dates">( Version 1.0 )</p>
         </div>
         <div class="job-details">
           <ul>
-            <li>Prepared a proposal to improve HelloMoney’s product specifications.</li>
-            <li>Assisted the Product Managers with daily tasks such as reviewing documents, supporting AUB’s daily operations,
-ensuring the completeness and good condition of company merchandise items, and generating demonstration
-videos for the bank’s official electronic wallet, HelloMoney.</li>
+            <li>Isolates page layout, font sizes, and positioning inside individual HTML files for simple cross-domain transportation.</li>
+            <li>Delegates color palettes, typography rules, and header/footer styling to a single external stylesheet (`styles.css`).</li>
           </ul>
         </div>
       </div>
 
       <div class="experience-item">
         <div class="job-meta">
-          <h3>PriceWaterhouseCoopers</h3>
-          <p>Intern</p>
-          <p class="job-dates">( 2020 )</p>
+          <h3>SEO &amp; Cloud Integration</h3>
+          <p>Built-in Standards</p>
+          <p class="job-dates">( Automated )</p>
         </div>
         <div class="job-details">
           <ul>
-            <li>Facilitated roll-forwarding transactions under an associate’s supervision.</li>
-            <li>Conducted industry research on selected PwC clients.</li>
+            <li>Includes pre-formatted Open Graph metadata, Schema.org JSON-LD structured data, and canonical tags for maximum search indexing.</li>
+            <li>Fully compatible with Cloudflare Pages, GitHub Pages, or standard static web hosting servers.</li>
           </ul>
         </div>
       </div>
+
       <div class="experience-footer-link">
-        <a href="certificates.pdf">Click to Download Language Training Certificates</a>
+        <a href="underconstruction.html">Click to View Complete Technical Manual</a>
       </div>
     </section>
 
-    <!-- Section 4: Recommendation Letters -->
+    <!-- Section 4: Implementation Templates & Guides -->
     <section class="section-wrapper recommendations-section">
-      <h2>Education & Certifications</h2>
+      <h2>Implementation &amp; Templates</h2>
       <div class="section-divider-line"></div>
+      
       <div class="recommendations-grid">
         <div class="recommender-card">
           <div class="recommender-avatar">
-            <img src="images/DLSU Logo.jpeg" alt="DLSU">
+            <img src="images/DLSU Logo.jpeg" alt="Modular Skeleton Template">
           </div>
-          <h3>College </h3>
-          <p>College Graduate (2021-2025)<br>De La Salle University Manila<br>Bachelor of Arts in International Studies, </Br>Major in Japanese Studies</p>
-          <a href="underconstruction.html">Click here to download the TCG</a>
+          <h3>Modular Skeleton</h3>
+          <p>Standard HTML page template equipped with pre-linked `styles.css` and `include.js` dynamic placeholders.</p>
+          <a href="underconstruction.html">Download Template</a>
         </div>
 
         <div class="recommender-card">
           <div class="recommender-avatar">
-            <img src="images/LSGH Logo.jpeg" alt="LSGH">
+            <img src="images/LSGH Logo.jpeg" alt="Theme Stylesheet Engine">
           </div>
-          <h3>Grade School to Senior High School </h3>
-          <p>High School Graduate (2010-2021) <br>La Salle Greenhills<br>Senior High School - Accountancy, Business and Management Strand (ABM) Graduate<br>Junior High School<br>Grade School</p>
-          <a href="underconstruction.html">Click here to download the Diploma </a>
+          <h3>Theme Stylesheet</h3>
+          <p>Central CSS engine managing site-wide color variables, typography, and device responsiveness rules.</p>
+          <a href="underconstruction.html">Download Stylesheet</a>
         </div>
 
         <div class="recommender-card">
           <div class="recommender-avatar">
-            <img src="images/university-of-the-philippines.png" alt="university-of-the-philippines">
+            <img src="images/university-of-the-philippines.png" alt="Cloudflare Hosting Guide">
           </div>
-          <h3>Special Trainings</h3>
-          <p>Certified Japanese Language Proficiency Test N5 Level Passer<br>Certificate issued by the Japanese Government’s Japan Educational Exchanges and Services<br> Also took Japanese Language lessons in University of the Philippines Linguistics Department & Nihongo Center</p>
-          <a href="underconstruction.html">Click here to download the Certificate for passing the Japanese Language Proficiency Test</a>
+          <h3>Cloudflare Guide</h3>
+          <p>Step-by-step instructions on deploying your static HTML files to Cloudflare Pages for free hosting.</p>
+          <a href="underconstruction.html">Download Deployment PDF</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Structural Rule 3: Footer Placeholder -->
+  <!-- Footer Placeholder Container -->
   <div id="footer-placeholder"></div>
 
-  <!-- Structural Rule 4: Loader Script -->
+  <!-- Component Loader Script -->
   <script src="include.js"></script>
+
 </body>
 </html>
