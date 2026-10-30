@@ -746,3 +746,118 @@ hr.section-divider {
     background-color: #ffffff !important;
     color: var(--text-dark, #042040) !important;
 }
+/* ==========================================
+   WEBSITE-BUILDER PAGE THEME & STYLES
+   ========================================== */
+
+/* Page Outer Frame Canvas */
+.career-container {
+    background-color: var(--bg-main, #FDFFF0);
+}
+
+/* Light Card Section (Hero & Recommendations) */
+.career-hero-card,
+.recommendations-section {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(4, 32, 64, 0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.career-hero-card h1,
+.recommendations-section h2,
+.recommender-card h3 {
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.career-hero-card p,
+.recommender-card p {
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Hero Action Buttons */
+.btn-primary-action {
+    background-color: var(--text-dark, #042040) !important;
+    color: var(--text-light, #CDE9F7) !important;
+    border: 2px solid var(--text-dark, #042040);
+    transition: all 0.2s ease;
+}
+
+.btn-primary-action:hover {
+    background-color: var(--accent-blue, #5A8AFF) !important;
+    color: #ffffff !important;
+    border-color: var(--accent-blue, #5A8AFF);
+}
+
+.btn-secondary-action {
+    background-color: var(--text-light, #CDE9F7) !important;
+    color: var(--text-dark, #042040) !important;
+    border: 2px solid var(--accent-blue, #5A8AFF);
+    transition: all 0.2s ease;
+}
+
+.btn-secondary-action:hover {
+    background-color: var(--accent-blue, #5A8AFF) !important;
+    color: #ffffff !important;
+}
+
+/* Dark Block Canvases (Summary & Features) */
+.section-wrapper.dark-bg {
+    background-color: var(--text-dark, #042040) !important;
+}
+
+.section-wrapper.dark-bg h2,
+.job-meta h3 {
+    color: #ffffff !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.section-wrapper.dark-bg p,
+.job-details li,
+.job-meta .job-dates {
+    color: var(--text-light, #CDE9F7) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Action Button in Dark Block */
+.btn-light-action {
+    background-color: var(--accent-blue, #5A8AFF) !important;
+    color: #ffffff !important;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-light-action:hover {
+    background-color: #ffffff !important;
+    color: var(--text-dark, #042040) !important;
+}
+
+/* Links inside Dark Blocks */
+.experience-footer-link a {
+    color: var(--text-light, #CDE9F7) !important;
+    transition: color 0.2s ease;
+}
+
+.experience-footer-link a:hover {
+    color: var(--accent-blue, #5A8AFF) !important;
+}
+
+/* Recommendations Section Divider & Avatar Framing */
+.section-divider-line {
+    background-color: var(--accent-blue, #5A8AFF) !important;
+}
+
+.recommender-avatar {
+    border: 2px solid var(--accent-blue, #5A8AFF);
+    background-color: var(--text-light, #CDE9F7);
+}
+
+.recommender-card a {
+    color: var(--accent-blue, #5A8AFF) !important;
+    font-weight: bold;
+}
+
+.recommender-card a:hover {
+    color: var(--text-dark, #042040) !important;
+}
