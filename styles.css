@@ -861,3 +861,94 @@ hr.section-divider {
 .recommender-card a:hover {
     color: var(--text-dark, #042040) !important;
 }
+/* ==========================================
+   TRAINING PAGE MODULE & THEME INTEGRATION
+   ========================================== */
+
+/* Page Background & Heading Theme */
+body {
+    background-color: var(--bg-main, #FDFFF0) !important;
+}
+
+.section-header h1,
+.section-header h2 {
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.section-header p,
+.hero-caption {
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Module Cards Theme */
+.module-card {
+    background-color: transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.module-card h3 {
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.module-card p {
+    color: var(--text-dark, #042040) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Read More Links */
+.module-card .read-more {
+    color: var(--accent-blue, #5A8AFF) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    transition: color 0.2s ease-in-out;
+}
+
+.module-card .read-more:hover {
+    color: var(--text-dark, #042040) !important;
+    text-decoration: underline;
+}
+
+/* Center Pill Button Styling */
+.btn-pill {
+    background-color: var(--text-dark, #042040) !important;
+    color: var(--text-light, #CDE9F7) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    border: 2px solid var(--text-dark, #042040) !important;
+    transition: all 0.3s ease;
+}
+
+.btn-pill:hover {
+    background-color: var(--accent-blue, #5A8AFF) !important;
+    border-color: var(--accent-blue, #5A8AFF) !important;
+    color: #ffffff !important;
+}
+
+/* Bottom Featured Programs Cards (Matches Promo Cards Look) */
+.program-card {
+    background-color: var(--text-dark, #042040) !important;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.program-card h4 {
+    color: #ffffff !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.program-card p {
+    color: var(--text-light, #CDE9F7) !important;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.program-card img {
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.program-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
