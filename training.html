@@ -1,325 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Blog - myCarboLoad</title>
-  	
-  <!-- 1. Link external stylesheet inside <head> -->
-  <link rel="stylesheet" href="styles.css">
-  
-  <style>
-    /* ==========================================
-       GLOBAL LAYOUT DEFAULTS (SKELETON)
-       ========================================== */
-    h1, h2, h3, h4, h5, h6 {
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Core SEO Meta Tags -->
+    <title>MOD Workforce | Small Business Tools and Resources</title>
+    <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="robots" content="index, follow">
 
-    p {
-      text-align: justify;
-    }
+    <!-- Canonical Tag (Points to primary URL without .html) -->
+    <link rel="canonical" href="https://www.modworkforce.com/">
 
-    img {
-      object-fit: cover;
-      object-position: center top;
-    }
+    <!-- Social & LLM Preview Metadata (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta property="og:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta property="og:url" content="https://www.modworkforce.com/">
+    <meta property="og:site_name" content="MOD Workforce">
+    <meta property="og:image" content="https://www.modworkforce.com/images/og-image.jpg">
 
-    /* ==========================================
-       BLOG PAGE LAYOUT & FONT SIZES ONLY
-       ========================================== */
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta name="twitter:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="twitter:image" content="https://www.modworkforce.com/images/og-image.jpg">
 
-    /* Section Headers */
-    .section-header {
-      margin-bottom: 40px;
-    }
-    .section-header h1,
-    .section-header h2 {
-      font-size: 2.5rem;
-      font-weight: normal;
-      margin-bottom: 10px;
-    }
-    .section-header p {
-      font-size: 0.875rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 
-    /* Video Hero Block */
-    .video-hero {
-      position: relative;
-      width: 100%;
-      height: 450px;
-      margin-bottom: 30px;
-      border-radius: 8px;
-      overflow: hidden;
+    <!-- Schema.org Knowledge Graph / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.modworkforce.com/#organization",
+          "name": "MOD Workforce",
+          "url": "https://www.modworkforce.com/",
+          "telephone": "+639564001626",
+          "email": "modworkforce@hawthorneconsultancymanila.com",
+          "priceRange": "$$",
+          "description": "Website for tools and resources for small businesses."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.modworkforce.com/#website",
+          "url": "https://www.modworkforce.com/",
+          "name": "MOD Workforce",
+          "publisher": {
+            "@id": "https://www.modworkforce.com/#organization"
+          }
+        }
+      ]
     }
-    .video-hero img {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-    .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    .play-button:hover {
-      transform: translate(-50%, -50%) scale(1.08);
-    }
-    .play-icon {
-      width: 0;
-      height: 0;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-left: 16px solid currentColor;
-      margin-left: 4px;
-    }
-    .hero-caption {
-      max-width: 700px;
-      margin: 0 auto 50px;
-      font-size: 1.35rem;
-      line-height: 1.6;
-    }
+    </script>
 
-    /* Destinations Grid */
-    .destinations-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 30px;
-    }
-    .destination-card {
-      display: flex;
-      flex-direction: column;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .destination-card img {
-      width: 100%;
-      height: 240px;
-      border-radius: 8px;
-      display: block;
-      margin-bottom: 16px;
-    }
-    .destination-card .card-body {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    .destination-card h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      text-align: left; /* Aligns card subheadings with content */
-    }
-    .destination-card p {
-      font-size: 1.25rem;
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-    .read-more {
-      font-size: 0.875rem;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: auto;
-    }
+    <!-- INTERNAL STRUCTURAL LAYOUT & SKELETON CSS ONLY (NO FONTS / NO COLORS) -->
+    <style>
+        /* ==========================================
+           GLOBAL LAYOUT DEFAULTS (SKELETON)
+           ========================================== */
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            font-size: 1.15rem; /* Minimum allowed font size */
+        }
+        img {
+            object-fit: cover;
+            object-position: center; /* Enforced center object-position */
+        }
 
-    .centered-card-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-    .centered-card-wrapper .destination-card {
-      width: calc(33.333% - 16px);
-    }
+        /* ==========================================
+           TRAINING PAGE LAYOUT & FONT SIZES ONLY
+           ========================================== */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
 
-    /* Action Button Block */
-    .btn-container {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-    .btn-pill {
-      padding: 12px 28px;
-      border-radius: 25px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-    }
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 40px;
+        }
+        .section-header h1,
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .section-header p {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-    /* Guides Grid */
-    .guides-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .guide-card {
-      text-align: center;
-    }
-    .guide-card img {
-      width: 100%;
-      height: 320px;
-      border-radius: 8px;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .guide-card h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .guide-card p {
-      font-size: 1.35rem;
-      text-align: center;
-    }
+        /* Video Hero Block */
+        .video-hero {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .video-hero video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .hero-caption {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            text-align: center;
+        }
 
-    /* Mobile Responsive Layout Adjustments */
-    @media (max-width: 850px) {
-      .destinations-grid,
-      .guides-grid {
-        grid-template-columns: 1fr;
-      }
-      .centered-card-wrapper .destination-card {
-        width: 100%;
-      }
-      .video-hero {
-        height: 280px;
-      }
-    }
-  </style>
+        /* Training Modules Grid */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .module-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 16px;
+        }
+        .module-card img {
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 16px;
+        }
+        .module-card .card-body {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .module-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: left; /* Card titles left aligned for list legibility */
+        }
+        .module-card p {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+        .read-more {
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: auto;
+        }
+
+        /* Action Button Container */
+        .btn-container {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        .btn-pill {
+            padding: 14px 32px;
+            border-radius: 25px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        /* Programs & Resources Grid */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .program-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .program-card img {
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .program-card h4 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .program-card p {
+            font-size: 1.15rem;
+            text-align: center;
+        }
+
+        /* Mobile Responsive Layout Adjustments */
+        @media (max-width: 850px) {
+            .modules-grid,
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            .video-hero {
+                height: 280px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- 2. Header Placeholder at the very top inside <body> -->
-  <div id="header-placeholder"></div>
+    <!-- 2. Header Placeholder at the very top inside <body> -->
+    <div id="header-placeholder"></div>
 
-  <!-- MAIN PAGE CONTENT -->
-  <main class="container">
-    
-    <!-- Section 1: Hero Header & Video Block -->
-    <header class="section-header">
-      <h1>Food Blog</h1>
-      <p>La Sallistang Tindero Says (Uncensored) </p>
-    </header>
+    <!-- MAIN PAGE CONTENT -->
+    <main class="container">
+        
+        <!-- Section 1: Hero Header & Video Block -->
+        <header class="section-header">
+            <h1>Workforce Training Hub</h1>
+            <p>Practical Skills & Operational Excellence Guides</p>
+        </header>
 
-   <div class="video-hero">
-  <video controls width="100%">
-    <source src="Videos/Functional-Foods-Final.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-    <p class="hero-caption">
-      Functional Foods Video
-    </p>
-
-    <!-- Section 2: Destinations Grid -->
-    <div class="destinations-grid">
-      <div class="destination-card">
-        <img src="images/healthy-food-sushi.jpeg" alt="healthy-food-sushi">
-        <div class="card-body">
-          <h3>The Luscious Taste of Sushi and Its History and Legacy to the Worldwide Palette</h3>
-          <p>Japanese cuisine has been touching Filipinos’ minds and souls for several decades. Because of the inherent complexities of crafting Japanese dishes, Filipino diners rely on restaurants that specialize in Japanese cuisine. </p>
-          <a href="japanese-cuisine.html" class="read-more">Read more ›</a>
+        <div class="video-hero">
+            <video controls width="100%">
+                <source src="Videos/Functional-Foods-Final.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-      </div>
+        <p class="hero-caption">
+            Standard Operating Procedures & Operational Excellence Overview
+        </p>
 
-      <div class="destination-card">
-        <img src="images/healthy-food-chocolate-bars.jpeg" alt="cacao">
-        <div class="card-body">
-          <h3>Crave Cacao and the Roots of the Philippine Chocolate Industry</h3>
-          <p>Bars and chips of chocolate have been part of the sugary palette of Filipinos and non-Filipinos for decades. They are often consumed after one’s main course meal is over, but with reasonable dietary limits to prevent health complications—notably diabetes—from occurring.</p>
-          <a href="cacao.html" class="read-more">Read more ›</a>
+        <!-- Section 2: Modules Grid -->
+        <div class="modules-grid">
+            <div class="module-card">
+                <img src="images/healthy-food-sushi.jpeg" alt="Operational Standards">
+                <div class="card-body">
+                    <h3>Standard Operating Procedures & Daily Management</h3>
+                    <p>Learn how clear daily workflows and standardized instructions elevate business throughput while maintaining operational consistency across team members.</p>
+                    <a href="sop-training.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <img src="images/healthy-food-chocolate-bars.jpeg" alt="Supply Chain Management">
+                <div class="card-body">
+                    <h3>Supply Chain & Vendor Logistics Optimization</h3>
+                    <p>Discover cost-effective inventory practices, local supplier negotiation tactics, and inventory tracking systems designed for small business growth.</p>
+                    <a href="supply-chain.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <img src="images/red-mango.jpg" alt="Customer Relations">
+                <div class="card-body">
+                    <h3>Customer Service Excellence & Retention Tactics</h3>
+                    <p>Build lasting relationships with clients through proven communication frameworks, resolution strategies, and quality service standards.</p>
+                    <a href="customer-service.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <img src="images/mister-donut.jpg" alt="Team Leadership">
+                <div class="card-body">
+                    <h3>Team Onboarding & On-Demand Support Staffing</h3>
+                    <p>Manage flexible staff efficiently. Learn key recruitment processes and fast-track onboarding schedules to handle peak operational demands.</p>
+                    <a href="staffing-guide.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <img src="images/padis-point.jpg" alt="Compliance and Safety">
+                <div class="card-body">
+                    <h3>Workplace Compliance, Safety, and Quality Control</h3>
+                    <p>Ensure legal compliance and safety in daily operations while enforcing clear quality checks for services and physical deliverables.</p>
+                    <a href="compliance-safety.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <img src="images/starbucks.jpg" alt="Digital Tools">
+                <div class="card-body">
+                    <h3>Digital Automation & Small Business Productivity Tools</h3>
+                    <p>Leverage affordable modern tools for scheduling, financial tracking, and team collaboration to maximize efficiency with minimal overhead.</p>
+                    <a href="digital-tools.html" class="read-more">Read more ›</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <div class="destination-card">
-        <img src="images/red-mango.jpg" alt="Red Mango">
-        <div class="card-body">
-          <h3>The Chocolate-Coated Oreo-Chip Yoghurt Treat and the History of Red Mango and the Philippine Ice Cream Industry</h3>
-          <p>Ice cream has been a staple in the Philippine confectionery market. Well-renowned local brands like Selecta and Magnolia have been endearing Filipino hearts and taste buds for decades.</p>
-          <a href="red-mango.html" class="read-more">Read more ›</a>
+        <!-- Action Button -->
+        <div class="btn-container">
+            <a href="about.html" class="btn-pill">Get to Know Our Instructors</a>
         </div>
-      </div>
-      <div class="destination-card">
-        <img src="images/mister-donut.jpg" alt="Mister Donut">
-        <div class="card-body">
-          <h3>Delectable Mister Donuts and the History of the Multinational Chain</h3>
-          <p>Together with Dunkin’ Donuts and Krispy Kreme, Mister Donut remains one of the most admired and revered doughnut chains in the Philippines and in other parts of the planet.  </p>
-          <a href="donut.html" class="read-more">Read more ›</a>
+
+        <!-- Section 3: Programs Grid -->
+        <section class="section-header">
+            <h2>Featured Resource Modules</h2>
+            <p>Targeted learning paths designed for business scalability.</p>
+        </section>
+
+        <div class="programs-grid">
+            <div class="program-card">
+                <img src="images/logo_carboload.jpg" alt="Core Operations">
+                <h4>Core Operations</h4>
+                <p>Optimize Daily Workflow & Productivity</p>
+            </div>
+            <div class="program-card">
+                <img src="images/logo_brainfood.jpg" alt="Leadership Track">
+                <h4>Leadership Track</h4>
+                <p>Unlock Your Team's Full Potential</p>
+            </div>
+            <div class="program-card">
+                <img src="images/logo_nutrikitchen.jpg" alt="Quality Standards">
+                <h4>Quality Standards</h4>
+                <p>Delivering Excellence Every Single Time</p>
+            </div>
         </div>
-      </div>
-      <div class="destination-card">
-        <img src="images/padis-point.jpg" alt="Padi's">
-        <div class="card-body">
-          <h3>The Integration of Margherita Pizza at Padi’s Point</h3>
-          <p>Just like carbonara and lasagna, pizza will always remain in the hearts of the Filipino gustatory landscape. </p>
-          <a href="padis.html" class="read-more">Read more ›</a>
-        </div>
-      </div>
-      <div class="destination-card">
-        <img src="images/starbucks.jpg" alt="Starbucks">
-        <div class="card-body">
-          <h3>The Delectable Palette of Starbucks’ Italian Picks</h3>
-          <p>The infusion of Italian cuisine has been a staple in the Philippine culinary scene. In fact, restaurants like Greenwich, Pizza Hut, and Shakey’s have been part of the lives of millions of Filipinos for about seven decades.  </p>
-          <a href="starbucks.html" class="read-more">Read more ›</a>
-        </div>
-      </div>
-    </div>
 
-   <div class="btn-container">
-  <a href="career.html">
-    <button class="btn-pill">Get to know the Writer</button>
-  </a>
-</div>
+    </main>
 
-    <!-- Section 3: Meet Our Guides Grid -->
-    <section class="section-header">
-      <h2>Our Food Brands</h2>
-      <p>Food to turn you into the Person you were meant to be.</p>
-    </section>
+    <!-- 3. Footer Placeholder at the very bottom right before </body> -->
+    <div id="footer-placeholder"></div>
 
-    <div class="guides-grid">
-      <div class="guide-card">
-        <img src="images/logo_carboload.jpg" alt="Carbo-Load">
-        <h4>CarboLoad</h4>
-        <p>Eat Up & Power Up !</p>
-      </div>
-
-      <div class="guide-card">
-        <img src="images/logo_brainfood.jpg" alt="Brain Food">
-        <h4>Brain Food</h4>
-        <p>Unlock your Potential !</p>
-      </div>
-
-      <div class="guide-card">
-        <img src="images/logo_nutrikitchen.jpg" alt="NutriKitchen">
-        <h4>NutriKitchen</h4>
-        <p>Where Nutritious is Delicious !</p>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- 3. Footer Placeholder at the very bottom right before </body> -->
-  <div id="footer-placeholder"></div>
-
-  <!-- 4. Loader script directly underneath footer placeholder -->
-  <script src="include.js"></script>
+    <!-- 4. Loader script directly underneath footer placeholder -->
+    <script src="include.js"></script>
 </body>
 </html>
