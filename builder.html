@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Builder in 5 Easy Steps</title>
+    <!-- Tailwind CSS for UI styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- JSZip for dynamic client-side ZIP creation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.2/jszip.min.js"></script>
+    <style>
+        .step-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: #e0f2fe;
+            border: 2px solid #3b82f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin: 0 auto 16px auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Website in 5 Easy Steps</h1>
+            <p class="text-gray-600">Configure your brochure website options below and download your ready-to-deploy static package.</p>
+        </header>
+
+        <!-- 5 Step Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            
+            <!-- Step 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center flex flex-col justify-between">
+                <div>
+                    <div class="step-circle">Modular<br>Skeleton<br>Template</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Step #1 - Select your Page Layouts</h3>
+                    <p class="text-xs text-gray-600 mb-4">Select from available page templates for your brochure website (Home, Products, About Us, Contact Us, Portfolio).</p>
+                </div>
+                <div>
+                    <select id="layoutSelect" class="w-full text-sm p-2 border border-gray-300 rounded-md bg-white mb-3">
+                        <option value="corporate">Corporate Layout (Clean Grid)</option>
+                        <option value="minimal">Minimalist Layout (Single Focus)</option>
+                        <option value="creative">Creative Layout (Hero Header)</option>
+                    </select>
+                    <button onclick="previewLayout()" class="text-blue-600 hover:underline text-sm font-semibold">Preview Skeleton</button>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center flex flex-col justify-between">
+                <div>
+                    <div class="step-circle">Theme<br>Stylesheet<br>Engine</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Step #2 - Select a Color Theme</h3>
+                    <p class="text-xs text-gray-600 mb-4">Select one from the 8 available color themes ranging from corporate to eclectic. Font type defaults to Helvetica.</p>
+                </div>
+                <div>
+                    <select id="themeSelect" class="w-full text-sm p-2 border border-gray-300 rounded-md bg-white mb-3">
+                        <option value="corporate">Corporate Blue</option>
+                        <option value="emerald">Emerald Green</option>
+                        <option value="sunset">Sunset Orange</option>
+                        <option value="purple">Royal Purple</option>
+                        <option value="dark">Slate Dark</option>
+                        <option value="eclectic">Eclectic Teal</option>
+                        <option value="crimson">Crimson Red</option>
+                        <option value="monochrome">Monochrome Gray</option>
+                    </select>
+                    <button onclick="previewLayout()" class="text-blue-600 hover:underline text-sm font-semibold">Apply Theme</button>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center flex flex-col justify-between">
+                <div>
+                    <div class="step-circle">Cloudflare<br>Hosting Guide</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Step #3 - Select Graphics</h3>
+                    <p class="text-xs text-gray-600 mb-4">Select an image graphic set per image container. Default optimized asset URLs are assigned automatically.</p>
+                </div>
+                <div>
+                    <select id="imageSelect" class="w-full text-sm p-2 border border-gray-300 rounded-md bg-white mb-3">
+                        <option value="tech">Tech & Modern Set</option>
+                        <option value="business">Business Professional Set</option>
+                        <option value="minimal">Abstract Geometry Set</option>
+                    </select>
+                    <a href="#previewArea" class="text-blue-600 hover:underline text-sm font-semibold">View Graphic Preset</a>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center flex flex-col justify-between">
+                <div>
+                    <div class="step-circle">Text &<br>Content<br>Input</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Step #4 - Key in your text & narrative</h3>
+                    <p class="text-xs text-gray-600 mb-4">Edit the placeholder texts below with your custom narrative. Container boxes fit standard layout defaults.</p>
+                </div>
+                <div>
+                    <input type="text" id="siteTitleInput" value="My Brand Name" placeholder="Website Title" class="w-full text-sm p-2 border border-gray-300 rounded-md mb-2">
+                    <textarea id="siteNarrativeInput" rows="2" placeholder="Website Heading / Subtitle" class="w-full text-sm p-2 border border-gray-300 rounded-md">Welcome to our high-quality custom brochure site.</textarea>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center flex flex-col justify-between">
+                <div>
+                    <div class="step-circle">Free<br>Deployment<br>Package</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Step #5 - Deploy in a free hosting site</h3>
+                    <p class="text-xs text-gray-600 mb-4">Your file is ready! Download the zip file containing your static HTML/CSS files to deploy to Cloudflare Pages or GitHub for free.</p>
+                </div>
+                <div>
+                    <button onclick="generateZipPackage()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md text-sm shadow transition">
+                        Download Zip File
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 6 / Customization Option -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center flex flex-col justify-between">
+                <div>
+                    <div class="step-circle">Custom<br>Support<br>Service</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Customize for a Minimal Fee</h3>
+                    <p class="text-xs text-gray-600 mb-4">Need revised layouts, extra pages, custom fonts, or automated deployment assistance? Contact our team.</p>
+                </div>
+                <div>
+                    <button onclick="alert('Contact form request submitted!')" class="w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-md text-sm shadow transition">
+                        Contact Support Team
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Interactive Live Preview Section -->
+        <div id="previewArea" class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">Live Website Preview</h2>
+            <div id="previewBox" class="p-8 border border-dashed border-gray-300 rounded-lg min-h-[250px] transition-all">
+                <!-- Dynamic Content Rendered Here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Styles Mapping
+        const themeColors = {
+            corporate: { bg: '#1e40af', text: '#ffffff', accent: '#3b82f6' },
+            emerald: { bg: '#065f46', text: '#ffffff', accent: '#10b981' },
+            sunset: { bg: '#9a3412', text: '#ffffff', accent: '#f97316' },
+            purple: { bg: '#5b21b6', text: '#ffffff', accent: '#8b5cf6' },
+            dark: { bg: '#0f172a', text: '#ffffff', accent: '#38bdf8' },
+            eclectic: { bg: '#115e59', text: '#ffffff', accent: '#14b8a6' },
+            crimson: { bg: '#991b1b', text: '#ffffff', accent: '#ef4444' },
+            monochrome: { bg: '#1f2937', text: '#ffffff', accent: '#9ca3af' }
+        };
+
+        function previewLayout() {
+            const title = document.getElementById('siteTitleInput').value || 'My Brand Name';
+            const narrative = document.getElementById('siteNarrativeInput').value || 'Welcome to our website.';
+            const themeKey = document.getElementById('themeSelect').value;
+            const theme = themeColors[themeKey];
+
+            const previewBox = document.getElementById('previewBox');
+            previewBox.style.fontFamily = 'Helvetica, Arial, sans-serif';
+            previewBox.innerHTML = `
+                <header style="background-color: ${theme.bg}; color: ${theme.text}; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
+                    <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 8px;">${title}</h1>
+                    <p style="font-size: 14px; opacity: 0.9;">${narrative}</p>
+                </header>
+                <main style="padding: 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <h3 style="font-size: 16px; font-weight: bold; color: #334155; margin-bottom: 8px;">Content Section</h3>
+                    <p style="font-size: 13px; color: #64748b;">This is a real-time generated preview of your brochure website. Customize the title and text in Step #4 to update this block.</p>
+                </main>
+            `;
+        }
+
+        // Initialize preview on page load
+        document.getElementById('siteTitleInput').addEventListener('input', previewLayout);
+        document.getElementById('siteNarrativeInput').addEventListener('input', previewLayout);
+        document.getElementById('themeSelect').addEventListener('change', previewLayout);
+        window.onload = previewLayout;
+
+        // Step 5: Dynamic Static Site ZIP Generation
+        function generateZipPackage() {
+            const title = document.getElementById('siteTitleInput').value || 'My Brand Name';
+            const narrative = document.getElementById('siteNarrativeInput').value || 'Welcome to our website.';
+            const themeKey = document.getElementById('themeSelect').value;
+            const theme = themeColors[themeKey];
+
+            const zip = new JSZip();
+
+            // Generated index.html
+            const htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${title}</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>${title}</h1>
+        <p>${narrative}</p>
+    </header>
+    <main class="site-content">
+        <h2>Welcome to Our Site</h2>
+        <p>This static website was created using the 5-Step Builder and deployed to free hosting.</p>
+    </main>
+</body>
+</html>`;
+
+            // Generated styles.css
+            const cssContent = `body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb;
+    color: #111827;
+}
+.site-header {
+    background-color: ${theme.bg};
+    color: ${theme.text};
+    padding: 40px 20px;
+    text-align: center;
+}
+.site-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 32px;
+}
+.site-header p {
+    margin: 0;
+    font-size: 16px;
+}
+.site-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}`;
+
+            // Add files to zip
+            zip.file("index.html", htmlContent);
+            zip.file("styles.css", cssContent);
+
+            // Trigger browser download
+            zip.generateAsync({ type: "blob" }).then(function(content) {
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(content);
+                link.download = "my_brochure_website.zip";
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>
