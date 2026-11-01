@@ -50,7 +50,7 @@
                         <option value="minimal">Minimalist Layout (Single Focus)</option>
                         <option value="creative">Creative Layout (Hero Header)</option>
                     </select>
-                    <button onclick="previewLayout()" class="text-blue-600 hover:underline text-sm font-semibold">Preview Skeleton</button>
+                    <button type="button" onclick="updatePreview()" class="text-blue-600 hover:underline text-sm font-semibold">Preview Skeleton</button>
                 </div>
             </div>
 
@@ -72,14 +72,14 @@
                         <option value="crimson">Crimson Red</option>
                         <option value="monochrome">Monochrome Gray</option>
                     </select>
-                    <button onclick="previewLayout()" class="text-blue-600 hover:underline text-sm font-semibold">Apply Theme</button>
+                    <button type="button" onclick="updatePreview()" class="text-blue-600 hover:underline text-sm font-semibold">Apply Theme</button>
                 </div>
             </div>
 
             <!-- Step 3 -->
             <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-center flex flex-col justify-between">
                 <div>
-                    <div class="step-circle">Cloudflare<br>Hosting Guide</div>
+                    <div class="step-circle">Graphics<br>Asset<br>Preset</div>
                     <h3 class="font-bold text-gray-900 mb-2">Step #3 - Select Graphics</h3>
                     <p class="text-xs text-gray-600 mb-4">Select an image graphic set per image container. Default optimized asset URLs are assigned automatically.</p>
                 </div>
@@ -114,7 +114,7 @@
                     <p class="text-xs text-gray-600 mb-4">Your file is ready! Download the zip file containing your static HTML/CSS files to deploy to Cloudflare Pages or GitHub for free.</p>
                 </div>
                 <div>
-                    <button onclick="generateZipPackage()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md text-sm shadow transition">
+                    <button type="button" onclick="generateZipPackage()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md text-sm shadow transition">
                         Download Zip File
                     </button>
                 </div>
@@ -128,7 +128,7 @@
                     <p class="text-xs text-gray-600 mb-4">Need revised layouts, extra pages, custom fonts, or automated deployment assistance? Contact our team.</p>
                 </div>
                 <div>
-                    <button onclick="alert('Contact form request submitted!')" class="w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-md text-sm shadow transition">
+                    <button type="button" onclick="alert('Contact request sent! Our support team will get in touch.')" class="w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-md text-sm shadow transition">
                         Contact Support Team
                     </button>
                 </div>
@@ -140,13 +140,12 @@
         <div id="previewArea" class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
             <h2 class="text-xl font-bold mb-4 text-gray-800">Live Website Preview</h2>
             <div id="previewBox" class="p-8 border border-dashed border-gray-300 rounded-lg min-h-[250px] transition-all">
-                <!-- Dynamic Content Rendered Here -->
+                <!-- Preview Content Rendered Here -->
             </div>
         </div>
     </div>
 
     <script>
-        // Theme Styles Mapping
         const themeColors = {
             corporate: { bg: '#1e40af', text: '#ffffff', accent: '#3b82f6' },
             emerald: { bg: '#065f46', text: '#ffffff', accent: '#10b981' },
@@ -158,42 +157,90 @@
             monochrome: { bg: '#1f2937', text: '#ffffff', accent: '#9ca3af' }
         };
 
-        function previewLayout() {
+        const graphicPresets = {
+            tech: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80',
+            business: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
+            minimal: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80'
+        };
+
+        function updatePreview() {
             const title = document.getElementById('siteTitleInput').value || 'My Brand Name';
             const narrative = document.getElementById('siteNarrativeInput').value || 'Welcome to our website.';
             const themeKey = document.getElementById('themeSelect').value;
-            const theme = themeColors[themeKey];
+            const layoutKey = document.getElementById('layoutSelect').value;
+            const imageKey = document.getElementById('imageSelect').value;
+            
+            const theme = themeColors[themeKey] || themeColors.corporate;
+            const graphicUrl = graphicPresets[imageKey] || graphicPresets.tech;
 
             const previewBox = document.getElementById('previewBox');
             previewBox.style.fontFamily = 'Helvetica, Arial, sans-serif';
-            previewBox.innerHTML = `
-                <header style="background-color: ${theme.bg}; color: ${theme.text}; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
-                    <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 8px;">${title}</h1>
-                    <p style="font-size: 14px; opacity: 0.9;">${narrative}</p>
-                </header>
-                <main style="padding: 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
-                    <h3 style="font-size: 16px; font-weight: bold; color: #334155; margin-bottom: 8px;">Content Section</h3>
-                    <p style="font-size: 13px; color: #64748b;">This is a real-time generated preview of your brochure website. Customize the title and text in Step #4 to update this block.</p>
-                </main>
-            `;
+
+            let layoutHTML = '';
+
+            if (layoutKey === 'minimal') {
+                layoutHTML = `
+                    <div style="text-align: center; padding: 40px 20px;">
+                        <h1 style="font-size: 28px; font-weight: bold; color: ${theme.bg}; margin-bottom: 12px;">${title}</h1>
+                        <p style="font-size: 15px; color: #475569; max-width: 500px; margin: 0 auto 24px auto;">${narrative}</p>
+                        <img src="${graphicUrl}" style="max-width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin: 0 auto;" />
+                    </div>`;
+            } else if (layoutKey === 'creative') {
+                layoutHTML = `
+                    <div style="background-color: ${theme.bg}; color: ${theme.text}; padding: 32px; border-radius: 8px; text-align: left;">
+                        <span style="background: ${theme.accent}; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase;">Creative Showcase</span>
+                        <h1 style="font-size: 30px; font-weight: bold; margin: 12px 0 8px 0;">${title}</h1>
+                        <p style="font-size: 14px; opacity: 0.9; margin-bottom: 20px;">${narrative}</p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+                        <img src="${graphicUrl}" style="width: 100%; height: 140px; object-fit: cover; border-radius: 6px;" />
+                        <div style="background: #f1f5f9; padding: 16px; border-radius: 6px; font-size: 13px; color: #334155;">
+                            <strong>Feature Details</strong>
+                            <p style="margin-top: 6px; color: #64748b;">Custom layout styled automatically based on your selected theme.</p>
+                        </div>
+                    </div>`;
+            } else {
+                // Corporate (Default)
+                layoutHTML = `
+                    <header style="background-color: ${theme.bg}; color: ${theme.text}; padding: 24px; border-radius: 8px; margin-bottom: 16px;">
+                        <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 8px;">${title}</h1>
+                        <p style="font-size: 14px; opacity: 0.9;">${narrative}</p>
+                    </header>
+                    <main style="display: flex; gap: 16px; align-items: center; padding: 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <img src="${graphicUrl}" style="width: 120px; height: 90px; object-fit: cover; border-radius: 6px;" />
+                        <div>
+                            <h3 style="font-size: 16px; font-weight: bold; color: #334155; margin-bottom: 4px;">Company Profile</h3>
+                            <p style="font-size: 13px; color: #64748b;">This is a real-time static website preview powered by your step choices above.</p>
+                        </div>
+                    </main>`;
+            }
+
+            previewBox.innerHTML = layoutHTML;
         }
 
-        // Initialize preview on page load
-        document.getElementById('siteTitleInput').addEventListener('input', previewLayout);
-        document.getElementById('siteNarrativeInput').addEventListener('input', previewLayout);
-        document.getElementById('themeSelect').addEventListener('change', previewLayout);
-        window.onload = previewLayout;
+        // Attach event listeners for instant automatic updates on inputs
+        document.getElementById('siteTitleInput').addEventListener('input', updatePreview);
+        document.getElementById('siteNarrativeInput').addEventListener('input', updatePreview);
+        document.getElementById('themeSelect').addEventListener('change', updatePreview);
+        document.getElementById('layoutSelect').addEventListener('change', updatePreview);
+        document.getElementById('imageSelect').addEventListener('change', updatePreview);
+
+        // Run preview load on page render
+        document.addEventListener('DOMContentLoaded', updatePreview);
+        window.onload = updatePreview;
 
         // Step 5: Dynamic Static Site ZIP Generation
         function generateZipPackage() {
             const title = document.getElementById('siteTitleInput').value || 'My Brand Name';
             const narrative = document.getElementById('siteNarrativeInput').value || 'Welcome to our website.';
             const themeKey = document.getElementById('themeSelect').value;
-            const theme = themeColors[themeKey];
+            const imageKey = document.getElementById('imageSelect').value;
+            
+            const theme = themeColors[themeKey] || themeColors.corporate;
+            const graphicUrl = graphicPresets[imageKey] || graphicPresets.tech;
 
             const zip = new JSZip();
 
-            // Generated index.html
             const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -208,13 +255,13 @@
         <p>${narrative}</p>
     </header>
     <main class="site-content">
-        <h2>Welcome to Our Site</h2>
-        <p>This static website was created using the 5-Step Builder and deployed to free hosting.</p>
+        <img src="${graphicUrl}" alt="Featured Graphic" class="featured-img" />
+        <h2>About Us</h2>
+        <p>This static website was built using our 5-Step Builder and deployed to free hosting.</p>
     </main>
 </body>
 </html>`;
 
-            // Generated styles.css
             const cssContent = `body {
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
@@ -243,13 +290,19 @@
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.featured-img {
+    max-width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 20px;
 }`;
 
-            // Add files to zip
             zip.file("index.html", htmlContent);
             zip.file("styles.css", cssContent);
 
-            // Trigger browser download
             zip.generateAsync({ type: "blob" }).then(function(content) {
                 const link = document.createElement("a");
                 link.href = URL.createObjectURL(content);
