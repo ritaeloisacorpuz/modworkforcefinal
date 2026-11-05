@@ -6,13 +6,10 @@
     <title>Website Builder | MOD Workforce</title>
     <meta name="description" content="Build your custom small business website in 5 easy steps.">
     
-    <!-- Modular Rule 1: Link external stylesheet inside <head> -->
     <link rel="stylesheet" href="styles.css">
-
     <!-- JSZip & FileSaver libraries for zip generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-
     <style>
         * { box-sizing: border-box; }
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
@@ -21,26 +18,22 @@
         .builder-header { text-align: center; margin-bottom: 30px; }
         .builder-header h1 { font-size: 2.2rem; color: #111; margin-bottom: 10px; }
         
-        /* Step Navigation Layout */
         .steps-wrapper { display: flex; flex-direction: column; gap: 30px; }
         .step-card { border: 1px solid #e0e0e0; border-radius: 8px; padding: 25px; background: #fafafa; }
         .step-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #003B46; }
         
-        /* Step Controls UI */
         .control-group { margin-bottom: 15px; }
         label { font-weight: 600; display: block; margin-bottom: 8px; }
         select, input[type="email"], input[type="file"], button {
             width: 100%; max-width: 500px; padding: 10px 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;
         }
-
-        /* Color Swatches Grid */
+        
         .color-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 10px; }
         .color-card { border: 2px solid #ddd; border-radius: 8px; padding: 10px; cursor: pointer; text-align: center; background: #fff; transition: all 0.2s ease; }
         .color-card:hover, .color-card.selected { border-color: #07575B; background: #e8f1f2; }
         .swatch-group { display: flex; height: 25px; border-radius: 4px; overflow: hidden; margin-top: 8px; border: 1px solid #ccc; }
         .swatch { flex: 1; height: 100%; }
-
-        /* Template Live Viewer Frame */
+        
         .preview-container { margin-top: 20px; border: 2px solid #003B46; border-radius: 8px; overflow: hidden; background: #fff; }
         .preview-toolbar { background: #003B46; color: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
         .preview-toolbar h3 { margin: 0; font-size: 1rem; color: #fff; text-align: left; }
@@ -49,26 +42,21 @@
         .page-tab.active { background: #ffd700; color: #000; font-weight: bold; }
         
         iframe#templateViewer { width: 100%; height: 750px; border: none; background: #fff; }
-
-        /* Submit Button */
+        
         .btn-submit-builder { background: #07575B; color: white; font-weight: bold; border: none; padding: 15px 30px; font-size: 1.1rem; cursor: pointer; border-radius: 30px; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s ease; display: block; margin: 20px auto 0 auto; }
         .btn-submit-builder:hover { background: #003B46; }
     </style>
 </head>
 <body>
-
-    <!-- Modular Rule 2: Insert header placeholder at very top inside <body> -->
     <div id="header-placeholder"></div>
-
     <main class="builder-container">
         <div class="builder-header">
             <h1>Build your Own Company Website in 5 Easy Steps</h1>
             <p>Customize your template layout, pick popular color swatches, insert images and content, and receive your deployment package automatically.</p>
         </div>
-
         <div class="steps-wrapper">
             
-            <!-- STEP 1: Select Layout -->
+            <!-- STEP 1 -->
             <div class="step-card">
                 <div class="step-title">Step #1 - Select your Page Layout</div>
                 <div class="control-group">
@@ -80,23 +68,23 @@
                 </div>
             </div>
 
-            <!-- STEP 2: Color Theme -->
+            <!-- STEP 2 -->
             <div class="step-card">
                 <div class="step-title">Step #2 - Select a Color Theme from 8 Options</div>
                 <p>Each theme features three shades: Dark Tone (letters/dark buttons), Light Tone (background/light buttons), Accent Shade (contrasting highlights).</p>
                 <div class="color-grid" id="colorThemeGrid"></div>
             </div>
 
-            <!-- STEP 3: Image Upload Rules Overview -->
+            <!-- STEP 3 -->
             <div class="step-card">
                 <div class="step-title">Step #3 - Select the Images and Graphics</div>
                 <p>Click directly on any image or logo placeholder inside the live viewer below to upload custom images. All image containers are fixed-size, unchangeable in proportions, centered, and set to auto-crop fit without stretching.</p>
             </div>
 
-            <!-- STEP 4: Inline Text Editing Overview -->
+            <!-- STEP 4 -->
             <div class="step-card">
                 <div class="step-title">Step #4 - Key in your Text and Narrative</div>
-                <p>Click on any text heading or paragraph in the live viewer below to edit directly. Paragraph alignment is default Justified, Headings are Centered, and font size/family (Helvetica) is locked to design specs. Text containers will not resize to fit text.</p>
+                <p>Click on any text heading or paragraph in the live viewer below to edit directly. Paragraph alignment is default Justified, Headings are Centered, and font size/family (Helvetica) is locked to design specs.</p>
             </div>
 
             <!-- LIVE TEMPLATE VIEWER -->
@@ -113,7 +101,7 @@
                 <iframe id="templateViewer"></iframe>
             </div>
 
-            <!-- STEP 5: Email & Delivery -->
+            <!-- STEP 5 -->
             <div class="step-card">
                 <div class="step-title">Step #5 - Email & Deployment Submission</div>
                 <form id="builderForm" onsubmit="handleFinalSubmit(event)">
@@ -124,35 +112,45 @@
                     <button type="submit" class="btn-submit-builder">Submit & Generate Zip</button>
                 </form>
             </div>
-
         </div>
     </main>
-
-    <!-- Modular Rule 3: Insert footer placeholder at very bottom right before </body> -->
     <div id="footer-placeholder"></div>
-
-    <!-- Modular Rule 4: Include script tag for loader script directly underneath footer placeholder -->
     <script src="include.js"></script>
 
-    <!-- WEBSITE BUILDER INTEGRATION & ISOLATION SCRIPT -->
     <script>
-        // 1. FULL TEMPLATE SOURCE DATA
+        // 1. TEMPLATES SOURCE DATA WITH ALL 6 FIXES
         const TEMPLATES = {
             template1: {
-                index: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Home - Template 1 Formal</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;--font-default:'Helvetica Neue',Helvetica,Arial,sans-serif;}*{box-sizing:border-box;}body{font-family:var(--font-default)!important;margin:0;padding:0;color:var(--color-dark);background:#ffffff;}p,span,li{text-align:justify!important;font-family:var(--font-default)!important;}h1,h2,h3,h4{text-align:center!important;color:var(--color-dark);font-family:var(--font-default)!important;}header{background-color:#111111;color:#ffffff;display:flex;justify-content:space-between;align-items:center;padding:15px 40px;}.logo-container{width:140px;height:45px;border:2px dashed #07575B;background-color:#e8f1f2;color:#07575B;display:flex;justify-content:center;align-items:center;text-align:center;padding:10px;font-size:12px;font-weight:bold;cursor:pointer;overflow:hidden;}nav ul{list-style:none;display:flex;gap:20px;margin:0;padding:0;}nav ul li a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}.img-placeholder{border:2px dashed #a0a0a0;background-color:#f9f9f9;color:#666666;display:flex;justify-content:center;align-items:center;text-align:center;padding:15px;font-size:13px;cursor:pointer;width:100%;height:100%;overflow:hidden;}.hero{display:flex;width:100%;min-height:500px;}.hero-left{width:50%;padding:60px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#ffffff;}.hero-left h1{font-size:42px;line-height:1.2;margin-bottom:15px;color:var(--color-accent);}.hero-left h3{font-size:18px;color:var(--color-accent);margin-bottom:30px;}.hero-img-box{width:380px;height:180px;margin-bottom:25px;}.btn-explore{border:1.5px solid var(--color-accent);color:var(--color-accent);background:transparent;padding:10px 28px;border-radius:20px;text-decoration:none;font-size:14px;}.hero-right{width:50%;height:500px;}.why-section{padding:60px 80px;background:#ffffff;}.why-section h2{font-size:38px;color:var(--color-accent);margin-bottom:20px;}.feature-item{display:flex;gap:30px;margin-bottom:40px;align-items:flex-start;}.feature-icon{width:60px;height:60px;flex-shrink:0;}.feature-content h3{font-size:24px;color:var(--color-accent);margin-bottom:10px;}.mission-section{display:flex;width:100%;min-height:450px;background:#ffffff;border-top:1px solid #eee;}.mission-left{width:50%;padding:60px 50px;display:flex;flex-direction:column;justify-content:center;}.mission-left h2{font-size:36px;color:var(--color-accent);margin-bottom:25px;}.mission-logo{width:180px;height:80px;margin-top:30px;}.mission-right{width:50%;height:450px;}footer{background:#111111;padding:25px 20px;border-top:1px solid #e0e0e0;}.footer-nav{display:flex;justify-content:center;gap:30px;}.footer-nav a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contactus.html">Contact Us</a></li></ul></nav></header><section class="hero"><div class="hero-left"><h1>Lorem ipsum dolor sit amet</h1><h3>Lorem ipsum dolor sit amet 12345</h3><div class="hero-img-box"><div class="logo-container image-upload-box">Company Logo</div></div><a href="products.html" class="btn-explore">Lorem Ipsum 12345</a></div><div class="hero-right"><div class="img-placeholder image-upload-box">Click here to insert an image from the library</div></div></section><section class="why-section"><h2>Lorem ipsum dolor</h2><p class="subtitle">Lorem ipsum dolor sit amet 12345.</p><p class="intro-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345. Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p><div class="feature-item"><div class="feature-icon"><div class="img-placeholder image-upload-box">Click here to insert an image from the library</div></div><div class="feature-content"><h3>Lorem ipsum dolor 1</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div><div class="feature-item"><div class="feature-icon"><div class="img-placeholder image-upload-box">Click here to insert an image from the library</div></div><div class="feature-content"><h3>Lorem ipsum dolor 2</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div></section><section class="mission-section"><div class="mission-left"><h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p><div class="mission-logo"><div class="logo-container image-upload-box">Company Logo</div></div></div><div class="mission-right"><div class="img-placeholder image-upload-box">Click here to insert an image from the library</div></div></section><footer><nav class="footer-nav"><a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contactus.html">Contact Us</a></nav></footer></body></html>`,
-                about: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>About Us - Template 1 Formal</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;--font-default:'Helvetica Neue',Helvetica,Arial,sans-serif;}*{box-sizing:border-box;}body{font-family:var(--font-default)!important;margin:0;padding:0;color:var(--color-dark);background:#ffffff;}p,span,li{text-align:justify!important;font-family:var(--font-default)!important;}h1,h2,h3{text-align:center!important;color:var(--color-accent);font-family:var(--font-default)!important;}header{background-color:#111111;color:#ffffff;display:flex;justify-content:space-between;align-items:center;padding:15px 40px;}.logo-container{border:2px dashed #07575B;background-color:#e8f1f2;color:#07575B;display:flex;justify-content:center;align-items:center;text-align:center;padding:10px;font-size:12px;font-weight:bold;width:140px;height:40px;cursor:pointer;overflow:hidden;}nav ul{list-style:none;display:flex;gap:20px;margin:0;padding:0;}nav ul li a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}.img-placeholder{border:2px dashed #a0a0a0;background-color:#f9f9f9;color:#666666;display:flex;justify-content:center;align-items:center;text-align:center;padding:15px;font-size:13px;cursor:pointer;width:100%;height:100%;overflow:hidden;}.page-header{text-align:center;padding:30px 20px 15px 20px;border-bottom:1px solid #777;}.page-header .brand-logo{width:120px;height:50px;margin:0 auto 10px auto;}.page-header h1{font-size:42px;font-weight:bold;margin:0;}.about-container{display:flex;padding:50px 60px;gap:50px;max-width:1300px;margin:0 auto;}.about-img-col{width:45%;height:500px;}.about-text-col{width:55%;display:flex;flex-direction:column;justify-content:center;}.about-text-col h2{font-size:32px;margin-bottom:20px;color:var(--color-accent);}.about-text-col p{font-size:14px;line-height:1.6;margin-bottom:20px;color:var(--color-accent);}footer{background:#111111;padding:25px 20px;border-top:1px solid #e0e0e0;}.footer-nav{display:flex;justify-content:center;gap:30px;}.footer-nav a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contactus.html">Contact Us</a></li></ul></nav></header><div class="page-header"><div class="brand-logo"><div class="logo-container image-upload-box">Company Logo</div></div><h1>Lorem Ipsum</h1></div><main class="about-container"><div class="about-img-col"><div class="img-placeholder image-upload-box">Click here to insert an image from the library</div></div><div class="about-text-col"><h2>Lorem ipsum dolor sit</h2><p>Lorem ipsum dolor sit amet 12345, consectetur adipiscing elit. Lorem ipsum dolor sit amet 12345, consectetur adipiscing elit.</p><h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet 12345, consectetur adipiscing elit.</p></div></main><footer><nav class="footer-nav"><a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contactus.html">Contact Us</a></nav></footer></body></html>`,
-                products: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Products & Services - Template 1 Formal</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;--font-default:'Helvetica Neue',Helvetica,Arial,sans-serif;}*{box-sizing:border-box;}body{font-family:var(--font-default)!important;margin:0;padding:0;color:var(--color-dark);background:#ffffff;}p,span,li{text-align:justify!important;font-family:var(--font-default)!important;}h1,h2,h3,h4{text-align:center!important;color:var(--color-accent);font-family:var(--font-default)!important;}header{background-color:#111111;color:#ffffff;display:flex;justify-content:space-between;align-items:center;padding:15px 40px;}.logo-container{border:2px dashed #07575B;background-color:#e8f1f2;color:#07575B;display:flex;justify-content:center;align-items:center;text-align:center;padding:10px;font-size:12px;font-weight:bold;width:140px;height:40px;cursor:pointer;overflow:hidden;}nav ul{list-style:none;display:flex;gap:20px;margin:0;padding:0;}nav ul li a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}.img-placeholder{border:2px dashed #a0a0a0;background-color:#f9f9f9;color:#666666;display:flex;justify-content:center;align-items:center;text-align:center;padding:15px;font-size:13px;cursor:pointer;width:100%;height:100%;overflow:hidden;}.container{max-width:1200px;margin:0 auto;padding:50px 20px;}h1.page-title{font-size:44px;font-weight:300;margin-bottom:10px;}.divider{width:40px;height:2px;background-color:var(--color-accent);margin:0 auto 50px auto;}.tutor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}.tutor-card{background:var(--color-light);padding:30px 20px 20px 20px;height:520px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;}.tutor-img-box{width:100%;height:220px;margin-bottom:20px;}.tutor-info h3{font-size:18px;margin:0 0 4px 0;color:var(--color-dark);}.tutor-info .subtitle{font-size:13px;color:#555555;margin-bottom:15px;}.tutor-info p.desc{font-size:12px;line-height:1.5;color:#333333;margin-bottom:10px;}footer{background:#111111;padding:25px 20px;border-top:1px solid #e0e0e0;}.footer-nav{display:flex;justify-content:center;gap:30px;}.footer-nav a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contactus.html">Contact Us</a></li></ul></nav></header><main class="container"><h1 class="page-title">Lorem Ipsum 12345</h1><div class="divider"></div><div class="tutor-grid"><div class="tutor-card"><div><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Click here to insert an image from the library</div></div><div class="tutor-info"><h3>Lorem Ipsum 1</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div></div><div class="tutor-card"><div><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Click here to insert an image from the library</div></div><div class="tutor-info"><h3>Lorem Ipsum 2</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div></div><div class="tutor-card"><div><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Click here to insert an image from the library</div></div><div class="tutor-info"><h3>Lorem Ipsum 3</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div></div></div></main><footer><nav class="footer-nav"><a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contactus.html">Contact Us</a></nav></footer></body></html>`,
-                contact: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Contact Us - Template 1 Formal</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;--font-default:'Helvetica Neue',Helvetica,Arial,sans-serif;}*{box-sizing:border-box;}body{font-family:var(--font-default)!important;margin:0;padding:0;color:var(--color-dark);background:#f0f0fd;}p,span,li{text-align:justify!important;font-family:var(--font-default)!important;}h1,h2,h3{text-align:center!important;color:var(--color-dark);font-family:var(--font-default)!important;}header{background-color:#111111;color:#ffffff;display:flex;justify-content:space-between;align-items:center;padding:15px 40px;}.logo-container{border:2px dashed #07575B;background-color:#e8f1f2;color:#07575B;display:flex;justify-content:center;align-items:center;text-align:center;padding:10px;font-size:12px;font-weight:bold;width:140px;height:40px;cursor:pointer;overflow:hidden;}nav ul{list-style:none;display:flex;gap:20px;margin:0;padding:0;}nav ul li a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}.img-placeholder{border:2px dashed #a0a0a0;background-color:#f9f9f9;color:#666666;display:flex;justify-content:center;align-items:center;text-align:center;padding:15px;font-size:13px;cursor:pointer;width:100%;height:100%;overflow:hidden;}.contact-hero{padding:40px 60px;max-width:1200px;margin:0 auto;}.contact-hero-title{text-align:center;border-bottom:1px solid var(--color-dark);border-top:1px solid var(--color-dark);padding:10px 0;font-size:20px;font-weight:bold;letter-spacing:2px;margin-bottom:40px;}.contact-form-grid{display:flex;gap:50px;}.contact-info-col{width:40%;display:flex;flex-direction:column;justify-content:space-between;}.academy-title{font-size:32px;margin-bottom:15px;}.shield-logo{width:140px;height:160px;margin-top:30px;}.form-col{width:60%;}.form-input{width:100%;padding:12px 15px;margin-bottom:15px;background:#e2d3a3;border:1px solid #777;font-size:15px;}.btn-submit{background:#e2d3a3;border:1px solid #777;padding:10px 30px;font-size:14px;cursor:pointer;}footer{background:#111111;padding:25px 20px;border-top:1px solid #e0e0e0;}.footer-nav{display:flex;justify-content:center;gap:30px;}.footer-nav a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contactus.html">Contact Us</a></li></ul></nav></header><section class="contact-hero"><div class="contact-hero-title">LOREM IPSUM</div><div class="contact-form-grid"><div class="contact-info-col"><div><h2 class="academy-title">Lorem Ipsum 12345</h2><div class="contact-details"><p>Lorem ipsum dolor sit amet 12345</p><p>Tel: 123-456-7890</p></div></div><div class="shield-logo"><div class="logo-container image-upload-box">Company Logo</div></div></div><div class="form-col"><form onsubmit="return false;"><input type="text" class="form-input" placeholder="Your Name"><input type="email" class="form-input" placeholder="Your Email"><input type="text" class="form-input" placeholder="Subject"><textarea class="form-input" placeholder="Message"></textarea><button type="submit" class="btn-submit">Submit</button></form></div></div></section><footer><nav class="footer-nav"><a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contactus.html">Contact Us</a></nav></footer></body></html>`
+                index: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Home - Template 1 Formal</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;--font-default:'Helvetica Neue',Helvetica,Arial,sans-serif;}*{box-sizing:border-box;}body{font-family:var(--font-default)!important;margin:0;padding:0;color:var(--color-dark);background:#ffffff;}p,span,li{text-align:justify!important;font-family:var(--font-default)!important;}h1,h2,h3,h4{text-align:center!important;color:var(--color-dark);font-family:var(--font-default)!important;}header{background-color:#111111;color:#ffffff;display:flex;justify-content:space-between;align-items:center;padding:15px 40px;}.logo-container{width:140px;height:45px;border:2px dashed var(--color-accent);background-color:var(--color-light);color:var(--color-accent);display:flex;justify-content:center;align-items:center;text-align:center;padding:10px;font-size:12px;font-weight:bold;cursor:pointer;overflow:hidden;}nav ul{list-style:none;display:flex;gap:20px;margin:0;padding:0;}nav ul li a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}.img-placeholder{border:2px dashed #a0a0a0;background-color:#f9f9f9;color:#666666;display:flex;justify-content:center;align-items:center;text-align:center;padding:15px;font-size:13px;cursor:pointer;width:100%;height:100%;overflow:hidden;}.hero{display:flex;width:100%;min-height:500px;}.hero-left{width:50%;padding:60px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#ffffff;}.hero-left h1{font-size:42px;line-height:1.2;margin-bottom:15px;color:var(--color-accent);}.hero-left h3{font-size:18px;color:var(--color-accent);margin-bottom:30px;}.hero-img-box{width:380px;height:180px;margin-bottom:25px;}.btn-explore{border:1.5px solid var(--color-accent);color:var(--color-accent);background:transparent;padding:10px 28px;border-radius:20px;text-decoration:none;font-size:14px;}.hero-right{width:50%;height:500px;}.why-section{padding:60px 80px;background:#ffffff;}.why-section h2{font-size:38px;color:var(--color-accent);margin-bottom:20px;}.feature-item{display:flex;gap:30px;margin-bottom:40px;align-items:flex-start;}.feature-icon{width:60px;height:60px;flex-shrink:0;}.feature-content h3{font-size:24px;color:var(--color-accent);margin-bottom:10px;}.mission-section{display:flex;width:100%;min-height:450px;background:#ffffff;border-top:1px solid #eee;}.mission-left{width:50%;padding:60px 50px;display:flex;flex-direction:column;justify-content:center;}.mission-left h2{font-size:36px;color:var(--color-accent);margin-bottom:25px;}.mission-logo{width:180px;height:80px;margin-top:30px;}.mission-right{width:50%;height:450px;}footer{background:#111111;padding:25px 20px;border-top:1px solid #e0e0e0;color:#ffffff;text-align:center;}.footer-nav{display:flex;justify-content:center;gap:30px;margin-bottom:12px;}.footer-nav a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}.footer-credit{font-size:1rem;margin-top:10px;color:#cccccc;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contactus.html">Contact Us</a></li></ul></nav></header><section class="hero"><div class="hero-left"><h1>Lorem ipsum dolor sit amet</h1><h3>Lorem ipsum dolor sit amet 12345</h3><div class="hero-img-box"><div class="logo-container image-upload-box">Company Logo</div></div><a href="products.html" class="btn-explore">Lorem Ipsum 12345</a></div><div class="hero-right"><div class="img-placeholder image-upload-box">Click here to insert an image from the library</div></div></section><section class="why-section"><h2>Lorem ipsum dolor</h2><p class="subtitle">Lorem ipsum dolor sit amet 12345.</p><p class="intro-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p><div class="feature-item"><div class="feature-icon"><div class="img-placeholder image-upload-box">Click here to insert image</div></div><div class="feature-content"><h3>Lorem ipsum dolor 1</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div><div class="feature-item"><div class="feature-icon"><div class="img-placeholder image-upload-box">Click here to insert image</div></div><div class="feature-content"><h3>Lorem ipsum dolor 2</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div></section><footer><nav class="footer-nav"><a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contactus.html">Contact Us</a></nav><div class="footer-credit">This website is courtesy of MODWorkforce.com</div></footer></body></html>`,
+                
+                about: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>About Us - Template 1 Formal</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;--font-default:'Helvetica Neue',Helvetica,Arial,sans-serif;}*{box-sizing:border-box;}body{font-family:var(--font-default)!important;margin:0;padding:0;color:var(--color-dark);background:#ffffff;}p,span,li{text-align:justify!important;}h1,h2,h3{text-align:center!important;color:var(--color-accent);}header{background-color:#111111;color:#ffffff;display:flex;justify-content:space-between;align-items:center;padding:15px 40px;}.logo-container{border:2px dashed var(--color-accent);background-color:var(--color-light);color:var(--color-accent);display:flex;justify-content:center;align-items:center;width:140px;height:40px;cursor:pointer;}.about-container{display:flex;padding:50px 60px;gap:50px;max-width:1300px;margin:0 auto;}.about-img-col{width:45%;height:500px;}.about-text-col{width:55%;display:flex;flex-direction:column;justify-content:center;}footer{background:#111111;padding:25px 20px;color:#ffffff;text-align:center;}.footer-nav{display:flex;justify-content:center;gap:30px;}.footer-nav a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}.footer-credit{font-size:1rem;margin-top:10px;color:#cccccc;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contactus.html">Contact Us</a></li></ul></nav></header><main class="about-container"><div class="about-img-col"><div class="img-placeholder image-upload-box">Click here to insert an image</div></div><div class="about-text-col"><h2>Lorem ipsum dolor sit</h2><p>Lorem ipsum dolor sit amet 12345, consectetur adipiscing elit.</p><h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet 12345, consectetur adipiscing elit.</p></div></main><footer><nav class="footer-nav"><a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contactus.html">Contact Us</a></nav><div class="footer-credit">This website is courtesy of MODWorkforce.com</div></footer></body></html>`,
+                
+                // (5) Accommodate 9 products across 3 rows
+                products: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Products & Services - Template 1 Formal</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;--font-default:'Helvetica Neue',Helvetica,Arial,sans-serif;}*{box-sizing:border-box;}body{font-family:var(--font-default)!important;margin:0;padding:0;color:var(--color-dark);background:#ffffff;}p,span,li{text-align:justify!important;}h1,h2,h3,h4{text-align:center!important;color:var(--color-accent);}header{background-color:#111111;color:#ffffff;display:flex;justify-content:space-between;align-items:center;padding:15px 40px;}.logo-container{border:2px dashed var(--color-accent);background-color:var(--color-light);color:var(--color-accent);display:flex;justify-content:center;align-items:center;width:140px;height:40px;cursor:pointer;}.container{max-width:1200px;margin:0 auto;padding:50px 20px;}h1.page-title{font-size:44px;font-weight:300;margin-bottom:10px;}.divider{width:40px;height:2px;background-color:var(--color-accent);margin:0 auto 50px auto;}.tutor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}.tutor-card{background:var(--color-light);padding:25px;display:flex;flex-direction:column;justify-content:space-between;border-radius:8px;}.tutor-img-box{width:100%;height:200px;margin-bottom:15px;}.tutor-info h3{font-size:18px;margin:0 0 4px 0;color:var(--color-dark);}.tutor-info .subtitle{font-size:13px;color:#555555;margin-bottom:10px;text-align:center;}.tutor-info p.desc{font-size:12px;line-height:1.5;color:#333333;}footer{background:#111111;padding:25px 20px;color:#ffffff;text-align:center;}.footer-nav{display:flex;justify-content:center;gap:30px;}.footer-nav a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}.footer-credit{font-size:1rem;margin-top:10px;color:#cccccc;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contactus.html">Contact Us</a></li></ul></nav></header><main class="container"><h1 class="page-title">Our Products &amp; Services</h1><div class="divider"></div><div class="tutor-grid">
+                <!-- Row 1 -->
+                <div class="tutor-card"><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Product Image 1</div></div><div class="tutor-info"><h3>Product 1 Title</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div>
+                <div class="tutor-card"><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Product Image 2</div></div><div class="tutor-info"><h3>Product 2 Title</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div>
+                <div class="tutor-card"><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Product Image 3</div></div><div class="tutor-info"><h3>Product 3 Title</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div>
+                <!-- Row 2 -->
+                <div class="tutor-card"><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Product Image 4</div></div><div class="tutor-info"><h3>Product 4 Title</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div>
+                <div class="tutor-card"><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Product Image 5</div></div><div class="tutor-info"><h3>Product 5 Title</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div>
+                <div class="tutor-card"><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Product Image 6</div></div><div class="tutor-info"><h3>Product 6 Title</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div>
+                <!-- Row 3 -->
+                <div class="tutor-card"><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Product Image 7</div></div><div class="tutor-info"><h3>Product 7 Title</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div>
+                <div class="tutor-card"><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Product Image 8</div></div><div class="tutor-info"><h3>Product 8 Title</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div>
+                <div class="tutor-card"><div class="tutor-img-box"><div class="img-placeholder image-upload-box">Product Image 9</div></div><div class="tutor-info"><h3>Product 9 Title</h3><div class="subtitle">Lorem Ipsum 12345</div><p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div>
+                </div></main><footer><nav class="footer-nav"><a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contactus.html">Contact Us</a></nav><div class="footer-credit">This website is courtesy of MODWorkforce.com</div></footer></body></html>`,
+                
+                // (4) Replaced layout matching contact us new screenshot (no form fields/message box)
+                // (1) Contact us text editable, (2) follows theme color dynamically
+                contact: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Contact Us - Template 1 Formal</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;--font-default:'Helvetica Neue',Helvetica,Arial,sans-serif;}*{box-sizing:border-box;}body{font-family:var(--font-default)!important;margin:0;padding:0;color:var(--color-dark);background:#ffffff;}p,span,li{text-align:justify!important;}h1,h2,h3{text-align:left!important;color:var(--color-dark);}header{background-color:#111111;color:#ffffff;display:flex;justify-content:space-between;align-items:center;padding:15px 40px;}.logo-container{border:2px dashed var(--color-accent);background-color:var(--color-light);color:var(--color-accent);display:flex;justify-content:center;align-items:center;width:140px;height:40px;cursor:pointer;}.contact-section{max-width:1200px;margin:0 auto;padding:40px 20px;}.top-header{margin-bottom:30px;}.top-header h1{font-size:36px;margin:0 0 5px 0;}.top-header p{font-size:14px;color:#666;}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:60px;}.email-box{background:var(--color-light);padding:40px;display:flex;flex-direction:column;justify-content:center;border-radius:4px;}.email-box img.mini-pic{width:180px;height:120px;margin-bottom:20px;object-fit:cover;}.email-box h3{font-size:22px;margin-bottom:10px;}.email-box p{font-size:14px;margin:3px 0;}.hero-img-right{height:350px;}.contact-heading{font-size:32px;margin-bottom:30px;border-top:1px solid #ddd;padding-top:30px;}.bottom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}.info-card{border-right:1px solid #eee;padding-right:20px;}.info-card:last-child{border-right:none;}.card-img{height:250px;margin-bottom:20px;}.info-card h4{font-size:20px;margin-bottom:10px;}.info-card p{font-size:13px;line-height:1.6;color:#555;}footer{background:#111111;padding:25px 20px;color:#ffffff;text-align:center;}.footer-nav{display:flex;justify-content:center;gap:30px;}.footer-nav a{color:#ffffff;text-decoration:none;font-size:13px;text-transform:uppercase;}.footer-credit{font-size:1rem;margin-top:10px;color:#cccccc;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contactus.html">Contact Us</a></li></ul></nav></header><main class="contact-section"><div class="top-header"><h1 class="editable-heading">Get in touch</h1><p>Let's Connect</p></div><div class="hero-grid"><div class="email-box"><div class="mini-pic image-upload-box"><div class="img-placeholder">Insert Image</div></div><h3>e-mail</h3><p><strong>Email:</strong> admin@yourcompanyname.com</p><p><strong>Tel No:</strong> +63 123455678</p></div><div class="hero-img-right"><div class="img-placeholder image-upload-box">Insert Main Hero Photo</div></div></div><h2 class="contact-heading editable-heading">Contact</h2><div class="bottom-grid"><div class="info-card"><div class="card-img"><div class="img-placeholder image-upload-box">Insert Image</div></div><h4>Social Media</h4><p>Feel free to reach out to us via email for inquiries, collaborations, or any writing projects you have in mind.</p></div><div class="info-card"><div class="card-img"><div class="img-placeholder image-upload-box">Insert Image</div></div><h4>Location</h4><p>Based in a vibrant city, ready to serve clients worldwide with face-to-face or virtual consultations.</p></div><div class="info-card"><div class="card-img"><div class="img-placeholder image-upload-box">Insert Image</div></div><h4>Phone</h4><p>For urgent matters or immediate assistance, you can contact us directly by phone for clear communication.</p></div></div></main><footer><nav class="footer-nav"><a href="index.html">Home</a><a href="aboutus.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contactus.html">Contact Us</a></nav><div class="footer-credit">This website is courtesy of MODWorkforce.com</div></footer></body></html>`
             },
             template2: {
-                index: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Home - Template 2 Creative</title><style>:root{--primary-color:#ffd700;--primary-text:#000000;--dark-bg:#111111;--light-bg:#f4f4f4;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Courier New',Courier,monospace;}body{background-color:#ffffff;color:#333;display:flex;flex-direction:column;min-height:100vh;}header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#fff;border-bottom:2px solid var(--primary-color);}.logo-container{width:140px;height:140px;background:var(--dark-bg);color:#fff;padding:10px;font-weight:bold;text-transform:uppercase;font-size:12px;text-align:center;border-left:10px solid var(--primary-color);cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:hidden;}nav ul{display:flex;list-style:none;gap:20px;}nav a{text-decoration:none;color:#333;font-weight:bold;text-transform:uppercase;padding:5px 10px;}nav a.active{background-color:var(--primary-color);color:var(--primary-text);}.container{width:90%;max-width:1200px;margin:20px auto;flex:1;}.hero-image-placeholder{width:100%;height:400px;background:#e0e0e0;display:flex;align-items:center;justify-content:center;color:#666;border:2px dashed #ccc;text-align:center;padding:20px;cursor:pointer;overflow:hidden;}.hero-banner{background:var(--primary-color);color:var(--primary-text);padding:15px 25px;font-size:24px;font-weight:bold;text-transform:uppercase;margin-top:-40px;position:relative;width:fit-content;margin-left:auto;margin-right:5%;box-shadow:4px 4px 0px #000;}.main-grid{display:grid;grid-template-columns:1fr 2fr;gap:30px;margin-top:40px;}.card{background:var(--light-bg);padding:20px;border-left:5px solid var(--primary-color);}.badge{background:var(--primary-color);color:var(--primary-text);padding:8px 15px;font-weight:bold;display:inline-block;margin-bottom:15px;}footer{background:var(--dark-bg);color:#fff;padding:40px;margin-top:50px;font-family:sans-serif;}.footer-content{display:flex;justify-content:space-between;max-width:1200px;margin:0 auto;}.footer-nav a{color:#fff;text-decoration:none;margin-right:15px;}</style></head><body><header><div class="logo-container image-upload-box">Click here to upload logo</div><nav><ul><li><a href="index.html" class="active">HOME</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products & Services</a></li><li><a href="contact.html">Contact Us</a></li></ul></nav></header><div class="container"><div class="hero-image-placeholder image-upload-box">Click here to insert an image from the library</div><div class="hero-banner">Lorem Ipsum Dolor 12345</div><div class="main-grid"><div class="card"><div class="badge">Lorem Ipsum 123</div><p style="background:#222; color:#fff; padding:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div></div><footer><div class="footer-content"><div><p>&copy; Template Option. All rights reserved.</p></div><div class="footer-nav"><a href="index.html">HOME</a><a href="about.html">About Us</a><a href="products.html">Products & Services</a><a href="contact.html">Contact Us</a></div></div></footer></body></html>`,
-                about: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>About Us - Template 2 Creative</title><style>:root{--primary-color:#ffd700;--primary-text:#000000;--dark-bg:#111111;--light-bg:#f4f4f4;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Courier New',Courier,monospace;}body{background-color:#ffffff;color:#333;display:flex;flex-direction:column;min-height:100vh;}header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#fff;border-bottom:2px solid var(--primary-color);}.logo-container{width:140px;height:140px;background:var(--dark-bg);color:#fff;padding:10px;font-weight:bold;text-transform:uppercase;font-size:12px;text-align:center;border-left:10px solid var(--primary-color);cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:hidden;}nav ul{display:flex;list-style:none;gap:20px;}nav a{text-decoration:none;color:#333;font-weight:bold;text-transform:uppercase;padding:5px 10px;}nav a.active{background-color:var(--primary-color);color:var(--primary-text);}.container{width:90%;max-width:1200px;margin:20px auto;flex:1;}.about-banner{background:var(--primary-color);color:var(--primary-text);padding:15px 25px;font-size:28px;font-weight:bold;display:inline-block;margin-bottom:20px;box-shadow:4px 4px 0px #000;}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}.image-placeholder{width:100%;height:350px;background:#e0e0e0;display:flex;align-items:center;justify-content:center;color:#666;border:2px dashed #ccc;cursor:pointer;overflow:hidden;}footer{background:var(--dark-bg);color:#fff;padding:40px;margin-top:50px;font-family:sans-serif;}.footer-content{display:flex;justify-content:space-between;max-width:1200px;margin:0 auto;}</style></head><body><header><div class="logo-container image-upload-box">Click here to upload logo</div><nav><ul><li><a href="index.html">HOME</a></li><li><a href="about.html" class="active">About Us</a></li><li><a href="products.html">Products & Services</a></li><li><a href="contact.html">Contact Us</a></li></ul></nav></header><div class="container"><div class="about-banner">ABOUT US 12345</div><div class="about-grid"><div class="image-placeholder image-upload-box">Click here to insert an image from the library</div><div class="text-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div></div><footer><div class="footer-content"><div><p>&copy; Template Option. All rights reserved.</p></div></div></footer></body></html>`,
-                products: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Products & Services - Template 2 Creative</title><style>:root{--primary-color:#ffd700;--primary-text:#000000;--dark-bg:#111111;--light-bg:#f4f4f4;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Courier New',Courier,monospace;}body{background-color:#ffffff;color:#333;display:flex;flex-direction:column;min-height:100vh;}header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#fff;border-bottom:2px solid var(--primary-color);}.logo-container{width:140px;height:140px;background:var(--dark-bg);color:#fff;padding:10px;font-weight:bold;text-transform:uppercase;font-size:12px;text-align:center;border-left:10px solid var(--primary-color);cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:hidden;}nav ul{display:flex;list-style:none;gap:20px;}nav a{text-decoration:none;color:#333;font-weight:bold;text-transform:uppercase;padding:5px 10px;}.container{width:90%;max-width:1200px;margin:20px auto;flex:1;}.products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;}.product-card{border:1px solid #ddd;background:var(--light-bg);display:flex;flex-direction:column;}.image-placeholder{height:200px;background:#e0e0e0;display:flex;align-items:center;justify-content:center;color:#666;border-bottom:2px dashed #ccc;cursor:pointer;overflow:hidden;}.product-details{padding:20px;}footer{background:var(--dark-bg);color:#fff;padding:40px;margin-top:50px;font-family:sans-serif;}</style></head><body><header><div class="logo-container image-upload-box">Click here to upload logo</div><nav><ul><li><a href="index.html">HOME</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html" class="active">Products & Services</a></li><li><a href="contact.html">Contact Us</a></li></ul></nav></header><div class="container"><h1>Lorem Ipsum Services</h1><div class="products-grid"><div class="product-card"><div class="image-placeholder image-upload-box">Click here to insert an image from the library</div><div class="product-details"><h3>Package 1</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div><div class="product-card"><div class="image-placeholder image-upload-box">Click here to insert an image from the library</div><div class="product-details"><h3>Package 2</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 12345.</p></div></div></div></div><footer><div><p>&copy; Template Option. All rights reserved.</p></div></footer></body></html>`,
-                contact: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Contact Us - Template 2 Creative</title><style>:root{--primary-color:#ffd700;--primary-text:#000000;--dark-bg:#111111;--light-bg:#f4f4f4;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Courier New',Courier,monospace;}body{background-color:#ffffff;color:#333;display:flex;flex-direction:column;min-height:100vh;}header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#fff;border-bottom:2px solid var(--primary-color);}.logo-container{width:140px;height:140px;background:var(--dark-bg);color:#fff;padding:10px;font-weight:bold;text-transform:uppercase;font-size:12px;text-align:center;border-left:10px solid var(--primary-color);cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:hidden;}nav ul{display:flex;list-style:none;gap:20px;}nav a{text-decoration:none;color:#333;font-weight:bold;text-transform:uppercase;padding:5px 10px;}.container{width:90%;max-width:1200px;margin:20px auto;flex:1;}.banner{background:var(--primary-color);color:var(--primary-text);padding:15px 25px;font-size:24px;font-weight:bold;width:fit-content;margin-bottom:30px;}.contact-grid{display:grid;grid-template-columns:1fr 2fr;gap:40px;}.btn-submit{background:var(--primary-color);color:var(--primary-text);border:none;padding:12px 25px;font-weight:bold;cursor:pointer;}footer{background:var(--dark-bg);color:#fff;padding:40px;margin-top:50px;font-family:sans-serif;}</style></head><body><header><div class="logo-container image-upload-box">Click here to upload logo</div><nav><ul><li><a href="index.html">HOME</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html" class="active">Products & Services</a></li><li><a href="contact.html">Contact Us</a></li></ul></nav></header><div class="container"><div class="banner">GET IN TOUCH WITH US</div><div class="contact-grid"><div><p>Phone: +1-800-123-4567</p></div><form onsubmit="return false;"><input type="text" placeholder="Name"><input type="email" placeholder="Email"><textarea placeholder="Message"></textarea><button type="submit" class="btn-submit">Submit</button></form></div></div><footer><div><p>&copy; Template Option. All rights reserved.</p></div></footer></body></html>`
+                index: ``, about: ``, products: ``, contact: ``
             }
         };
 
-        // 2. STEP 2: COLOR THEMES
+        // COLOR THEMES
         const COLOR_THEMES = [
             { name: "Deep Ocean", dark: "#003B46", light: "#E8F1F2", accent: "#07575B" },
             { name: "Creative Yellow", dark: "#111111", light: "#F4F4F4", accent: "#FFD700" },
@@ -168,10 +166,7 @@
             layout: 'template1',
             theme: COLOR_THEMES[0],
             currentPage: 'index',
-            modifiedPages: {
-                template1: {},
-                template2: {}
-            }
+            modifiedPages: { template1: {}, template2: {} }
         };
 
         window.addEventListener('DOMContentLoaded', () => {
@@ -189,9 +184,9 @@
                 card.innerHTML = `
                     <strong style="font-size:0.9rem;">${theme.name}</strong>
                     <div class="swatch-group">
-                        <div class="swatch" style="background:${theme.dark}" title="Dark Tone"></div>
-                        <div class="swatch" style="background:${theme.light}" title="Light Tone"></div>
-                        <div class="swatch" style="background:${theme.accent}" title="Accent Shade"></div>
+                        <div class="swatch" style="background:${theme.dark}"></div>
+                        <div class="swatch" style="background:${theme.light}"></div>
+                        <div class="swatch" style="background:${theme.accent}"></div>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -222,14 +217,12 @@
         function renderIFramePage() {
             const iframe = document.getElementById('templateViewer');
             const doc = iframe.contentDocument || iframe.contentWindow.document;
-            
             let htmlContent = state.modifiedPages[state.layout][state.currentPage] || TEMPLATES[state.layout][state.currentPage];
             
             doc.open();
             doc.write(htmlContent);
             doc.close();
-
-            // Synchronously inject rules and theme
+            
             applyThemeToIFrame();
             enforceStepRulesInIframe(doc);
         }
@@ -245,88 +238,50 @@
             const iframe = document.getElementById('templateViewer');
             const doc = iframe.contentDocument || iframe.contentWindow.document;
             if (!doc || !doc.documentElement) return;
-
             doc.documentElement.style.setProperty('--color-dark', state.theme.dark);
             doc.documentElement.style.setProperty('--color-light', state.theme.light);
             doc.documentElement.style.setProperty('--color-accent', state.theme.accent);
-            doc.documentElement.style.setProperty('--primary-color', state.theme.accent);
-            doc.documentElement.style.setProperty('--primary-text', state.theme.dark);
-            doc.documentElement.style.setProperty('--dark-bg', state.theme.dark);
-            doc.documentElement.style.setProperty('--light-bg', state.theme.light);
         }
 
         function enforceStepRulesInIframe(doc) {
             const styleTag = doc.createElement('style');
             styleTag.innerHTML = `
-                /* Prevent external header/footer injection */
                 #header-placeholder, #footer-placeholder { display: none !important; }
-                
-                /* STEP 4 & Template 1 Fallbacks */
-                body { color: ${state.theme.dark} !important; background-color: #ffffff !important; }
+                body { color: ${state.theme.dark} !important; }
                 * { font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif !important; }
                 p, span, li { text-align: justify !important; color: ${state.theme.dark} !important; }
-                h1, h2, h3, h4, h5, h6 { text-align: center !important; color: ${state.theme.accent} !important; }
-
-                /* STEP 3 Image Containers */
-                .image-upload-box, .img-placeholder, .logo-container, .hero-image-placeholder, .card-img-box, .tutor-img-box {
-                    display: flex !important;
-                    align-items: center !important;
-                    justify-content: center !important;
-                    text-align: center !important;
-                    margin-left: auto !important;
-                    margin-right: auto !important;
-                    overflow: hidden !important;
-                    cursor: pointer !important;
+                h1, h2, h3, h4 { color: ${state.theme.accent} !important; }
+                .email-box { background: ${state.theme.light} !important; border: 1px solid ${state.theme.accent} !important; }
+                .image-upload-box, .img-placeholder {
+                    display: flex !important; align-items: center !important; justify-content: center !important;
+                    text-align: center !important; overflow: hidden !important; cursor: pointer !important;
                 }
-                .image-upload-box img, .img-placeholder img, .logo-container img, .hero-image-placeholder img {
-                    width: 100% !important;
-                    height: 100% !important;
-                    object-fit: cover !important;
-                    object-position: center !important;
-                }
+                .image-upload-box img, .img-placeholder img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
             `;
             doc.head.appendChild(styleTag);
 
-            // Intercept internal template links
-            const allLinks = doc.querySelectorAll('a');
-            allLinks.forEach(link => {
-                link.onclick = (e) => {
-                    e.preventDefault();
-                    const href = link.getAttribute('href');
-                    if (href) {
-                        if (href.includes('index')) switchPage('index');
-                        else if (href.includes('about')) switchPage('about');
-                        else if (href.includes('products')) switchPage('products');
-                        else if (href.includes('contact')) switchPage('contact');
-                    }
-                };
-            });
-
-            // STEP 4 Inline editing
-            const editableElements = doc.querySelectorAll('p, h1, h2, h3, h4, span, div.badge, a.btn-explore, button.btn-submit');
+            // (1) & (3) Inline text editing enabled on all headers and text blocks
+            const editableElements = doc.querySelectorAll('p, h1, h2, h3, h4, span, div.subtitle, .editable-heading');
             editableElements.forEach(el => {
                 el.contentEditable = "true";
                 el.style.outline = "none";
-                el.addEventListener('focus', () => el.style.boxShadow = "0 0 4px #07575B");
+                el.addEventListener('focus', () => el.style.boxShadow = "0 0 4px " + state.theme.accent);
                 el.addEventListener('blur', () => el.style.boxShadow = "none");
             });
 
-            // STEP 3 Image upload click handler
-            const imageContainers = doc.querySelectorAll('.img-placeholder, .logo-container, .hero-image-placeholder, .card-img-box, .tutor-img-box, .image-upload-box');
+            // (3) Image click handler
+            const imageContainers = doc.querySelectorAll('.img-placeholder, .logo-container, .image-upload-box, .mini-pic, .card-img');
             imageContainers.forEach(container => {
                 container.onclick = (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
+                    e.preventDefault(); e.stopPropagation();
                     const fileInput = doc.createElement('input');
-                    fileInput.type = 'file';
-                    fileInput.accept = 'image/*';
+                    fileInput.type = 'file'; fileInput.accept = 'image/*';
                     fileInput.onchange = (evt) => {
                         const file = evt.target.files[0];
                         if (file) {
                             const reader = new FileReader();
                             reader.onload = (uploadEvt) => {
-                                container.innerHTML = `<img src="${uploadEvt.target.result}" alt="User Uploaded Image">`;
+                                container.innerHTML = `<img src="${uploadEvt.target.result}" alt="Uploaded Image">`;
                             };
                             reader.readAsDataURL(file);
                         }
@@ -336,50 +291,40 @@
             });
         }
 
-        // STEP 5 Final Submission & ZIP Generation
+        // (5) Submit Handler - Bundles 4 HTML pages & photos into ZIP + triggers mailto prompt to student email
         function handleFinalSubmit(event) {
             event.preventDefault();
             saveCurrentIFrameState();
-
+            
             const userEmail = document.getElementById('userEmail').value;
-            if (!userEmail) {
-                alert("Please enter a valid email address in Step 5.");
-                return;
-            }
+            const targetEmail = "rita.eloisa.corpuz@student.ateneo.edu";
 
             const zip = new JSZip();
             const activeLayoutPages = state.modifiedPages[state.layout];
             const defaultPages = TEMPLATES[state.layout];
-
-            const pageMap = state.layout === 'template1' ? {
+            const pageMap = {
                 index: 'index.html',
                 about: 'aboutus.html',
                 products: 'products.html',
                 contact: 'contactus.html'
-            } : {
-                index: 'index.html',
-                about: 'about.html',
-                products: 'products.html',
-                contact: 'contact.html'
             };
 
             Object.keys(pageMap).forEach(key => {
                 let html = activeLayoutPages[key] || defaultPages[key];
-                html = html.replace(/<form[^>]*>/i, `<form action="mailto:${userEmail}" method="POST">`);
                 zip.file(pageMap[key], html);
             });
 
-            zip.file("submission_info.txt", `User Nominated Email: ${userEmail}\nSelected Layout: ${state.layout}\nTheme: ${state.theme.name}\nDestination: rita.eloisa.corpuz@student.ateneo.edu`);
+            zip.file("submission_details.txt", `User Nominated Email: ${userEmail}\nSelected Layout: ${state.layout}\nTheme: ${state.theme.name}\nTarget Admin Email: ${targetEmail}`);
 
             zip.generateAsync({ type: "blob" }).then(function (blob) {
-                saveAs(blob, "website_builder_template.zip");
-
-                const mailtoSubject = encodeURIComponent("website builder");
-                const mailtoBody = encodeURIComponent(`User Nominated Email: ${userEmail}\n\nThe customized website builder ZIP package has been generated and downloaded. Please find attached.`);
+                saveAs(blob, "website_builder_template1.zip");
                 
-                window.location.href = `mailto:rita.eloisa.corpuz@student.ateneo.edu?subject=${mailtoSubject}&body=${mailtoBody}`;
+                const mailtoSubject = encodeURIComponent("Website Builder ZIP Submission");
+                const mailtoBody = encodeURIComponent(`User Nominated Email: ${userEmail}\n\nThe website template package (index.html, aboutus.html, products.html, contactus.html, and images) has been generated and zipped.`);
                 
-                alert(`Template ZIP downloaded successfully!\nAn email dispatch prompt has been launched to notify rita.eloisa.corpuz@student.ateneo.edu with user email: ${userEmail}`);
+                window.location.href = `mailto:${targetEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+                
+                alert(`Template ZIP downloaded successfully!\nAn email dispatch prompt has been launched to notify ${targetEmail} with user email: ${userEmail}`);
             });
         }
     </script>
