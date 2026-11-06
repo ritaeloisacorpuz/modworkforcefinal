@@ -9,13 +9,13 @@
 
    /* Accent Colors */
    --accent-blue: #5A8AFF;      /* Primary Accent (Links, Hovers) */
-   --accent-brick: #D9534F;     /* Heading & Primary Button Accent */
+   --accent-brick: #5a8aff;     /* Heading & Primary Button Accent */
    --accent-yellow: #FFC107;    /* Secondary Highlight Accent */
-   --accent-cyan: #17A2B8;      /* Borders & Sub-nav Details */
+   --accent-cyan: #5a8aff;      /* Borders & Sub-nav Details */
 
    /* Text & Button Colors */
-   --text-dark: #042040;        /* Main dark text & dark button bg */
-   --text-light: #CDE9F7;       /* Muted light text on dark containers */
+   --text-dark: #26286D;        /* Main dark text & dark button bg */
+   --text-light: #5A8AFF;       /* Muted light text on dark containers */
 }
 /* Base Typography & Theme Application */
 body {
