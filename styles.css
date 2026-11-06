@@ -8,13 +8,13 @@
    --bg-white: #ffffff;         /* Pure white sections */
 
    /* Accent Colors */
-   --accent-blue: #3F51B5;      /* Primary Accent (Links, Hovers) */
-   --accent-brick: #2A3679;     /* Heading & Primary Button Accent */
+   --accent-blue: #C3DCE5;      /* Primary Accent (Links, Hovers) */
+   --accent-brick: #9CB0B7;     /* Heading & Primary Button Accent */
    --accent-yellow: #F8D287;    /* Secondary Highlight Accent */
-   --accent-cyan: #FBE8C2;      /* Borders & Sub-nav Details */
+   --accent-cyan: #FF7F00;      /* Borders & Sub-nav Details */
 
    /* Text & Button Colors */
-   --text-dark: #2A3679;        /* Main dark text & dark button bg */
+   --text-dark: #000000;        /* Main dark text & dark button bg */
    --text-light: #ffffff;       /* Muted light text on dark containers */
 }
 /* Base Typography & Theme Application */
