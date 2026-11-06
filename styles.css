@@ -4,14 +4,14 @@
 
 :root {
    /* Base Backgrounds */
-   --bg-main: #FDFFF0;          /* Main page background */
+   --bg-main: #FFFFFF;          /* Main page background */
    --bg-white: #ffffff;         /* Pure white sections */
 
    /* Accent Colors */
-   --accent-blue: #C3DCE5;      /* Primary Accent (Links, Hovers) */
-   --accent-brick: #9CB0B7;     /* Heading & Primary Button Accent */
-   --accent-yellow: #F8D287;    /* Secondary Highlight Accent */
-   --accent-cyan: #FF7F00;      /* Borders & Sub-nav Details */
+   --accent-blue: #000000;      /* Primary Accent (Links, Hovers) */
+   --accent-brick: #000000;     /* Heading & Primary Button Accent */
+   --accent-yellow: #F0F2D8;    /* Secondary Highlight Accent */
+   --accent-cyan: #F0F2D8;      /* Borders & Sub-nav Details */
 
    /* Text & Button Colors */
    --text-dark: #000000;        /* Main dark text & dark button bg */
