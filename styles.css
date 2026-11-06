@@ -4,16 +4,19 @@
 
 :root {
    /* Base Backgrounds */
-   --bg-main: #FDFFF0;          /* General background (Light Blue) */
-   
-   /* Accent Colors */
-   --accent-blue: #5A8AFF;      /* Special Accent */
-   
-   /* Text & Button Colors */
-   --text-dark: #042040;        /* Text on light background & Button backgrounds (Dark Blue) */
-   --text-light: #CDE9F7;       /* Text on dark background (Light Blue) */
-}
+   --bg-main: #FDFFF0;          /* Main page background */
+   --bg-white: #ffffff;         /* Pure white sections */
 
+   /* Accent Colors */
+   --accent-blue: #5A8AFF;      /* Primary Accent (Links, Hovers) */
+   --accent-brick: #D9534F;     /* Heading & Primary Button Accent */
+   --accent-yellow: #FFC107;    /* Secondary Highlight Accent */
+   --accent-cyan: #17A2B8;      /* Borders & Sub-nav Details */
+
+   /* Text & Button Colors */
+   --text-dark: #042040;        /* Main dark text & dark button bg */
+   --text-light: #CDE9F7;       /* Muted light text on dark containers */
+}
 /* Base Typography & Theme Application */
 body {
    font-family: 'Helvetica', 'Arial', sans-serif;
@@ -135,10 +138,9 @@ img, svg, video {
 }
 
 /* Odd links (1st, 3rd, etc.): Dark Blue background with Light Blue text */
-.sub-nav-bar a:nth-child(odd) {
-    background-color: #042040 !important;
-    color: #CDE9F7 !important;
-    border: 2px solid #042040;
+background-color: var(--text-dark) !important;
+    color: var(--text-light) !important;
+    border: 2px solid var(--text-dark);
     padding: 0.85rem 1.25rem;
     border-radius: 6px;
     font-weight: bold;
@@ -146,20 +148,17 @@ img, svg, video {
 
 /* Even links (2nd, 4th, etc.): Light Blue background with Dark Blue text */
 .sub-nav-bar a:nth-child(even) {
-    background-color: #CDE9F7 !important;
-    color: #042040 !important;
-    border: 2px solid #042040;
+    background-color: var(--text-light) !important;
+    color: var(--text-dark) !important;
+    border: 2px solid var(--text-dark);
     padding: 0.85rem 1.25rem;
     border-radius: 6px;
     font-weight: bold;
 }
 
 /* Hover effects for sub-navigation boxes */
-.sub-nav-bar a:nth-child(odd):hover {
-    background-color: #5A8AFF !important;
-    color: #ffffff !important;
-    border-color: #5A8AFF;
-}
+background-color: var(--accent-blue) !important;
+    border-color: var(--accent-blue);
 
 .sub-nav-bar a:nth-child(even):hover {
     background-color: #5A8AFF !important;
