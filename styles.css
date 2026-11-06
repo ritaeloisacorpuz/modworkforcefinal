@@ -15,7 +15,7 @@
 
    /* Text & Button Colors */
    --text-dark: #26286D;        /* Main dark text & dark button bg */
-   --text-light: #5A8AFF;       /* Muted light text on dark containers */
+   --text-light: #ffffff;       /* Muted light text on dark containers */
 }
 /* Base Typography & Theme Application */
 body {
