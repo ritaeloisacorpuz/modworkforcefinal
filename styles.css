@@ -991,3 +991,21 @@ button:active {
     border-color: #C3DCE5 !important;
     color: #000000 !important;
 }
+/* 1. Remove Yellow Band Behind Sub-Nav Bar */
+.sub-nav-bar {
+    background-color: #ffffff !important;
+}
+
+/* 2. Turn Feature Card Icons, Headings, and Dividers White */
+.feature-card h3,
+.feature-card p {
+    color: #ffffff !important;
+}
+
+.feature-card .feature-icon img {
+    filter: brightness(0) invert(1) !important;
+}
+
+.feature-icon {
+    border-bottom-color: #ffffff !important;
+}
