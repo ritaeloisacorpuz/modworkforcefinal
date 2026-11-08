@@ -127,62 +127,45 @@ img, svg, video {
        box-sizing: border-box;
    }
 }
-/* ==========================================
-   SUB-NAVBAR & ABOUT US BUTTON OVERRIDES
-   ========================================== */
+/* ===================================================
+   SUB-NAVBAR & BUTTON HOVER/CLICK STATES
+   =================================================== */
 
-/* Alternating Sub-Nav Menu Box Colors */
+/* Sub-nav layout spacing */
 .sub-nav-bar {
-    padding: 1.5rem 1rem;
-    gap: 1rem;
+  padding: 1.5rem 1rem;
+  gap: 1rem;
 }
 
-/* Odd links (1st, 3rd, etc.): Dark Blue background with Light Blue text */
-background-color: var(--text-dark) !important;
-    color: var(--text-light) !important;
-    border: 2px solid var(--text-dark);
-    padding: 0.85rem 1.25rem;
-    border-radius: 6px;
-    font-weight: bold;
+/* Base style for sub-nav links: Black text, white background */
+.sub-nav-bar a {
+  background-color: var(--bg-white) !important;
+  color: var(--text-dark) !important;
+  border: 2px solid var(--text-dark);
+  padding: 0.85rem 1.25rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-/* Even links (2nd, 4th, etc.): Light Blue background with Dark Blue text */
-.sub-nav-bar a:nth-child(even) {
-    background-color: var(--text-light) !important;
-    color: var(--text-dark) !important;
-    border: 2px solid var(--text-dark);
-    padding: 0.85rem 1.25rem;
-    border-radius: 6px;
-    font-weight: bold;
+/* Hover state for sub-nav links: White text, black background */
+.sub-nav-bar a:hover {
+  background-color: var(--text-dark) !important;
+  color: var(--bg-white) !important;
+  border-color: var(--text-dark);
 }
 
-/* Hover effects for sub-navigation boxes */
-background-color: var(--accent-blue) !important;
-    border-color: var(--accent-blue);
-
-.sub-nav-bar a:nth-child(even):hover {
-    background-color: #5A8AFF !important;
-    color: #ffffff !important;
-    border-color: #5A8AFF;
-}
-
-/* Enforce Dark Blue Background & High Contrast for About Us Buttons */
-.btn-primary, 
-.btn-secondary, 
-a[href="about.html"] {
-    background-color: #042040 !important;
-    color: #CDE9F7 !important;
-    border: 2px solid #042040 !important;
-    font-weight: bold;
-}
-
-/* Hover state for About Us Buttons */
-.btn-primary:hover, 
-.btn-secondary:hover, 
-a[href="about.html"]:hover {
-    background-color: #5A8AFF !important;
-    color: #ffffff !important;
-    border-color: #5A8AFF !important;
+/* Global Click/Active state for ALL buttons & links: Light Grey (#C3DCE5) */
+.sub-nav-bar a:active,
+.btn-primary:active,
+.btn-dark:active,
+.btn-secondary:active,
+.btn-light:active,
+.btn-outline:active,
+button:active {
+  background-color: #C3DCE5 !important;
+  border-color: #C3DCE5 !important;
+  color: var(--text-dark) !important;
 }
 /* ==========================================
    PROMO CARDS SOLID BLOCK THEME OVERRIDES
