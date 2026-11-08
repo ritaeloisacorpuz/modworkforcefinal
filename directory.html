@@ -188,11 +188,19 @@ const PUBLIC_R2_URL = "https://pub-717848f3e98b4114afb9b42dd2e0d2c5.r2.dev";
 function fixImageUrl(rawUrl) {
   if (!rawUrl || typeof rawUrl !== 'string') return '';
   let url = rawUrl.trim();
+  
+  // Extract key path if it contains profiles/ or gov_ids/
+  if (url.includes("profiles/")) {
+    const profileKey = "profiles/" + url.split("profiles/")[1];
+    return `${PUBLIC_R2_URL}/${profileKey}`;
+  }
+  
   if (url.includes("r2.cloudflarestorage.com")) {
     const parts = url.split("/");
-    const key = parts.slice(3).join("/");
+    const key = parts.slice(3).filter(Boolean).join("/");
     return `${PUBLIC_R2_URL}/${key}`;
   }
+  
   return url;
 }
 
@@ -217,11 +225,14 @@ document.addEventListener("DOMContentLoaded", async function () {
       const workerEmail = cleaner.email || 'N/A';
       const workerPhone = cleaner.primary_phone || 'N/A';
       const workerNarrative = cleaner.description || 'No background description provided.';
-      const photo = fixImageUrl(cleaner.profile_pic_url) || 'images/default-avatar.jpg';
+      const photo = fixImageUrl(cleaner.profile_pic_url);
 
       const cardHTML = `
         <div class="cleaner-card">
-          <img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.onerror=null; this.src='https://via.placeholder.com/280x250/ffffff/000000?text=No+Photo';" />
+          <img src="${photo || 'https://via.placeholder.com/280x250/ffffff/000000?text=No+Photo'}" 
+               alt="${workerName}" 
+               class="cleaner-photo" 
+               onerror="this.onerror=null; this.src='https://via.placeholder.com/280x250/ffffff/000000?text=No+Photo';" />
           <div class="cleaner-info">
             <h3 class="cleaner-name">${workerName}</h3>
             <div class="cleaner-meta">
@@ -243,6 +254,5 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 });
 </script>
-
 </body>
 </html>
