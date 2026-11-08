@@ -934,3 +934,60 @@ body {
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
+/* ===================================================
+   TARGETED FIXES (NO GLOBAL OVERRIDES)
+   =================================================== */
+
+/* 1. Force Page Backgrounds to White */
+body, .hero-section, .section-container, .promos-section, .learn-more-block {
+    background-color: #ffffff !important;
+}
+
+/* 2. Force Blue Container Cards to Solid Black */
+.promo-card {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.promo-card h4, 
+.promo-card p {
+    color: #ffffff !important;
+}
+
+/* 3. Sub-Navigation Alternate Buttons (Black / White / Black / White) */
+.sub-nav-bar a.btn-dark {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #000000 !important;
+}
+
+.sub-nav-bar a.btn-light {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+}
+
+/* Hover States for Sub-Nav Buttons */
+.sub-nav-bar a.btn-dark:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.sub-nav-bar a.btn-light:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* 4. Click/Active State Grey (#C3DCE5) for All Buttons */
+.sub-nav-bar a:active,
+.btn-primary:active,
+.btn-dark:active,
+.btn-secondary:active,
+.btn-light:active,
+.btn-outline:active,
+button:active {
+    background-color: #C3DCE5 !important;
+    border-color: #C3DCE5 !important;
+    color: #000000 !important;
+}
