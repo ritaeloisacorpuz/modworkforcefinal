@@ -9,10 +9,10 @@
     <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
     <meta name="robots" content="index, follow">
 
-    <!-- Canonical Tag (Points to primary URL without .html) -->
+    <!-- Canonical Tag -->
     <link rel="canonical" href="https://www.modworkforce.com/">
 
-    <!-- Social & LLM Preview Metadata (Open Graph) -->
+    <!-- Social & LLM Preview Metadata -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="MOD Workforce | Small Business Tools and Resources">
     <meta property="og:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
@@ -20,19 +20,10 @@
     <meta property="og:site_name" content="MOD Workforce">
     <meta property="og:image" content="https://www.modworkforce.com/images/og-image.jpg">
 
-    <!-- Twitter / X Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MOD Workforce | Small Business Tools and Resources">
-    <meta name="twitter:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
-    <meta name="twitter:image" content="https://www.modworkforce.com/images/og-image.jpg">
-
     <!-- Linked Shared Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- PapaParse Library for CSV Profile Parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-
-    <!-- Schema.org Knowledge Graph / JSON-LD -->
+    <!-- Schema.org Knowledge Graph -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -60,36 +51,23 @@
     }
     </script>
 
-    <!-- Internal Skeletal Layout Rules (Bones, Grid & Font Floor) -->
     <style>
-        /* Base Defaults for Modular Portability */
         body, main, section, p, div, span, li, a {
-            font-size: max(1.15rem, 100%);
-            line-height: 1.6;
+            font-size: max(1rem, 100%);
+            line-height: 1.5;
         }
 
         p {
-            text-align: justify;
-            margin-bottom: 0.75rem;
+            text-align: left;
+            margin-bottom: 0.5rem;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3 {
             text-align: center;
             margin-top: 0;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
 
-        img, svg, video {
-            object-position: center;
-            object-fit: cover;
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Directory Section Container */
         .directory-section {
             max-width: 1200px;
             margin: 0 auto;
@@ -102,17 +80,6 @@
             margin-bottom: 40px;
         }
 
-        .directory-header h1 {
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .directory-header p {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        /* Responsive Grid Layout */
         .cleaners-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -120,61 +87,68 @@
         }
 
         .cleaner-card {
+            background-color: #000;
+            color: #fff;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             display: flex;
             flex-direction: column;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .cleaner-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
         }
 
         .cleaner-photo {
             width: 100%;
             height: 250px;
             object-fit: cover;
-            object-position: center;
+            display: block;
         }
 
         .cleaner-info {
             padding: 20px;
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
+            flex-grow: 1;
         }
 
         .cleaner-name {
-            margin-bottom: 10px;
-            font-weight: 700;
-            padding-bottom: 6px;
-            text-align: left;
+            color: #fff;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            text-align: center;
         }
 
         .cleaner-meta {
-            margin-bottom: 15px;
-            padding: 10px 12px;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 12px;
             border-radius: 6px;
+            margin-bottom: 15px;
+            word-break: break-word;
         }
 
         .cleaner-meta p {
-            margin-bottom: 6px;
-            text-align: left;
-        }
-
-        .cleaner-meta p:last-child {
-            margin-bottom: 0;
+            color: #000;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
         }
 
         .cleaner-narrative {
-            line-height: 1.5;
-            margin-top: auto;
-            white-space: pre-line;
-            text-align: justify;
+            color: #ddd;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .btn-request {
+            display: block;
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .loading-msg {
@@ -183,40 +157,15 @@
             font-weight: 600;
         }
 
-        .btn-request {
-            display: block;
-            width: 100%;
-            text-align: center;
-            padding: 12px 0;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 0 0 6px 6px;
-            margin-top: 15px;
-            box-sizing: border-box;
-            transition: background-color 0.2s ease;
-        }
-
-        /* Mobile & Tablet Responsiveness Enhancements */
         @media screen and (max-width: 768px) {
-            .directory-section {
-                padding: 20px 15px;
-            }
-            .cleaners-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .cleaner-photo {
-                height: 220px;
-            }
+            .cleaners-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-  <!-- Header Placeholder Container -->
   <div id="header-placeholder"></div>
 
-  <!-- Main Directory Section -->
   <main class="directory-section">
     <div class="directory-header">
       <h1>Supplier Directory</h1>
@@ -229,18 +178,23 @@
     <div id="cleaners-container" class="cleaners-grid"></div>
   </main>
 
-  <!-- Footer Placeholder Container -->
   <div id="footer-placeholder"></div>
 
-  <!-- Component Loader Script -->
   <script src="include.js"></script>
 
-  <!-- CSV Auto-Parse Script -->
-<!-- Cloudflare D1 Database Fetch Script -->
 <script>
-function formatImageUrl(rawUrl) {
+const PUBLIC_R2_URL = "https://pub-717848f3e98b4114afb9b42dd2e0d2c5.r2.dev";
+
+function fixImageUrl(rawUrl) {
   if (!rawUrl || typeof rawUrl !== 'string') return '';
-  return rawUrl.trim();
+  let url = rawUrl.trim();
+  // Converts legacy private Cloudflare R2 links to the new public domain
+  if (url.includes("r2.cloudflarestorage.com")) {
+    const parts = url.split("/");
+    const key = parts.slice(3).join("/");
+    return `${PUBLIC_R2_URL}/${key}`;
+  }
+  return url;
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -260,14 +214,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     container.innerHTML = "";
     suppliers.forEach(cleaner => {
-      const workerName = `${cleaner.first_name || ''} ${cleaner.last_name || ''}`.trim() || 'Anonymous Worker';
+      const workerName = `${cleaner.first_name || ''} ${cleaner.last_name || ''}`.trim() || 'Anonymous Supplier';
       const workerEmail = cleaner.email || 'N/A';
       const workerPhone = cleaner.primary_phone || 'N/A';
       const workerNarrative = cleaner.description || 'No background description provided.';
-      const photo = formatImageUrl(cleaner.profile_pic_url);
+      const photo = fixImageUrl(cleaner.profile_pic_url);
 
       const cardHTML = `
-        <div class="cleaner-card promo-card">
+        <div class="cleaner-card">
           ${photo ? `<img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.style.display='none';" />` : ''}
           <div class="cleaner-info">
             <h3 class="cleaner-name">${workerName}</h3>
@@ -276,7 +230,7 @@ document.addEventListener("DOMContentLoaded", async function () {
               <p><strong>Contact:</strong> ${workerPhone}</p>
             </div>
             <p class="cleaner-narrative">${workerNarrative}</p>
-            <a href="mailto:${workerEmail}" class="btn-request btn-primary">Contact Supplier</a>
+            <a href="mailto:${workerEmail}" class="btn-request">Contact Supplier</a>
           </div>
         </div>
       `;
