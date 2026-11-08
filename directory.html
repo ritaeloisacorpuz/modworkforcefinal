@@ -236,14 +236,11 @@
   <script src="include.js"></script>
 
   <!-- CSV Auto-Parse Script -->
- <!-- Cloudflare D1 Database Fetch Script -->
+<!-- Cloudflare D1 Database Fetch Script -->
 <script>
-// Helper function to format image URLs
 function formatImageUrl(rawUrl) {
-  if (!rawUrl || typeof rawUrl !== 'string') return 'images/default-avatar.jpg';
-  let trimmed = rawUrl.trim();
-  if (trimmed === '') return 'images/default-avatar.jpg';
-  return trimmed;
+  if (!rawUrl || typeof rawUrl !== 'string') return '';
+  return rawUrl.trim();
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -264,23 +261,22 @@ document.addEventListener("DOMContentLoaded", async function () {
     container.innerHTML = "";
     suppliers.forEach(cleaner => {
       const workerName = `${cleaner.first_name || ''} ${cleaner.last_name || ''}`.trim() || 'Anonymous Worker';
-      const workerCategory = cleaner.category || 'Supplier';
-      const workerLocation = cleaner.primary_phone || 'Not specified';
-      const workerSchedule = cleaner.email || 'Flexible';
+      const workerEmail = cleaner.email || 'N/A';
+      const workerPhone = cleaner.primary_phone || 'N/A';
       const workerNarrative = cleaner.description || 'No background description provided.';
       const photo = formatImageUrl(cleaner.profile_pic_url);
 
       const cardHTML = `
         <div class="cleaner-card promo-card">
-          <img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.onerror=null; this.src='images/default-avatar.jpg';" />
+          ${photo ? `<img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.style.display='none';" />` : ''}
           <div class="cleaner-info">
             <h3 class="cleaner-name">${workerName}</h3>
             <div class="cleaner-meta">
-              <p><strong>Email:</strong> ${workerSchedule}</p>
-              <p><strong>Contact:</strong> ${workerLocation}</p>
+              <p><strong>Email:</strong> ${workerEmail}</p>
+              <p><strong>Contact:</strong> ${workerPhone}</p>
             </div>
             <p class="cleaner-narrative">${workerNarrative}</p>
-            <a href="mailto:${cleaner.email}" class="btn-request btn-primary">Contact Supplier</a>
+            <a href="mailto:${workerEmail}" class="btn-request btn-primary">Contact Supplier</a>
           </div>
         </div>
       `;
@@ -288,7 +284,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
   } catch (err) {
     if (loadingMsg) {
-      loadingMsg.innerText = "Failed to load profiles from Cloudflare D1 database.";
+      loadingMsg.innerText = "Failed to load profiles from database.";
     }
     console.error("Database Fetch Error:", err);
   }
