@@ -10,8 +10,8 @@
    /* Accent Colors */
    --accent-blue: #000000;      /* Primary Accent (Links, Hovers) */
    --accent-brick: #000000;     /* Heading & Primary Button Accent */
-   --accent-yellow: #F0F2D8;    /* Secondary Highlight Accent */
-   --accent-cyan: #F0F2D8;      /* Borders & Sub-nav Details */
+   --accent-yellow: #ffffff;    /* Secondary Highlight Accent */
+   --accent-cyan: #ffffff;      /* Borders & Sub-nav Details */
 
    /* Text & Button Colors */
    --text-dark: #000000;        /* Main dark text & dark button bg */
