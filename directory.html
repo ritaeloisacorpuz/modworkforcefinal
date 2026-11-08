@@ -236,87 +236,64 @@
   <script src="include.js"></script>
 
   <!-- CSV Auto-Parse Script -->
-  <script>
-    // Helper function to format image URLs from Google Drive, Wix, or direct links
-    function formatImageUrl(rawUrl) {
-      if (!rawUrl || typeof rawUrl !== 'string') return 'images/default-avatar.jpg';
-      
-      let trimmed = rawUrl.trim();
-      if (trimmed === '') return 'images/default-avatar.jpg';
+ <!-- Cloudflare D1 Database Fetch Script -->
+<script>
+// Helper function to format image URLs
+function formatImageUrl(rawUrl) {
+  if (!rawUrl || typeof rawUrl !== 'string') return 'images/default-avatar.jpg';
+  let trimmed = rawUrl.trim();
+  if (trimmed === '') return 'images/default-avatar.jpg';
+  return trimmed;
+}
 
-      // 1. Convert Wix Image Protocol to CDN URL
-      if (trimmed.startsWith('wix:image://v1/')) {
-        const parts = trimmed.replace('wix:image://v1/', '').split('/');
-        const fileId = parts[0];
-        return `https://static.wixstatic.com/media/${fileId}`;
-      }
+document.addEventListener("DOMContentLoaded", async function () {
+  const container = document.getElementById("cleaners-container");
+  const loadingMsg = document.getElementById("loading");
 
-      // 2. Convert Google Drive Sharing Links to Direct Image URLs
-      if (trimmed.includes('drive.google.com')) {
-        const match = trimmed.match(/\/d\/([a-zA-Z0-9_-]+)/) || trimmed.match(/id=([a-zA-Z0-9_-]+)/);
-        if (match && match[1]) {
-          return `https://lh3.googleusercontent.com/d/${match[1]}`;
-        }
-      }
+  try {
+    const response = await fetch("https://directory-api.rita-eloisa-corpuz.workers.dev");
+    const suppliers = await response.json();
 
-      // 3. Standard HTTP/HTTPS or local relative image path
-      return trimmed;
+    if (loadingMsg) loadingMsg.style.display = "none";
+
+    if (!suppliers || suppliers.length === 0) {
+      container.innerHTML = "<p style='text-align:center; grid-column: 1/-1;'>No profiles found in database.</p>";
+      return;
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      Papa.parse("profile.csv", {
-        download: true,
-        header: true,
-        skipEmptyLines: true,
-        complete: function (results) {
-          const container = document.getElementById("cleaners-container");
-          const loadingMsg = document.getElementById("loading");
-          if (loadingMsg) loadingMsg.style.display = "none";
+    container.innerHTML = "";
+    suppliers.forEach(cleaner => {
+      const workerName = `${cleaner.first_name || ''} ${cleaner.last_name || ''}`.trim() || 'Anonymous Worker';
+      const workerCategory = cleaner.category || 'Supplier';
+      const workerLocation = cleaner.primary_phone || 'Not specified';
+      const workerSchedule = cleaner.email || 'Flexible';
+      const workerNarrative = cleaner.description || 'No background description provided.';
+      const photo = formatImageUrl(cleaner.profile_pic_url);
 
-          if (!results.data || results.data.length === 0) {
-            container.innerHTML = "<p style='text-align:center; grid-column: 1/-1;'>No profiles found in the database.</p>";
-            return;
-          }
-
-          container.innerHTML = "";
-          results.data.forEach(cleaner => {
-            const workerName = cleaner['First Name'] || cleaner.FirstName || cleaner.Name || 'Anonymous Worker';
-            const workerCategory = cleaner['Job Type'] || cleaner.Category || 'Blue Collar';
-            const workerLocation = cleaner['Preferred work area'] || cleaner['Preferred Location for facetoface Tutorials'] || cleaner.Location || 'Not specified';
-            const workerSchedule = cleaner['Sched'] || cleaner.Schedule || 'Flexible';
-            const workerNarrative = cleaner['Job Narrative'] || cleaner.Narrative || cleaner.Bio || 'No background description provided.';
-
-            const rawPhoto = cleaner['Profile Picture'] || cleaner['PhotoURL'] || cleaner['Photo'] || cleaner['Image'];
-            const photo = formatImageUrl(rawPhoto);
-
-            const cardHTML = `
-              <div class="cleaner-card promo-card">
-                <img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.onerror=null; this.src='images/default-avatar.jpg';">
-                <div class="cleaner-info">
-                  <h3 class="cleaner-name">${workerName}</h3>
-                  <div class="cleaner-meta">
-                    <p><strong>Category:</strong> ${workerCategory}</p>
-                    <p><strong>Location:</strong> ${workerLocation}</p>
-                    <p><strong>Schedule:</strong> ${workerSchedule}</p>
-                  </div>
-                  <p class="cleaner-narrative">${workerNarrative}</p>
-                </div>
-                <a href="request.html" class="btn-request btn-primary">Request Contact Details</a>
-              </div>
-            `;
-            container.innerHTML += cardHTML;
-          });
-        },
-        error: function(err) {
-          const loadingMsg = document.getElementById("loading");
-          if (loadingMsg) {
-            loadingMsg.innerText = "Failed to load profiles. Please ensure profile.csv is uploaded in your repository root.";
-          }
-          console.error("CSV Parsing Error:", err);
-        }
-      });
+      const cardHTML = `
+        <div class="cleaner-card promo-card">
+          <img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.onerror=null; this.src='images/default-avatar.jpg';" />
+          <div class="cleaner-info">
+            <h3 class="cleaner-name">${workerName}</h3>
+            <div class="cleaner-meta">
+              <p><strong>Email:</strong> ${workerSchedule}</p>
+              <p><strong>Contact:</strong> ${workerLocation}</p>
+            </div>
+            <p class="cleaner-narrative">${workerNarrative}</p>
+            <a href="mailto:${cleaner.email}" class="btn-request btn-primary">Contact Supplier</a>
+          </div>
+        </div>
+      `;
+      container.innerHTML += cardHTML;
     });
-  </script>
+  } catch (err) {
+    if (loadingMsg) {
+      loadingMsg.innerText = "Failed to load profiles from Cloudflare D1 database.";
+    }
+    console.error("Database Fetch Error:", err);
+  }
+});
+</script>
 
 </body>
 </html>
