@@ -188,21 +188,17 @@ const PUBLIC_R2_URL = "https://pub-717848f3e98b4114afb9b42dd2e0d2c5.r2.dev";
 function fixImageUrl(rawUrl) {
   if (!rawUrl || typeof rawUrl !== 'string') return '';
   let url = rawUrl.trim();
-
-  // If path contains profiles/, extract key and force public domain URL
-  if (url.includes("profiles/")) {
-    const key = "profiles/" + url.split("profiles/")[1];
-    return `${PUBLIC_R2_URL}/${key}`;
+  
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url;
   }
-
-  // Handle direct file keys
-  if (url.startsWith("profiles/")) {
+  
+  if (url.startsWith('profiles/')) {
     return `${PUBLIC_R2_URL}/${url}`;
   }
-
-  return url;
+  
+  return `${PUBLIC_R2_URL}/${url.replace(/^\/+/, '')}`;
 }
-
 document.addEventListener("DOMContentLoaded", async function () {
   const container = document.getElementById("cleaners-container");
   const loadingMsg = document.getElementById("loading");
