@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swap Map Item Submission</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
+    .container { max-width: 650px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    h2 { margin-top: 0; color: #333; }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; font-weight: bold; margin-bottom: 6px; color: #444; }
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+      width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 14px;
+    }
+    textarea { height: 100px; resize: vertical; }
+    .char-count { font-size: 12px; color: #666; text-align: right; margin-top: 4px; }
+    input[type="file"] { display: block; margin-top: 4px; }
+    .btn-submit { background-color: #0051c3; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 4px; cursor: pointer; width: 100%; }
+    .btn-submit:disabled { background-color: #94b2e1; cursor: not-allowed; }
+    .status-msg { margin-top: 15px; font-weight: bold; text-align: center; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Post Item for Barter / Swap</h2>
+  <form id="directoryForm" enctype="multipart/form-data">
+    
+    <!-- 1. Government ID -->
+    <div class="form-group">
+      <label for="govId">Government ID (JPEG or PDF)</label>
+      <input type="file" id="govId" name="govId" accept=".jpg, .jpeg, .pdf, image/jpeg, application/pdf" required>
+    </div>
+    <!-- 2. Item Picture -->
+    <div class="form-group">
+      <label for="profilePic">Item Photo (JPEG only)</label>
+      <input type="file" id="profilePic" name="profilePic" accept=".jpg, .jpeg, image/jpeg" required>
+    </div>
+    <!-- 3. First Name -->
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" required>
+    </div>
+    <!-- 4. Last Name -->
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" required>
+    </div>
+    <!-- 5. Description -->
+    <div class="form-group">
+      <label for="description">Item Description & Swap Preferences (Up to 400 characters)</label>
+      <textarea id="description" name="description" maxlength="400" required></textarea>
+      <div class="char-count"><span id="charCounter">0</span> / 400</div>
+    </div>
+    <!-- 6. Email Address -->
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <!-- 7. Primary Contact Number -->
+    <div class="form-group">
+      <label for="primaryPhone">Primary Contact Number (Cellphone/Landline)</label>
+      <input type="tel" id="primaryPhone" name="primaryPhone" required>
+    </div>
+    <!-- 8. Secondary Contact Number -->
+    <div class="form-group">
+      <label for="secondaryPhone">Secondary Contact Number (Cellphone/Landline)</label>
+      <input type="tel" id="secondaryPhone" name="secondaryPhone">
+    </div>
+    <button type="submit" class="btn-submit" id="submitBtn">Post Swap Item</button>
+  </form>
+  <div id="statusMsg" class="status-msg"></div>
+</div>
+<script>
+  // Character counter for description
+  const descInput = document.getElementById('description');
+  const charCounter = document.getElementById('charCounter');
+  descInput.addEventListener('input', () => {
+    charCounter.textContent = descInput.value.length;
+  });
+  // Handle Form Submission
+  document.getElementById('directoryForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = document.getElementById('submitBtn');
+    const statusMsg = document.getElementById('statusMsg');
+    const formData = new FormData(e.target);
+    submitBtn.disabled = true;
+    statusMsg.style.color = '#333';
+    statusMsg.textContent = 'Uploading files and saving entry...';
+    try {
+      // Sends data directly to Swap Cloudflare Workers endpoint
+      const response = await fetch('https://swap-api.rita-eloisa-corpuz.workers.dev', {
+        method: 'POST',
+        body: formData
+      });
+      const result = await response.json();
+      if (response.ok && result.success) {
+        statusMsg.style.color = 'green';
+        statusMsg.textContent = 'Submission successful!';
+        document.getElementById('directoryForm').reset();
+        charCounter.textContent = '0';
+      } else {
+        throw new Error(result.error || 'Submission failed.');
+      }
+    } catch (err) {
+      statusMsg.style.color = 'red';
+      statusMsg.textContent = err.message;
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
