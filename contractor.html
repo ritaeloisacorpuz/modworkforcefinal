@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const loadingMsg = document.getElementById("loading");
   try {
     // Isolated Worker endpoint for Contractor Database
-    const response = await fetch("https://https://contractor-api.rita-eloisa-corpuz.workers.dev/");
+    const response = await fetch("https://contractor-api.rita-eloisa-corpuz.workers.dev/");
     const contractors = await response.json();
     if (loadingMsg) loadingMsg.style.display = "none";
     if (!contractors || contractors.length === 0) {
