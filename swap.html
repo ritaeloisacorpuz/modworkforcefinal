@@ -5,21 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Core SEO Meta Tags -->
-    <title>MOD Workforce | Swap Map</title>
-    <meta name="description" content="Trade and barter items on MOD Workforce Swap Map. Turn your unused equipment into treasure.">
+    <title>MOD Workforce | Small Business Tools and Resources</title>
+    <meta name="description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
     <meta name="robots" content="index, follow">
-    <!-- Canonical Tag -->
-    <link rel="canonical" href="https://www.modworkforce.com/swap-map.html">
-    <!-- Social & LLM Preview Metadata -->
+
+    <!-- Canonical Tag (Points to primary URL without .html) -->
+    <link rel="canonical" href="https://www.modworkforce.com/">
+
+    <!-- Social & LLM Preview Metadata (Open Graph) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="MOD Workforce | Swap Map">
-    <meta property="og:description" content="Trade and barter items on MOD Workforce Swap Map. Turn your unused equipment into treasure.">
-    <meta property="og:url" content="https://www.modworkforce.com/swap-map.html">
+    <meta property="og:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta property="og:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta property="og:url" content="https://www.modworkforce.com/">
     <meta property="og:site_name" content="MOD Workforce">
     <meta property="og:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MOD Workforce | Small Business Tools and Resources">
+    <meta name="twitter:description" content="Tools and resources for small businesses: on-demand manpower, affordable suppliers, and step-by-step business setup guides.">
+    <meta name="twitter:image" content="https://www.modworkforce.com/images/og-image.jpg">
+
     <!-- Linked Shared Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Schema.org Knowledge Graph -->
+
+    <!-- PapaParse Library for CSV Profile Parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+    <!-- Schema.org Knowledge Graph / JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -46,188 +59,264 @@
       ]
     }
     </script>
+
+    <!-- Internal Skeletal Layout Rules (Bones, Grid & Font Floor) -->
     <style>
+        /* Base Defaults for Modular Portability */
         body, main, section, p, div, span, li, a {
-            font-size: max(1rem, 100%);
-            line-height: 1.5;
+            font-size: max(1.15rem, 100%);
+            line-height: 1.6;
         }
+
         p {
-            text-align: left;
-            margin-bottom: 0.5rem;
+            text-align: justify;
+            margin-bottom: 0.75rem;
         }
-        h1, h2, h3 {
+
+        h1, h2, h3, h4, h5, h6 {
             text-align: center;
             margin-top: 0;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
+
+        img, svg, video {
+            object-position: center;
+            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Directory Section Container */
         .directory-section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
             box-sizing: border-box;
         }
+
         .directory-header {
             text-align: center;
             margin-bottom: 40px;
         }
-        .swap-intro {
-            max-width: 800px;
-            margin: 0 auto 20px auto;
-            text-align: center;
-            color: #333;
+
+        .directory-header h1 {
+            font-weight: 700;
+            margin-bottom: 10px;
         }
+
+        .directory-header p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Grid Layout */
         .cleaners-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
         }
+
         .cleaner-card {
-            background-color: #000;
-            color: #fff;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            text-align: left;
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
+        .cleaner-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+
         .cleaner-photo {
             width: 100%;
             height: 250px;
             object-fit: cover;
-            display: block;
+            object-position: center;
         }
+
         .cleaner-info {
             padding: 20px;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
         }
+
         .cleaner-name {
-            color: #fff;
-            margin-bottom: 12px;
-            font-size: 1.25rem;
-            text-align: center;
-        }
-        .cleaner-meta {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 12px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            word-break: break-word;
-        }
-        .cleaner-meta p {
-            color: #000;
-            margin-bottom: 4px;
-            font-size: 0.9rem;
-        }
-        .cleaner-narrative {
-            color: #ddd;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-            flex-grow: 1;
+            margin-bottom: 10px;
+            font-weight: 700;
+            padding-bottom: 6px;
             text-align: left;
         }
-        .btn-request {
-            display: block;
-            background-color: #fff;
-            color: #000;
-            text-align: center;
-            padding: 10px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
+
+        .cleaner-meta {
+            margin-bottom: 15px;
+            padding: 10px 12px;
+            border-radius: 6px;
         }
+
+        .cleaner-meta p {
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .cleaner-meta p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cleaner-narrative {
+            line-height: 1.5;
+            margin-top: auto;
+            white-space: pre-line;
+            text-align: justify;
+        }
+
         .loading-msg {
             text-align: center;
             margin: 50px 0;
             font-weight: 600;
         }
+
+        .btn-request {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px 0;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 0 0 6px 6px;
+            margin-top: 15px;
+            box-sizing: border-box;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Mobile & Tablet Responsiveness Enhancements */
         @media screen and (max-width: 768px) {
-            .cleaners-grid { grid-template-columns: 1fr; }
+            .directory-section {
+                padding: 20px 15px;
+            }
+            .cleaners-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .cleaner-photo {
+                height: 220px;
+            }
         }
     </style>
 </head>
 <body>
+
+  <!-- Header Placeholder Container -->
   <div id="header-placeholder"></div>
+
+  <!-- Main Directory Section -->
   <main class="directory-section">
     <div class="directory-header">
       <h1>Swap Map</h1>
-      <p style="font-weight: bold; font-size: 1.1rem;">Welcome to Barter Land !</p>
-      
-      <p class="swap-intro">
-        Do you want an X Deal? If you have an old equipment that still works but no longer need or you have excess inventory which you want to dispose of before it expires, find your match here. Just click on the button below to post your item along with a short description. One man’s trash is another man’s treasure. So, just post away and trade your junk for jewels.
-      </p>
-      
-      <p>
-        <a href="inputswap.html" class="btn-outline">Post your item here and swap your trash for treasure.</a>
-      </p>
+      <p>Welcome to Barter Land ! </p>
+      <p>Do you want an X Deal? If you have an old equipment that still works but no longer need or you have excess inventory which you want to dispose of before it expires, find your match here. Just click on the button below to post your item along with a short description. One man’s trash is another man’s treasure. So, just post away and trade your junk for jewels.</p>
+      <a href="underconstruction.html" class="btn-outline">Post your item here and swap your trash for treasure.</a>
     </div>
-    <div id="loading" class="loading-msg">Loading items from database...</div>
+
+    <div id="loading" class="loading-msg">Loading profiles from database...</div>
     <div id="cleaners-container" class="cleaners-grid"></div>
   </main>
+
+  <!-- Footer Placeholder Container -->
   <div id="footer-placeholder"></div>
+
+  <!-- Component Loader Script -->
   <script src="include.js"></script>
-<script>
-const PUBLIC_R2_URL = "https://pub-717848f3e98b4114afb9b42dd2e0d2c5.r2.dev";
-function fixImageUrl(rawUrl) {
-  if (!rawUrl || typeof rawUrl !== 'string') return '';
-  let url = rawUrl.trim();
-  if (url.includes("profiles/")) {
-    const key = "profiles/" + url.split("profiles/")[1];
-    return `${PUBLIC_R2_URL}/${key}`;
-  }
-  if (url.startsWith("profiles/")) {
-    return `${PUBLIC_R2_URL}/${url}`;
-  }
-  return url;
-}
-document.addEventListener("DOMContentLoaded", async function () {
-  const container = document.getElementById("cleaners-container");
-  const loadingMsg = document.getElementById("loading");
-  try {
-    // Isolated Worker endpoint for Swap/Barter Database
-    const response = await fetch("https://swap-api.rita-eloisa-corpuz.workers.dev");
-    const barterItems = await response.json();
-    if (loadingMsg) loadingMsg.style.display = "none";
-    if (!barterItems || barterItems.length === 0) {
-      container.innerHTML = "<p style='text-align:center; grid-column: 1/-1;'>No swap items found in database.</p>";
-      return;
-    }
-    container.innerHTML = "";
-    barterItems.forEach(item => {
-      const ownerName = `${item.first_name || ''} ${item.last_name || ''}`.trim() || 'Anonymous Poster';
-      const ownerEmail = item.email || 'N/A';
-      const ownerPhone = item.primary_phone || 'N/A';
-      const itemDescription = item.description || 'No item description provided.';
+
+  <!-- CSV Auto-Parse Script -->
+  <script>
+    // Helper function to format image URLs from Google Drive, Wix, or direct links
+    function formatImageUrl(rawUrl) {
+      if (!rawUrl || typeof rawUrl !== 'string') return 'images/default-avatar.jpg';
       
-      const photoUrl = fixImageUrl(item.profile_pic_url);
-      const cardHTML = `
-        <div class="cleaner-card">
-          <img src="${photoUrl}" 
-               alt="${ownerName}" 
-               class="cleaner-photo" 
-               onerror="this.onerror=null; this.src='https://via.placeholder.com/280x250/cccccc/000000?text=No+Photo+Found';" />
-          <div class="cleaner-info">
-            <h3 class="cleaner-name">${ownerName}</h3>
-            <div class="cleaner-meta">
-              <p><strong>Email:</strong> ${ownerEmail}</p>
-              <p><strong>Contact:</strong> ${ownerPhone}</p>
-            </div>
-            <p class="cleaner-narrative">${itemDescription}</p>
-            <a href="mailto:${ownerEmail}?subject=Barter%20Swap%20Inquiry" class="btn-request">Make a Swap Offer</a>
-          </div>
-        </div>
-      `;
-      container.innerHTML += cardHTML;
-    });
-  } catch (err) {
-    if (loadingMsg) {
-      loadingMsg.innerText = "Failed to load swap items from database.";
+      let trimmed = rawUrl.trim();
+      if (trimmed === '') return 'images/default-avatar.jpg';
+
+      // 1. Convert Wix Image Protocol to CDN URL
+      if (trimmed.startsWith('wix:image://v1/')) {
+        const parts = trimmed.replace('wix:image://v1/', '').split('/');
+        const fileId = parts[0];
+        return `https://static.wixstatic.com/media/${fileId}`;
+      }
+
+      // 2. Convert Google Drive Sharing Links to Direct Image URLs
+      if (trimmed.includes('drive.google.com')) {
+        const match = trimmed.match(/\/d\/([a-zA-Z0-9_-]+)/) || trimmed.match(/id=([a-zA-Z0-9_-]+)/);
+        if (match && match[1]) {
+          return `https://lh3.googleusercontent.com/d/${match[1]}`;
+        }
+      }
+
+      // 3. Standard HTTP/HTTPS or local relative image path
+      return trimmed;
     }
-    console.error("Database Fetch Error:", err);
-  }
-});
-</script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+      Papa.parse("profile.csv", {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function (results) {
+          const container = document.getElementById("cleaners-container");
+          const loadingMsg = document.getElementById("loading");
+          if (loadingMsg) loadingMsg.style.display = "none";
+
+          if (!results.data || results.data.length === 0) {
+            container.innerHTML = "<p style='text-align:center; grid-column: 1/-1;'>No profiles found in the database.</p>";
+            return;
+          }
+
+          container.innerHTML = "";
+          results.data.forEach(cleaner => {
+            const workerName = cleaner['First Name'] || cleaner.FirstName || cleaner.Name || 'Anonymous Worker';
+            const workerCategory = cleaner['Job Type'] || cleaner.Category || 'Blue Collar';
+            const workerLocation = cleaner['Preferred work area'] || cleaner['Preferred Location for facetoface Tutorials'] || cleaner.Location || 'Not specified';
+            const workerSchedule = cleaner['Sched'] || cleaner.Schedule || 'Flexible';
+            const workerNarrative = cleaner['Job Narrative'] || cleaner.Narrative || cleaner.Bio || 'No background description provided.';
+
+            const rawPhoto = cleaner['Profile Picture'] || cleaner['PhotoURL'] || cleaner['Photo'] || cleaner['Image'];
+            const photo = formatImageUrl(rawPhoto);
+
+            const cardHTML = `
+              <div class="cleaner-card promo-card">
+                <img src="${photo}" alt="${workerName}" class="cleaner-photo" onerror="this.onerror=null; this.src='images/default-avatar.jpg';">
+                <div class="cleaner-info">
+                  <h3 class="cleaner-name">${workerName}</h3>
+                  <div class="cleaner-meta">
+                    <p><strong>Category:</strong> ${workerCategory}</p>
+                    <p><strong>Location:</strong> ${workerLocation}</p>
+                    <p><strong>Schedule:</strong> ${workerSchedule}</p>
+                  </div>
+                  <p class="cleaner-narrative">${workerNarrative}</p>
+                </div>
+                <a href="request.html" class="btn-request btn-primary">Request Contact Details</a>
+              </div>
+            `;
+            container.innerHTML += cardHTML;
+          });
+        },
+        error: function(err) {
+          const loadingMsg = document.getElementById("loading");
+          if (loadingMsg) {
+            loadingMsg.innerText = "Failed to load profiles. Please ensure profile.csv is uploaded in your repository root.";
+          }
+          console.error("CSV Parsing Error:", err);
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
