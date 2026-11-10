@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Independent Contractor Directory Sign-Up</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
     body { font-family: Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
     .container { max-width: 650px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
@@ -22,6 +23,8 @@
   </style>
 </head>
 <body>
+<div id="header-placeholder"></div>
+
 <div class="container">
   <h2>Independent Contractor Profile Sign-Up Form</h2>
   <form id="directoryForm" enctype="multipart/form-data">
@@ -71,6 +74,10 @@
   </form>
   <div id="statusMsg" class="status-msg"></div>
 </div>
+
+<div id="footer-placeholder"></div>
+<script src="include.js"></script>
+
 <script>
   // Character counter for description
   const descInput = document.getElementById('description');
