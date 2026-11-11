@@ -279,13 +279,13 @@
             return;
           }
 
-          container.innerHTML = "";
+         container.innerHTML = "";
           results.data.forEach(cleaner => {
             const workerName = cleaner['First Name'] || cleaner.FirstName || cleaner.Name || 'Anonymous Worker';
-const workerEmail = cleaner['Email'] || cleaner.email || 'N/A';
-const workerContact = cleaner['Contact Number'] || cleaner['Cellphone Number'] || cleaner.Phone || cleaner.Contact || 'N/A';
-const workerLocation = cleaner['Preferred Location'] || cleaner['Preferred work location'] || cleaner.Location || 'Not specified';
-const workerNarrative = cleaner['Item Narrative'] || cleaner['Job Narrative'] || cleaner.Narrative || cleaner.Bio || 'No background description provided.';
+            const workerEmail = cleaner['Email'] || cleaner.email || 'N/A';
+            const workerContact = cleaner['Contact Number'] || cleaner['Cellphone Number'] || cleaner.Phone || cleaner.Contact || 'N/A';
+            const workerLocation = cleaner['Preferred Location'] || cleaner['Preferred work location'] || cleaner.Location || 'Not specified';
+            const workerNarrative = cleaner['Item Narrative'] || cleaner['Job Narrative'] || cleaner.Narrative || cleaner.Bio || 'No background description provided.';
 
             const rawPhoto = cleaner['Profile Picture'] || cleaner['PhotoURL'] || cleaner['Photo'] || cleaner['Image'];
             const photo = formatImageUrl(rawPhoto);
@@ -296,10 +296,10 @@ const workerNarrative = cleaner['Item Narrative'] || cleaner['Job Narrative'] ||
                 <div class="cleaner-info">
                   <h3 class="cleaner-name">${workerName}</h3>
                   <div class="cleaner-meta">
-  <p><strong>Email:</strong> ${workerEmail}</p>
-  <p><strong>Contact:</strong> ${workerContact}</p>
-  <p><strong>Location:</strong> ${workerLocation}</p>
-</div>
+                    <p><strong>Email:</strong> ${workerEmail}</p>
+                    <p><strong>Contact:</strong> ${workerContact}</p>
+                    <p><strong>Location:</strong> ${workerLocation}</p>
+                  </div>
                   <p class="cleaner-narrative">${workerNarrative}</p>
                 </div>
                 <a href="request.html" class="btn-request btn-primary">Request Contact Details</a>
@@ -307,7 +307,6 @@ const workerNarrative = cleaner['Item Narrative'] || cleaner['Job Narrative'] ||
             `;
             container.innerHTML += cardHTML;
           });
-        },
         error: function(err) {
           const loadingMsg = document.getElementById("loading");
           if (loadingMsg) {
