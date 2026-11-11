@@ -1009,3 +1009,7 @@ button:active {
 .feature-icon {
     border-bottom-color: #ffffff !important;
 }
+.btn-submit-builder {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
