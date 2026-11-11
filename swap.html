@@ -279,14 +279,14 @@
             return;
           }
 
-         container.innerHTML = "";
+        container.innerHTML = "";
           results.data.forEach(cleaner => {
-const workerName = cleaner['First Name'] || cleaner.FirstName || cleaner.Name || 'Anonymous Worker';
-const workerEmail = cleaner['Email'] || cleaner.email || cleaner['Job Type'] || 'N/A';
-const workerContact = cleaner['Contact Number'] || cleaner['Cellphone Number'] || cleaner['Sched'] || 'N/A';
-const workerLocation = cleaner['Preferred Location'] || cleaner['Preferred work location'] || cleaner.Location || 'Not specified';
-const workerNarrative = cleaner['Item Narrative'] || cleaner['Job Narrative'] || cleaner.Narrative || cleaner.Bio || 'No background description provided.';
-              
+            const workerName = cleaner['First Name'] || cleaner.FirstName || cleaner.Name || 'Anonymous Worker';
+            const workerEmail = cleaner['Email'] || cleaner.email || cleaner['Job Type'] || 'N/A';
+            const workerContact = cleaner['Contact Number'] || cleaner['Cellphone Number'] || cleaner['Sched'] || 'N/A';
+            const workerLocation = cleaner['Preferred Location'] || cleaner['Preferred work location'] || cleaner.Location || 'Not specified';
+            const workerNarrative = cleaner['Item Narrative'] || cleaner['Job Narrative'] || cleaner.Narrative || cleaner.Bio || 'No background description provided.';
+
             const rawPhoto = cleaner['Profile Picture'] || cleaner['PhotoURL'] || cleaner['Photo'] || cleaner['Image'];
             const photo = formatImageUrl(rawPhoto);
 
@@ -307,6 +307,7 @@ const workerNarrative = cleaner['Item Narrative'] || cleaner['Job Narrative'] ||
             `;
             container.innerHTML += cardHTML;
           });
+        },
         error: function(err) {
           const loadingMsg = document.getElementById("loading");
           if (loadingMsg) {
