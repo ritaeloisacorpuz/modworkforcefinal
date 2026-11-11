@@ -1013,3 +1013,8 @@ button:active {
     background: #000000 !important;
     color: #ffffff !important;
 }
+.cleaner-meta, 
+.cleaner-meta p, 
+.cleaner-meta strong {
+  color: #111111 !important;
+}
