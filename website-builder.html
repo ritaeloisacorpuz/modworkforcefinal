@@ -45,7 +45,6 @@
         .btn-submit-builder { background: #07575B; color: white; font-weight: bold; border: none; padding: 15px 30px; font-size: 1.1rem; cursor: pointer; border-radius: 30px; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s ease; display: block; margin: 20px auto 0 auto; }
         .btn-submit-builder:hover { background: #003B46; }
         .btn-submit-builder:disabled { background: #888; cursor: not-allowed; }
-
         .status-box { margin-top: 15px; padding: 15px; border-radius: 6px; display: none; text-align: center; font-weight: 600; }
         .status-box.success { display: block; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
         .status-box.error { display: block; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
@@ -71,26 +70,22 @@
                     </select>
                 </div>
             </div>
-
             <!-- STEP 2 -->
             <div class="step-card">
                 <div class="step-title">Step #2 - Select a Color Theme from 8 Options</div>
                 <p>Each theme features three shades: Dark Tone (letters/dark buttons), Light Tone (background/light buttons), Accent Shade (contrasting highlights).</p>
                 <div class="color-grid" id="colorThemeGrid"></div>
             </div>
-
             <!-- STEP 3 -->
             <div class="step-card">
                 <div class="step-title">Step #3 - Select the Images and Graphics</div>
                 <p>Click directly on any image or logo placeholder inside the live viewer below to upload custom images. Images are automatically resized and cropped to fit without stretching.</p>
             </div>
-
             <!-- STEP 4 -->
             <div class="step-card">
                 <div class="step-title">Step #4 - Key in your Text and Narrative</div>
                 <p>Click on any text heading or paragraph in the live viewer below to edit directly. Switch between tabs (Home, About Us, Products &amp; Services, Contact Us) to customize all 4 pages before submitting.</p>
             </div>
-
             <!-- LIVE TEMPLATE VIEWER -->
             <div class="preview-container">
                 <div class="preview-toolbar">
@@ -104,7 +99,6 @@
                 </div>
                 <iframe id="templateViewer"></iframe>
             </div>
-
             <!-- STEP 5 -->
             <div class="step-card">
                 <div class="step-title">Step #5 - Email &amp; Deployment Submission</div>
@@ -119,19 +113,16 @@
             </div>
         </div>
     </main>
-
     <!-- Hidden file input used when user clicks an image placeholder inside iframe -->
     <input type="file" id="hiddenImageInput" accept="image/*" style="display:none;">
-
     <div id="footer-placeholder"></div>
     <script src="include.js"></script>
     <script>
         // =========================================================================
         // CONFIGURATION - POINT THIS TO YOUR NEW DEDICATED CLOUDFLARE WORKER
         // =========================================================================
-       const WORKER_ENDPOINT = "https://website-builder-mailer.rita-eloisa-corpuz.workers.dev";
+        const WORKER_ENDPOINT = "https://website-builder-mailer.rita-eloisa-corpuz.workers.dev";
         const TARGET_ADMIN_EMAIL = "rita.eloisa.corpuz@student.ateneo.edu";
-
         const COLOR_THEMES = [
             { name: "Ocean Teal", dark: "#003B46", light: "#E8F1F2", accent: "#07575B" },
             { name: "Vibrant Pink", dark: "#2B0B1E", light: "#FDF0F5", accent: "#E83E8C" },
@@ -142,7 +133,6 @@
             { name: "Royal Amethyst", dark: "#2E1065", light: "#F5F3FF", accent: "#7C3AED" },
             { name: "Golden Ochre", dark: "#422006", light: "#FEFCE8", accent: "#CA8A04" }
         ];
-
         // Note: All internal links use index.html, about.html, products.html, contact.html
         const TEMPLATES = {
             template1: {
@@ -155,22 +145,19 @@
                 index: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Home</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;}body{background-color:#ffffff;color:#333333;display:flex;flex-direction:column;min-height:100vh;}header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#fff;border-bottom:3px solid var(--color-accent);flex-wrap:wrap;}.logo-container{width:140px;height:60px;background:var(--color-dark);color:#fff;font-weight:bold;text-transform:uppercase;font-size:12px;letter-spacing:1px;text-align:center;border-left:8px solid var(--color-accent);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}nav ul{display:flex;list-style:none;gap:15px;flex-wrap:wrap;}nav a{text-decoration:none;color:var(--color-dark);font-weight:bold;text-transform:uppercase;padding:6px 12px;font-size:13px;}nav a:hover,nav a.active{background-color:var(--color-accent);color:#fff;}.container{width:90%;max-width:1200px;margin:20px auto;flex:1;}.hero-image-placeholder{width:100%;height:400px;background:#e0e0e0;display:flex;align-items:center;justify-content:center;color:#666;border:2px dashed #ccc;text-align:center;overflow:hidden;}.hero-banner{background:var(--color-accent);color:#fff;padding:15px 25px;font-size:24px;font-weight:bold;text-transform:uppercase;margin-top:-30px;position:relative;width:fit-content;margin-left:auto;margin-right:5%;box-shadow:4px 4px 0px var(--color-dark);}.main-grid{display:grid;grid-template-columns:1fr 2fr;gap:30px;margin-top:40px;}.card{background:var(--color-light);padding:20px;border-left:5px solid var(--color-accent);}.card p{background:var(--color-dark);color:#fff;padding:15px;margin-top:10px;line-height:1.5;}.badge{background:var(--color-accent);color:#fff;padding:8px 15px;font-weight:bold;display:inline-block;margin-bottom:15px;text-transform:uppercase;}.three-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;text-align:center;}.three-col p{line-height:1.5;font-size:14px;}footer{background:var(--color-dark);color:#fff;padding:35px 20px;margin-top:50px;}.footer-content{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;max-width:1200px;margin:0 auto;}.footer-nav a{color:#fff;text-decoration:none;margin-right:15px;text-transform:uppercase;font-size:13px;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html" class="active">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contact.html">Contact Us</a></li></ul></nav></header><div class="container"><div class="hero-image-placeholder img-placeholder image-upload-box">Click to insert Hero Image</div><div class="hero-banner">Bold Ideas. Real Results.</div><div class="main-grid"><div class="card"><div class="badge">Who We Are</div><p>Click here to introduce your company's core value proposition in a punchy summary.</p></div><div class="three-col"><div><div class="badge">Pillar 1</div><p>Highlight your first key service or advantage.</p></div><div><div class="badge">Pillar 2</div><p>Highlight your second key service or advantage.</p></div><div><div class="badge">Pillar 3</div><p>Highlight your third key service or advantage.</p></div></div></div></div><footer><div class="footer-content"><div><p>Call us: +63 123-456-7890</p><p>Find us: Your Business Address</p></div><div class="footer-nav"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contact.html">Contact Us</a></div><div><p>This website is courtesy of MODWorkforce.com</p></div></div></footer></body></html>`,
                 about: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About Us</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;}body{background-color:#ffffff;color:#333333;display:flex;flex-direction:column;min-height:100vh;}header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#fff;border-bottom:3px solid var(--color-accent);flex-wrap:wrap;}.logo-container{width:140px;height:60px;background:var(--color-dark);color:#fff;font-weight:bold;text-transform:uppercase;font-size:12px;letter-spacing:1px;text-align:center;border-left:8px solid var(--color-accent);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}nav ul{display:flex;list-style:none;gap:15px;flex-wrap:wrap;}nav a{text-decoration:none;color:var(--color-dark);font-weight:bold;text-transform:uppercase;padding:6px 12px;font-size:13px;}nav a:hover,nav a.active{background-color:var(--color-accent);color:#fff;}.container{width:90%;max-width:1200px;margin:20px auto;flex:1;}.about-banner{background:var(--color-accent);color:#fff;padding:15px 25px;font-size:28px;font-weight:bold;text-transform:uppercase;display:inline-block;margin-bottom:20px;box-shadow:4px 4px 0px var(--color-dark);}.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;margin-top:20px;}.image-placeholder{width:100%;height:350px;background:#e0e0e0;display:flex;align-items:center;justify-content:center;color:#666;border:2px dashed #ccc;text-align:center;overflow:hidden;}.text-content p{margin-bottom:15px;line-height:1.6;font-size:15px;}footer{background:var(--color-dark);color:#fff;padding:35px 20px;margin-top:50px;}.footer-content{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;max-width:1200px;margin:0 auto;}.footer-nav a{color:#fff;text-decoration:none;margin-right:15px;text-transform:uppercase;font-size:13px;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="about.html" class="active">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contact.html">Contact Us</a></li></ul></nav></header><div class="container"><div class="about-banner">About Our Team</div><div class="about-grid"><div class="image-placeholder img-placeholder image-upload-box">Click to insert Team Photo</div><div class="text-content"><p>Write your company story here. Explain what drives your team and why clients trust you.</p><p>Add a second paragraph detailing your milestones, values, and future goals.</p></div></div></div><footer><div class="footer-content"><div><p>Call us: +63 123-456-7890</p><p>Find us: Your Business Address</p></div><div class="footer-nav"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contact.html">Contact Us</a></div><div><p>This website is courtesy of MODWorkforce.com</p></div></div></footer></body></html>`,
                 products: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Products &amp; Services</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;}body{background-color:#ffffff;color:#333333;display:flex;flex-direction:column;min-height:100vh;}header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#fff;border-bottom:3px solid var(--color-accent);flex-wrap:wrap;}.logo-container{width:140px;height:60px;background:var(--color-dark);color:#fff;font-weight:bold;text-transform:uppercase;font-size:12px;letter-spacing:1px;text-align:center;border-left:8px solid var(--color-accent);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}nav ul{display:flex;list-style:none;gap:15px;flex-wrap:wrap;}nav a{text-decoration:none;color:var(--color-dark);font-weight:bold;text-transform:uppercase;padding:6px 12px;font-size:13px;}nav a:hover,nav a.active{background-color:var(--color-accent);color:#fff;}.container{width:90%;max-width:1200px;margin:20px auto;flex:1;}.about-banner{background:var(--color-accent);color:#fff;padding:15px 25px;font-size:28px;font-weight:bold;text-transform:uppercase;display:inline-block;margin-bottom:30px;box-shadow:4px 4px 0px var(--color-dark);}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}.item-card{background:var(--color-light);border-top:5px solid var(--color-accent);padding:20px;}.item-img{height:180px;background:#ddd;margin-bottom:15px;display:flex;align-items:center;justify-content:center;overflow:hidden;}.item-card h3{color:var(--color-dark);margin-bottom:10px;}.item-card p{font-size:14px;line-height:1.5;}footer{background:var(--color-dark);color:#fff;padding:35px 20px;margin-top:50px;}.footer-content{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;max-width:1200px;margin:0 auto;}.footer-nav a{color:#fff;text-decoration:none;margin-right:15px;text-transform:uppercase;font-size:13px;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html" class="active">Products &amp; Services</a></li><li><a href="contact.html">Contact Us</a></li></ul></nav></header><div class="container"><div class="about-banner">Products &amp; Services</div><div class="grid"><div class="item-card"><div class="item-img img-placeholder image-upload-box">Product 1 Photo</div><h3>Package One</h3><p>Describe what is included in your first product or service package.</p></div><div class="item-card"><div class="item-img img-placeholder image-upload-box">Product 2 Photo</div><h3>Package Two</h3><p>Describe what is included in your second product or service package.</p></div><div class="item-card"><div class="item-img img-placeholder image-upload-box">Product 3 Photo</div><h3>Package Three</h3><p>Describe what is included in your third product or service package.</p></div></div></div><footer><div class="footer-content"><div><p>Call us: +63 123-456-7890</p><p>Find us: Your Business Address</p></div><div class="footer-nav"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contact.html">Contact Us</a></div><div><p>This website is courtesy of MODWorkforce.com</p></div></div></footer></body></html>`,
-                contact: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact Us</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;}body{background-color:#ffffff;color:#333333;display:flex;flex-direction:column;min-height:100vh;}header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#fff;border-bottom:3px solid var(--color-accent);flex-wrap:wrap;}.logo-container{width:140px;height:60px;background:var(--color-dark);color:#fff;font-weight:bold;text-transform:uppercase;font-size:12px;letter-spacing:1px;text-align:center;border-left:8px solid var(--color-accent);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}nav ul{display:flex;list-style:none;gap:15px;flex-wrap:wrap;}nav a{text-decoration:none;color:var(--color-dark);font-weight:bold;text-transform:uppercase;padding:6px 12px;font-size:13px;}nav a:hover,nav a.active{background-color:var(--color-accent);color:#fff;}.container{width:90%;max-width:1200px;margin:20px auto;flex:1;}.about-banner{background:var(--color-accent);color:#fff;padding:15px 25px;font-size:28px;font-weight:bold;text-transform:uppercase;display:inline-block;margin-bottom:30px;box-shadow:4px 4px 0px var(--color-dark);}.contact-box{background:var(--color-light);padding:30px;border-left:6px solid var(--color-dark);line-height:1.8;}footer{background:var(--color-dark);color:#fff;padding:35px 20px;margin-top:50px;}.footer-content{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;max-width:1200px;margin:0 auto;}.footer-nav a{color:#fff;text-decoration:none;margin-right:15px;text-transform:uppercase;font-size:13px;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contact.html" class="active">Contact Us</a></li></ul></nav></header><div class="container"><div class="about-banner">Contact Us</div><div class="contact-box"><h2>Start a Conversation</h2><p><strong>Email:</strong> hello@yourcompany.com</p><p><strong>Phone:</strong> +63 123-456-7890</p><p><strong>Office Hours:</strong> Monday – Friday, 9:00 AM – 6:00 PM</p><p><strong>Address:</strong> 123 Business Avenue, Metro Manila</p></div></div><footer><div class="footer-content"><div><p>Call us: +63 123-456-7890</p><p>Find us: Your Business Address</p></div><div class="footer-nav"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contact.html">Contact Us</a></div><div><p>This website is courtesy of MODWorkforce.com</p></div></div></footer></body></html>`
+                contact: `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact Us</title><style>:root{--color-dark:#003B46;--color-light:#E8F1F2;--color-accent:#07575B;}*{box-sizing:border-box;margin:0;padding:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;}body{background-color:#ffffff;color:#333333;display:flex;flex-direction:column;min-height:100vh;}header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#fff;border-bottom:3px solid var(--color-accent);flex-wrap:wrap;}.logo-container{width:140px;height:60px;background:var(--color-dark);color:#fff;font-weight:bold;text-transform:uppercase;font-size:12px;letter-spacing:1px;text-align:center;border-left:8px solid var(--color-accent);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}nav ul{display:flex;list-style:none;gap:15px;flex-wrap:wrap;}nav a{text-decoration:none;color:var(--color-dark);font-weight:bold;text-transform:uppercase;padding:6px 12px;font-size:13px;}nav a:hover,nav a.active{background-color:var(--color-accent);color:#fff;}.container{width:90%;max-width:1200px;margin:20px auto;flex:1;}.about-banner{background:var(--color-accent);color:#fff;padding:15px 25px;font-size:28px;font-weight:bold;text-transform:uppercase;display:inline-block;margin-bottom:30px;box-shadow:4px 4px 0px var(--color-dark);}.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}.contact-box{background:var(--color-light);padding:30px;border-left:6px solid var(--color-dark);line-height:1.8;}.contact-box h2{color:var(--color-dark);margin-bottom:15px;}.contact-box p{margin-bottom:10px;font-size:15px;}.contact-photo{width:100%;height:300px;background:#e0e0e0;display:flex;align-items:center;justify-content:center;color:#666;border:2px dashed #ccc;text-align:center;overflow:hidden;}footer{background:var(--color-dark);color:#fff;padding:35px 20px;margin-top:50px;}.footer-content{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;max-width:1200px;margin:0 auto;}.footer-nav a{color:#fff;text-decoration:none;margin-right:15px;text-transform:uppercase;font-size:13px;}</style></head><body><header><div class="logo-container image-upload-box">Company Logo</div><nav><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products &amp; Services</a></li><li><a href="contact.html" class="active">Contact Us</a></li></ul></nav></header><div class="container"><div class="about-banner">Contact Us</div><div class="contact-grid"><div class="contact-box"><h2>Start a Conversation</h2><p><strong>Email:</strong> hello@yourcompany.com</p><p><strong>Phone:</strong> +63 123-456-7890</p><p><strong>Office Hours:</strong> Monday – Friday, 9:00 AM – 6:00 PM</p><p><strong>Address:</strong> 123 Business Avenue, Metro Manila</p></div><div class="contact-photo img-placeholder image-upload-box">Click to insert Contact / Location Image</div></div></div><footer><div class="footer-content"><div><p>Call us: +63 123-456-7890</p><p>Find us: Your Business Address</p></div><div class="footer-nav"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products &amp; Services</a><a href="contact.html">Contact Us</a></div><div><p>This website is courtesy of MODWorkforce.com</p></div></div></footer></body></html>`
             }
         };
-
         // State management
         let currentLayout = "template1";
         let currentTheme = COLOR_THEMES[0];
         let currentPage = "index";
         let pageStates = {}; // Holds customized HTML strings for all 4 pages
         let activeImageTarget = null;
-
         function initBuilder() {
             renderColorThemes();
             loadSelectedTemplate();
         }
-
         function renderColorThemes() {
             const grid = document.getElementById("colorThemeGrid");
             grid.innerHTML = "";
@@ -196,7 +183,6 @@
                 grid.appendChild(card);
             });
         }
-
         function loadSelectedTemplate() {
             currentLayout = document.getElementById("layoutSelect").value;
             // Deep copy the 4 pages into working state
@@ -209,7 +195,6 @@
             applyThemeToAllPages();
             renderIframePage(currentPage);
         }
-
         function applyThemeToAllPages() {
             Object.keys(pageStates).forEach(pageKey => {
                 const parser = new DOMParser();
@@ -220,7 +205,6 @@
                 pageStates[pageKey] = "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
             });
         }
-
         function switchPage(pageKey) {
             saveCurrentIframeState();
             currentPage = pageKey;
@@ -229,29 +213,38 @@
             });
             renderIframePage(pageKey);
         }
-
         function saveCurrentIframeState() {
             const iframe = document.getElementById("templateViewer");
             if (!iframe || !iframe.contentDocument || !iframe.contentDocument.documentElement) return;
+            // Guard against saving an external page if iframe ever navigated away
+            if (!iframe.contentDocument.querySelector(".logo-container")) return;
             pageStates[currentPage] = "<!DOCTYPE html>\n" + iframe.contentDocument.documentElement.outerHTML;
         }
-
         function renderIframePage(pageKey) {
             const iframe = document.getElementById("templateViewer");
             const doc = iframe.contentDocument || iframe.contentWindow.document;
             doc.open();
             doc.write(pageStates[pageKey]);
             doc.close();
-
             // Enable live text editing & image uploading inside the iframe
             setTimeout(() => {
+                // Prevent internal nav/footer links from navigating the preview iframe to modworkforce.com
+                doc.querySelectorAll("a[href]").forEach(link => {
+                    link.onclick = (e) => {
+                        e.preventDefault();
+                        const href = link.getAttribute("href") || "";
+                        if (href.includes("index")) switchPage("index");
+                        else if (href.includes("about")) switchPage("about");
+                        else if (href.includes("products")) switchPage("products");
+                        else if (href.includes("contact")) switchPage("contact");
+                    };
+                });
                 const editableTags = doc.querySelectorAll("h1, h2, h3, h4, p, .hero-banner, .about-banner, .badge");
                 editableTags.forEach(el => {
                     el.setAttribute("contenteditable", "true");
                     el.style.outline = "none";
                     el.title = "Click to edit text";
                 });
-
                 const imageBoxes = doc.querySelectorAll(".image-upload-box");
                 imageBoxes.forEach(box => {
                     box.style.cursor = "pointer";
@@ -265,12 +258,10 @@
                 });
             }, 50);
         }
-
         // Handle image selection & automatic compression so ZIP stays lightweight
         document.getElementById("hiddenImageInput").addEventListener("change", function(event) {
             const file = event.target.files[0];
             if (!file || !activeImageTarget) return;
-
             const reader = new FileReader();
             reader.onload = function(e) {
                 const img = new Image();
@@ -279,23 +270,19 @@
                     const MAX_WIDTH = 1200;
                     let width = img.width;
                     let height = img.height;
-
                     if (width > MAX_WIDTH) {
                         height = Math.round((height * MAX_WIDTH) / width);
                         width = MAX_WIDTH;
                     }
-
                     canvas.width = width;
                     canvas.height = height;
                     const ctx = canvas.getContext("2d");
                     ctx.drawImage(img, 0, 0, width, height);
-
                     // Use PNG for logos (keeps transparency), JPEG for photos
                     const isLogo = activeImageTarget.classList.contains("logo-container");
                     const compressedDataUrl = isLogo
                         ? canvas.toDataURL("image/png")
                         : canvas.toDataURL("image/jpeg", 0.82);
-
                     activeImageTarget.innerHTML = `<img src="${compressedDataUrl}" alt="Uploaded Graphic" style="width:100%;height:100%;object-fit:${isLogo ? 'contain' : 'cover'};display:block;">`;
                     activeImageTarget.style.border = "none";
                     activeImageTarget.style.backgroundColor = "transparent";
@@ -306,53 +293,43 @@
             reader.readAsDataURL(file);
             event.target.value = "";
         });
-
         // Strip editor attributes before packaging into ZIP
         function getCleanProductionHtml(rawHtml) {
             const parser = new DOMParser();
             const doc = parser.parseFromString(rawHtml, "text/html");
-
             doc.querySelectorAll("[contenteditable]").forEach(el => {
                 el.removeAttribute("contenteditable");
                 el.removeAttribute("title");
             });
-
             doc.querySelectorAll(".image-upload-box").forEach(box => {
                 box.removeAttribute("title");
                 box.style.cursor = "default";
             });
-
             return "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
         }
-
         async function handleFinalSubmit(event) {
             event.preventDefault();
             const submitBtn = document.getElementById("submitBtn");
             const statusBox = document.getElementById("statusMessage");
             const userEmail = document.getElementById("userEmail").value.trim();
-
             submitBtn.disabled = true;
             submitBtn.textContent = "Generating ZIP & Sending...";
             statusBox.className = "status-box";
             statusBox.style.display = "none";
-
             try {
                 // Save latest edits from currently visible iframe tab
                 saveCurrentIframeState();
-
                 // Build Cloudflare-ready ZIP archive
                 const zip = new JSZip();
                 zip.file("index.html", getCleanProductionHtml(pageStates.index));
                 zip.file("about.html", getCleanProductionHtml(pageStates.about));
                 zip.file("products.html", getCleanProductionHtml(pageStates.products));
                 zip.file("contact.html", getCleanProductionHtml(pageStates.contact));
-
                 const zipBlob = await zip.generateAsync({
                     type: "blob",
                     compression: "DEFLATE",
                     compressionOptions: { level: 6 }
                 });
-
                 // Prepare multipart form payload for the dedicated Cloudflare Worker
                 const formData = new FormData();
                 formData.append("recipient", TARGET_ADMIN_EMAIL);
@@ -360,18 +337,14 @@
                 formData.append("layout", currentLayout);
                 formData.append("theme", currentTheme.name);
                 formData.append("websiteZip", zipBlob, "cloudflare-website-package.zip");
-
                 const response = await fetch(WORKER_ENDPOINT, {
                     method: "POST",
                     body: formData
                 });
-
                 const result = await response.json().catch(() => ({}));
-
                 if (!response.ok) {
                     throw new Error(result.error || `Server responded with status ${response.status}`);
                 }
-
                 // Also create a direct download URL as an instant backup for the user
                 const downloadUrl = URL.createObjectURL(zipBlob);
                 statusBox.className = "status-box success";
@@ -389,7 +362,6 @@
                 submitBtn.textContent = "Submit Website Project";
             }
         }
-
         window.addEventListener("DOMContentLoaded", initBuilder);
     </script>
 </body>
